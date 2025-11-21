@@ -2,13 +2,23 @@
 
 import { motion, cubicBezier } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
+import PmgtImage from '../../assets/pmgt_new.png';
+import OperationAdvisorImage from '../../assets/Operation_advisor.png';
+import AIChatbotImage from '../../assets/Cpal.png';
+import SmartHelmetImage from '../../assets/Smarthelmet.png';
+
+
+
+
 
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
 export default function Products() {
   return (
-    <section className="relative overflow-hidden bg-[#0A0B0C] px-6 py-24 md:px-8 lg:px-16">
-      {/* --- Hero Lighting (neutral slate tone like Linear) --- */}
+    
+    <section className="relative overflow-hidden bg-[#0A0B0C] px-6 py-17 pb-0 md:px-8 lg:px-16 lg:pb-0">
+      
       <div aria-hidden className="pointer-events-none absolute inset-0">
         {/* subtle neutral wash */}
         <div
@@ -93,7 +103,7 @@ export default function Products() {
           </div>
         </motion.div>
 
-        {/* Tilted hero mock (slanted + bottom vignette) */}
+        {/* Tilted hero mock (slanted + bottom vignette) with real image */}
         <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.98, rotateX: -8, filter: 'blur(8px)' }}
           whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0, filter: 'blur(0px)' }}
@@ -103,7 +113,7 @@ export default function Products() {
           style={{ perspective: '1200px' }}
         >
           <div
-            className="relative mx-auto w-full rounded-2xl border border-white/10 bg-gradient-to-b from-[#1a1b1d] to-[#121316] shadow-[0_50px_140px_-50px_rgba(0,0,0,.6)]"
+            className="relative mx-auto w-full rounded-2xl border border-white/10 bg-[#121316] shadow-[0_50px_140px_-50px_rgba(0,0,0,.6)]"
             style={{
               transform: 'rotateX(14deg) rotateZ(-2deg)',
               boxShadow:
@@ -113,56 +123,22 @@ export default function Products() {
               maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 72%, rgba(0,0,0,.0) 100%)',
             }}
           >
-            {/* Header bar */}
-            <div className="flex items-center justify-between rounded-t-2xl border-b border-white/5 bg-white/[0.02] px-5 py-3">
-              <div className="flex items-center gap-2">
-                <span className="h-2.5 w-2.5 rounded-full bg-red-400/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-yellow-300/70" />
-                <span className="h-2.5 w-2.5 rounded-full bg-green-400/70" />
-              </div>
-              <div className="h-2 w-24 rounded bg-white/10" />
+            <div className="relative overflow-hidden rounded-2xl">
+              <Image
+                src={PmgtImage}
+                alt="Atlas project management interface"
+                className="h-auto w-full"
+                priority
+                quality={100}
+              />
+
+              
             </div>
-
-            {/* Table body mock */}
-            <div className="px-5 py-4">
-              <div className="mb-3 flex gap-3">
-                <div className="h-9 w-56 rounded-md border border-white/10 bg-white/[0.03]" />
-                <div className="h-9 w-32 rounded-md border border-white/10 bg-white/[0.03]" />
-                <div className="h-9 w-28 rounded-md border border-white/10 bg-white/[0.03]" />
-                <div className="ml-auto h-9 w-24 rounded-md border border-white/10 bg-white/[0.03]" />
-              </div>
-
-              <div className="space-y-2 rounded-xl border border-white/10 bg-black/10 p-3">
-                {Array.from({ length: 6 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="grid grid-cols-[80px_1fr_1fr_1fr_1fr] items-center gap-3 rounded-lg bg-white/[0.02] px-3 py-3"
-                  >
-                    <div className="h-2.5 w-12 rounded bg-white/15" />
-                    <div className="h-2.5 w-56 rounded bg-white/12" />
-                    <div className="h-2.5 w-40 rounded bg-white/10" />
-                    <div className="h-2.5 w-32 rounded bg-white/10" />
-                    <div className="ml-auto h-6 w-24 rounded-full bg-emerald-500/15" />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* glow sweep */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 top-16 h-24"
-              style={{
-                background:
-                  'linear-gradient(90deg, rgba(120,187,255,.0) 0%, rgba(120,187,255,.35) 50%, rgba(120,187,255,.0) 100%)',
-                filter: 'blur(10px)',
-              }}
-            />
           </div>
         </motion.div>
 
         {/* --- Two column grid with centered content + connector lines --- */}
-        <div className="relative mt-32">
+        <div className="relative mt-22">
           {/* connectors */}
           <div aria-hidden className="pointer-events-none absolute inset-x-0 -top-16 hidden md:block">
             {/* top horizontal */}
@@ -224,35 +200,17 @@ export default function Products() {
                 suggested actions across your backlog.
               </p>
 
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 shadow-[0_40px_120px_-40px_rgba(0,0,0,.6)]">
-                <div className="rounded-xl border border-white/10 bg-[#151618] p-4">
-                  {/* title row */}
-                  <div className="mb-3 flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <span className="inline-flex h-5 w-5 items-center justify-center rounded bg-cyan-500/15">
-                        <span className="h-2 w-2 rounded-full bg-cyan-400" />
-                      </span>
-                      <span className="text-[14px] text-white/80">Triage Intelligence</span>
-                    </div>
-                    <div className="h-2 w-12 rounded bg-white/10" />
-                  </div>
-
-                  {/* body list */}
-                  <div className="space-y-2 rounded-lg border border-white/10 bg-white/[0.02] p-3">
-                    <div className="h-2.5 w-64 rounded bg-white/12" />
-                    <div className="h-2.5 w-80 rounded bg-white/10" />
-                    <div className="h-2.5 w-72 rounded bg-white/10" />
-                  </div>
-
-                  {/* accept btn */}
-                  <div className="mt-4">
-                    <button className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80 hover:border-white/20 hover:bg-white/[0.06]">
-                      <span className="h-3 w-3 rounded-full bg-emerald-400/80 shadow-[0_0_10px_rgba(16,185,129,.6)]" />
-                      Accept suggestion
-                    </button>
-                  </div>
-                </div>
+              <div className="relative">
+                <Image
+                  src={OperationAdvisorImage}
+                  alt="Operation Advisor interface showing triage intelligence"
+                  className="h-auto w-full max-w-[400px] mx-auto"
+                  quality={100}
+                />
               </div>
+
+             
+
             </motion.div>
 
             {/* AI Chatbot */}
@@ -270,46 +228,147 @@ export default function Products() {
                     '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
                 }}
               >
-                AI Chatbot
+                CPAL Chatbot
               </h3>
               <p className="mb-8 max-w-[480px] text-[17px] leading-[26px] text-[#9ca3af]">
                 Connect an assistant to your tools to answer questions, triage issues, and generate
                 updates. Works with Slack, email, and your data sources.
               </p>
 
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 shadow-[0_40px_120px_-40px_rgba(0,0,0,.6)]">
-                <div className="relative rounded-xl border border-white/10 bg-[#151618] p-4">
-                  <div className="mb-3 h-2 w-24 rounded bg-white/10" />
-                  <div className="rounded-lg border border-white/10 bg-white/[0.02] p-3">
-                    <div className="mb-3 h-10 rounded-lg border border-white/10 bg-white/[0.04]" />
-                    <div className="flex gap-2">
-                      <span className="h-7 w-20 rounded-full bg-white/[0.06]" />
-                      <span className="h-7 w-20 rounded-full bg-white/[0.06]" />
-                      <span className="h-7 w-20 rounded-full bg-white/[0.06]" />
-                    </div>
-                  </div>
+              <div className="relative">
+                <Image
+                  src={AIChatbotImage}
+                  alt="AI Chatbot interface with assistant capabilities"
+                  className="h-auto w-full max-w-[400px] mx-auto"
+                  quality={100}
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
 
-                  {/* cone light */}
+        {/* --- Smart Helmet Section --- */}
+        <div className="relative mt-12">
+          <div className="grid gap-12 md:grid-cols-2 items-center">
+            {/* Left side - Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.7, ease: easeOutExpo }}
+              className="flex flex-col"
+            >
+              {/* Smart IOT Chip */}
+              <div className="mb-6">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[13px] text-white/70">
+                  <span className="h-2 w-2 rounded-full bg-[#C789E8] shadow-[0_0_14px_rgba(199,137,232,.6)]" />
+                  Smart IOT
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h3
+                className="mb-5 text-[52px] leading-[58px] font-medium tracking-[-0.02em] text-white"
+                style={{
+                  fontFamily:
+                    '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
+                }}
+              >
+                Smart Helmet
+              </h3>
+
+              {/* Description */}
+              <p
+                className="mb-6 max-w-[520px] text-[17px] leading-[26px] text-[#9ca3af]"
+                style={{
+                  fontFamily:
+                    '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
+                }}
+              >
+                Streamline product operations with AI-assisted labeling, root-cause hints, and
+                suggested actions across your backlog.
+              </p>
+
+              {/* Highlight Points */}
+              <div className="mb-8 space-y-3">
+                <div className="flex items-center gap-3">
+                  <div className="h-1 w-1 rounded-full bg-[#C789E8]" />
+                  <span className="text-[15px] text-white/80">Worker Safety</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-1 w-1 rounded-full bg-[#C789E8]" />
+                  <span className="text-[15px] text-white/80">Real-time Monitoring</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-1 w-1 rounded-full bg-[#C789E8]" />
+                  <span className="text-[15px] text-white/80">Instant Alerts</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="h-1 w-1 rounded-full bg-[#C789E8]" />
+                  <span className="text-[15px] text-white/80">Fast Issue Tracking</span>
+                </div>
+              </div>
+
+              {/* Learn More Button */}
+              <div>
+                <Link
+                  href="#"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80 hover:border-white/20 hover:bg-white/[0.05]"
+                >
+                  Learn more
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 5l7 7-7 7"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Right side - Helmet Image with 3D Grid */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.7, ease: easeOutExpo }}
+              className="relative flex items-center justify-center"
+            >
+              <div className="relative w-full max-w-[600px]">
+                {/* 3D Grid Background */}
+                <div
+                  className="absolute inset-0 -bottom-20"
+                  style={{
+                    perspective: '1000px',
+                    transform: 'translateY(40%)',
+                  }}
+                >
                   <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-0 top-10 h-24"
                     style={{
+                      width: '100%',
+                      height: '300px',
                       background:
-                        'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.25) 50%, rgba(255,255,255,0) 100%)',
-                      filter: 'blur(12px)',
+                        'repeating-linear-gradient(0deg, rgba(199,137,232,0.15) 0px, rgba(199,137,232,0.15) 1px, transparent 1px, transparent 30px), repeating-linear-gradient(90deg, rgba(199,137,232,0.15) 0px, rgba(199,137,232,0.15) 1px, transparent 1px, transparent 30px)',
+                      transform: 'rotateX(60deg)',
+                      transformOrigin: 'center center',
+                      WebkitMaskImage:
+                        'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
+                      maskImage:
+                        'linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 20%, rgba(0,0,0,0.8) 80%, rgba(0,0,0,0) 100%)',
                     }}
                   />
+                </div>
 
-                  {/* bottom fade */}
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0"
-                    style={{
-                      WebkitMaskImage:
-                        'linear-gradient(to bottom, rgba(0,0,0,1) 78%, rgba(0,0,0,0) 100%)',
-                      maskImage:
-                        'linear-gradient(to bottom, rgba(0,0,0,1) 78%, rgba(0,0,0,0) 100%)',
-                    }}
+                {/* Helmet Image */}
+                <div className="relative z-10">
+                  <Image
+                    src={SmartHelmetImage}
+                    alt="Smart Helmet with IOT capabilities"
+                    className="h-auto w-full max-w-[500px] mx-auto"
+                    quality={100}
                   />
                 </div>
               </div>
