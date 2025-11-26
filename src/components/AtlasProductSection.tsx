@@ -1,48 +1,14 @@
 'use client';
-
-import { useRef } from 'react';
 import Image from 'next/image';
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  useSpring,
-} from 'framer-motion';
+import { motion, cubicBezier } from 'framer-motion';
 
 import AtlasImage from '../../assets/Atlas.png';
 
+const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
+
 export default function AtlasGrid() {
-  // --- 3D hover for BIG hero image only -------------------------
-  const heroRef = useRef<HTMLDivElement | null>(null);
-  const mvX = useMotionValue(0);
-  const mvY = useMotionValue(0);
-
-  // Smooth the motion values
-  const springX = useSpring(mvX, { stiffness: 150, damping: 18, mass: 0.4 });
-  const springY = useSpring(mvY, { stiffness: 150, damping: 18, mass: 0.4 });
-
-  // Map to rotations
-  const rotateX = useTransform(springY, [-1, 1], [10, -10]);
-  const rotateY = useTransform(springX, [-1, 1], [-10, 10]);
-
-  const handleHeroMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!heroRef.current) return;
-    const rect = heroRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width; // 0..1
-    const y = (e.clientY - rect.top) / rect.height; // 0..1
-
-    // normalize to -1..1
-    mvX.set(x * 2 - 1);
-    mvY.set(y * 2 - 1);
-  };
-
-  const handleHeroLeave = () => {
-    mvX.set(0);
-    mvY.set(0);
-  };
-
   return (
-    <section className="relative -mt-20 w-full overflow-hidden bg-[#010101]">
+    <section className="relative -mt-28 min-h-[190vh] w-full overflow-hidden bg-[#010101]">
       {/* GRID BACKGROUND */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
@@ -56,68 +22,92 @@ export default function AtlasGrid() {
         }}
       />
 
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col px-6 pt-28 pb-32">
-        {/* TOP: HERO IMAGE + TITLE */}
-        <div className="flex flex-col items-center justify-center pb-16">
-          <motion.div
-            ref={heroRef}
-            className="relative w-full max-w-5xl cursor-pointer rounded-[18px] border border-white/10 bg-gradient-to-b from-white/8 via-white/3 to-black/60 shadow-[0_36px_120px_rgba(0,0,0,0.9)]"
-            onMouseMove={handleHeroMove}
-            onMouseLeave={handleHeroLeave}
+      <div className="relative z-10 mx-auto flex max-w-6xl flex-col px-6 pt-20 pb-12">
+        {/* ---------- TOP: HERO CHIP + BIG IMAGE + ATLAS TEXT (Effect 1) ---------- */}
+
+        {/* Chip – same pattern as homepage chip */}
+        <motion.div
+          initial={{ opacity: 0, y: 6 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.6, ease: easeOutExpo }}
+          className="mb-5 flex items-center gap-2 self-start pl-12 text-sm text-slate-200"
+        >
+          <span className="h-2.5 w-4 rounded-full bg-lime-400 shadow-[0_0_10px_rgba(190,242,100,0.9)]" />
+          <span className="text-[15px] text-slate-100">Project management</span>
+          <span className="text-lg leading-none text-slate-500">›</span>
+        </motion.div>
+
+        {/* Big hero image – Effect 1 (fade / slide / scale / blur) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20, scale: 0.98, filter: 'blur(8px)' }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.8, ease: easeOutExpo }}
+          className="relative mx-auto w-full max-w-5xl"
+        >
+          <Image
+            src={AtlasImage}
+            alt="Atlas project management dashboard"
+            className="w-full rounded-[12px] border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.9)]"
+            priority
+          />
+        </motion.div>
+
+        {/* Giant “Atlas” text – simple fade up, slightly delayed */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.7, ease: easeOutExpo, delay: 0.05 }}
+          // className="-mt-19 text-center"
+          className="-mt-19 text-center relative z-10 pointer-events-none"
+
+        >
+          <h2
+            className="text-[152px] leading-none font-semibold tracking-tight text-transparent md:text-[150px]"
             style={{
-              rotateX,
-              rotateY,
-              transformStyle: 'preserve-3d',
+              backgroundImage:
+                'linear-gradient(to bottom, #f9fafb 0%, #d1d5db 35%, #9ca3af 55%, #020617 100%)',
+              WebkitBackgroundClip: 'text',
+              backgroundClip: 'text',
             }}
           >
-            <div className="overflow-hidden rounded-[16px]">
-              <Image
-                src={AtlasImage}
-                alt="Atlas project management dashboard"
-                className="w-full"
-                priority
-              />
-            </div>
+            Atlas
+          </h2>
+        </motion.div>
 
-            {/* subtle inner highlight */}
-            <div className="pointer-events-none absolute inset-0 rounded-[18px] bg-gradient-to-tr from-white/10 via-transparent to-white/5 mix-blend-screen" />
-          </motion.div>
-
-          {/* Title stays ABOVE everything and never goes “under” the image */}
-          <div className="relative z-20 -mt-15 text-center">
-            <h2
-              className="text-[152px] leading-none font-semibold tracking-tight text-transparent md:text-[150px]"
-              style={{
-                backgroundImage:
-                  'linear-gradient(to bottom, #f9fafb 0%, #d1d5db 35%, #9ca3af 55%, #020617 100%)',
-                WebkitBackgroundClip: 'text',
-                backgroundClip: 'text',
-              }}
-            >
-              Atlas
-            </h2>
-          </div>
-        </div>
-
-        {/* BOTTOM: STATIC CARD + FEATURES + WATCH DEMO */}
-        <div className="mt-10 grid items-start gap-10 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]">
-          {/* LEFT: smaller card (no 3D hover, just tiny lift) */}
+        {/* ---------- BOTTOM: IMAGE + TEXT SECTION (Effect 2 like Smart Helmet) ---------- */}
+        <div className="mt-25 grid items-center gap-12 md:grid-cols-2">
+          {/* LEFT: Image – slide in from left (like helmet image) */}
           <motion.div
-            className="relative w-full max-w-xl rounded-[18px] border border-white/10 bg-black/60 shadow-[0_30px_80px_rgba(0,0,0,0.85)]"
-            whileHover={{ y: -6, scale: 1.01 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 18 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.7, ease: easeOutExpo }}
+            className="relative flex items-center justify-center"
           >
-            <div className="overflow-hidden rounded-[16px]">
-              <Image
-                src={AtlasImage}
-                alt="Atlas project grid view"
-                className="w-full"
-              />
+            <div className="relative w-full max-w-xl">
+              <div className="relative mx-auto w-full rounded-[10px] border border-white/12 bg-gradient-to-b from-white/8 via-white/3 to-black/60 shadow-[0_40px_120px_rgba(0,0,0,0.9)]">
+                <div className="overflow-hidden rounded-[16px]">
+                  <Image
+                    src={AtlasImage}
+                    alt="Atlas project grid view"
+                    className="w-full"
+                  />
+                </div>
+              </div>
             </div>
           </motion.div>
 
-          {/* RIGHT: KEY FEATURES + WATCH DEMO BUTTON */}
-          <div className="space-y-6 text-left md:pl-4">
+          {/* RIGHT: Text + Watch demo – slide in from right (like helmet text) */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.7, ease: easeOutExpo }}
+            className="space-y-6 text-left md:pl-4"
+          >
             <p className="inline-flex items-center rounded-full border border-lime-400/40 bg-lime-400/5 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-lime-300">
               Atlas · Project Management
             </p>
@@ -132,37 +122,41 @@ export default function AtlasGrid() {
               locations.
             </p>
 
-            <ul className="grid gap-3 text-sm text-slate-100/90 md:grid-cols-2 md:gap-4">
-              <li className="flex items-start gap-2">
+            <div className="mt-4 grid gap-3 text-sm text-slate-100/90 md:grid-cols-2 md:gap-4">
+              <div className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lime-400" />
                 <span>Grid-level visibility across all productions and venues.</span>
-              </li>
-              <li className="flex items-start gap-2">
+              </div>
+              <div className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lime-400" />
                 <span>
                   Real-time status for every role, from studio ops to field teams.
                 </span>
-              </li>
-              <li className="flex items-start gap-2">
+              </div>
+              <div className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lime-400" />
                 <span>Templates for recurring shows, events and channel grids.</span>
-              </li>
-              <li className="flex items-start gap-2">
+              </div>
+              <div className="flex items-start gap-2">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lime-400" />
                 <span>
                   Built for high-volume media operations that can’t miss a go-live.
                 </span>
-              </li>
-            </ul>
+              </div>
+            </div>
 
-            {/* Watch demo on the RIGHT */}
-            <div className="mt-8 flex justify-end">
-              <button className="inline-flex items-center gap-2 rounded-full bg-[#d7ff1f] px-8 py-3 text-sm font-semibold text-black shadow-[0_0_40px_rgba(215,255,31,0.35)] transition-transform duration-200 hover:scale-[1.03] active:scale-[0.98]">
+            <div className="mt-8 flex justify-start md:justify-end">
+              <button
+                type="button"
+                className="group inline-flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-sm font-medium text-black shadow-[0_0_45px_rgba(190,242,100,0.65)] transition-transform duration-200 hover:-translate-y-0.5"
+              >
                 Watch demo
-                <span className="text-lg">↗</span>
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-xs transition-transform group-hover:translate-x-0.5">
+                  ↗
+                </span>
               </button>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

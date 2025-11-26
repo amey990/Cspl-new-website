@@ -8,10 +8,6 @@ import OperationAdvisorImage from '../../assets/Operation_advisor.png';
 import AIChatbotImage from '../../assets/Cpal.png';
 import SmartHelmetImage from '../../assets/Smarthelmet.png';
 
-
-
-
-
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
 export default function Products() {
