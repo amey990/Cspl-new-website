@@ -199,17 +199,27 @@ const columns = {
   ],
   resources: [
     { label: 'Documentation', href: '#' },
-    { label: 'Case Studies', href: '#' },
+    // { label: 'Case Studies', href: '#' },
+    { label: 'Case Studies', href: '/case-studies' },
+
     { label: 'Blog', href: '#' },
     { label: 'Webinars', href: '#' },
     { label: 'Community', href: '#' },
   ],
+  // company: [
+  //   { label: 'About Us', href: '#' },
+  //   { label: 'Careers', href: '#' },
+  //   { label: 'Contact', href: '#' },
+  //   { label: 'Partners', href: '#' },
+  // ],
+
   company: [
-    { label: 'About Us', href: '#' },
-    { label: 'Careers', href: '#' },
-    { label: 'Contact', href: '#' },
-    { label: 'Partners', href: '#' },
-  ],
+  { label: 'About Us', href: '/Aboutus' },
+  { label: 'Careers', href: '/Careers' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Partners', href: '/partners' },
+],
+
 };
 
 const socials = [
