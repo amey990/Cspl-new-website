@@ -1129,7 +1129,7 @@ export default function AtlasProjectManagementPage() {
 
             {/* Lottie badge */}
             <motion.div
-              className="pointer-events-none absolute -bottom-12 -left-5 h-24 w-24 md:h-28 md:w-28"
+              className="pointer-events-none absolute -bottom-17 -left-12 h-24 w-24 md:h-38 md:w-38"
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.5 }}

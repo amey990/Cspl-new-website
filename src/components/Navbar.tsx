@@ -391,13 +391,13 @@ const productsContent = {
           title: 'Atlas Project Management',
           description: 'Streamline project workflows and team collaboration',
           // maps to src/app/Atlas_P1/page.tsx
-          href: '/Atlas_P1',
+          href: '/Atlas',
         },
         {
           title: 'CNMS',
           description: 'Comprehensive network management solutions',
           // maps to src/app/CNMS_P2/page.tsx
-          href: '/CNMS_P2',
+          href: '/Cnms',
         },
       ],
     },
@@ -407,10 +407,10 @@ const productsContent = {
         {
           title: 'Smart Helmet',
           description: 'Advanced safety monitoring and communication',
-          // maps to src/app/Smart_HP1/page.tsx
-          href: '/Smart_HP1',
+          
+          href: '/Smart_Helmet',
         },
-      ],
+      ],  
     },
   ],
   right: [
@@ -421,17 +421,17 @@ const productsContent = {
           title: 'C-Pal',
           description: 'Intelligent conversational AI assistant',
           // TEMP: send all AI line items to the same AI page
-          href: '/AI_Line_P1',
+          href: '/CPAL',
         },
         {
           title: 'Operations Advisor',
           description: 'AI-driven operational insights and optimization',
-          href: '/AI_Line_P1',
+          href: '/Ops_advisor',
         },
         {
           title: 'Agentic Solution',
           description: 'Autonomous AI agents for business automation',
-          href: '/AI_Line_P1',
+          href: '/Agents',
         },
       ],
     },
