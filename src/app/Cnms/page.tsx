@@ -1,24 +1,3 @@
-// 'use client';
-
-// export default function CnmsPage() {
-//   return (
-//     <main className="min-h-screen bg-[#010000] text-white">
-//       <section className="mx-auto max-w-5xl px-6 py-20 md:px-8 lg:px-16">
-//         <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-zinc-500">
-//           Product · Program Management
-//         </p>
-//         <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-//           CNMS
-//         </h1>
-//         <p className="mt-5 max-w-2xl text-base md:text-lg text-zinc-300 leading-relaxed">
-//           Comprehensive network management solutions. Detailed product page coming soon.
-//         </p>
-//       </section>
-//     </main>
-//   );
-// }
-
-
 'use client';
 
 import Image from 'next/image';
@@ -26,6 +5,13 @@ import Link from 'next/link';
 import { motion, cubicBezier } from 'framer-motion';
 
 import CNMSImage from '../../../assets/CNMS_dummy.jpg';
+
+
+import dynamic from 'next/dynamic';
+import NetworkAnimation from '../../../assets/lottie/Network_no_bg.json'; // 👈 adjust path/extension if needed
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
+
 
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 const ACCENT = '#9502A8';
@@ -166,47 +152,35 @@ export default function CNMSPage() {
           </motion.div>
 
           {/* RIGHT: Hero image with slight 3D tilt */}
-          <motion.div
-            {...fadeIn}
-            className="relative flex-1 md:flex-[0.6]"
-            style={{ perspective: '1200px' }}
-          >
-            {/* soft glow behind */}
-            <div className="pointer-events-none absolute inset-0 -z-10">
-              <div
-                className="absolute right-[-10%] top-[15%] h-72 w-72 rounded-full blur-3xl"
-                style={{
-                  background:
-                    'radial-gradient(circle, rgba(149,2,168,0.45) 0%, transparent 60%)',
-                }}
-              />
-            </div>
+         <motion.div
+  {...fadeIn}
+  className="relative flex-1 md:flex-[0.6]"
+  style={{ perspective: '1200px' }}
+>
+  <div
+    className="relative mx-auto w-full max-w-[560px] rounded-2xl border border-white/10 bg-[#121316]"
+    style={{
+      transform: 'rotateX(14deg) rotateZ(-2deg)',
+      boxShadow:
+        '0 20px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06), 0 0 0 1px rgba(255,255,255,.04)',
+      WebkitMaskImage:
+        'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+      maskImage:
+        'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+    }}
+  >
+    <div className="relative overflow-hidden rounded-2xl">
+      <Image
+        src={CNMSImage}
+        alt="CNMS network management dashboard"
+        className="h-auto w-full"
+        quality={100}
+        priority
+      />
+    </div>
+  </div>
+</motion.div>
 
-            <div
-              className="relative mx-auto w-full max-w-[560px] rounded-2xl border border-white/10 bg-[#121316]"
-              style={{
-                transform: 'rotateX(14deg) rotateZ(-2deg)',
-                boxShadow:
-                  '0 20px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06), 0 0 0 1px rgba(255,255,255,.04)',
-                WebkitMaskImage:
-                  'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-                maskImage:
-                  'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-              }}
-            >
-              <div className="relative overflow-hidden rounded-2xl">
-                <Image
-                  src={CNMSImage}
-                  alt="CNMS network management dashboard"
-                  className="h-auto w-full"
-                  quality={100}
-                  priority
-                />
-                {/* overlay gradient */}
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_10%_0%,rgba(149,2,168,0.45),transparent_55%),radial-gradient(circle_at_90%_100%,rgba(59,130,246,0.35),transparent_60%)]" />
-              </div>
-            </div>
-          </motion.div>
         </section>
 
         {/* ------------------------------------------------------------------ */}
@@ -899,6 +873,7 @@ export default function CNMSPage() {
             </div>
 
             {/* Right: configurable dashboard mock */}
+                        {/* Right: configurable dashboard mock */}
             <div className="relative flex justify-center md:justify-end">
               <div className="relative w-full max-w-md rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_32px_110px_rgba(0,0,0,1)]">
                 <div className="mb-4 flex items-center justify-between">
@@ -951,7 +926,18 @@ export default function CNMSPage() {
                   <span className="h-1 w-4 rounded-full bg-zinc-700" />
                 </div>
               </div>
+
+              {/* Network animation – bottom-right corner */}
+              <div className="pointer-events-none absolute -bottom-25 -right-14 w-[170px] md:w-[220px]">
+                <Lottie
+                  animationData={NetworkAnimation}
+                  loop
+                  autoplay
+                  className="h-full w-full"
+                />
+              </div>
             </div>
+
           </motion.div>
         </section>
       </div>

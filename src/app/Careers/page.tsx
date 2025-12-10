@@ -1,7 +1,18 @@
+// //pp//
 // 'use client';
 
 // import Link from 'next/link';
 // import { motion, cubicBezier } from 'framer-motion';
+
+// import ImageCarousel from '@/components/ImageCarousel';
+
+// // change these paths/names to match your actual files
+// import life1 from '../../../assets/life1.jpg';
+// import life2 from '../../../assets/life2.jpg';
+// import life3 from '../../../assets/life3.jpg';
+// import life4 from '../../../assets/life4.jpg';
+// import life5 from '../../../assets/life5.jpg';
+
 
 // const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
@@ -62,17 +73,15 @@
 //         }}
 //       />
 
-//       {/* SOFT COLOUR WASH */}
+//       {/* NEUTRAL VIGNETTE (replaces blue colour wash) */}
 //       <div
 //         className="pointer-events-none absolute inset-0 z-0"
 //         style={{
 //           backgroundImage: `
-//             radial-gradient(circle at 10% 20%, rgba(59,130,246,0.25), transparent 60%),
-//             radial-gradient(circle at 85% 30%, rgba(236,72,153,0.25), transparent 60%),
-//             radial-gradient(circle at 50% 80%, rgba(52,211,153,0.18), transparent 60%)
+//             radial-gradient(circle at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 55%, rgba(0,0,0,1) 100%),
+//             linear-gradient(to bottom, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.95) 100%)
 //           `,
-//           opacity: 0.7,
-//           filter: 'blur(2px)',
+//           opacity: 1,
 //         }}
 //       />
 
@@ -234,108 +243,136 @@
 //         </section>
 
 //         {/* ------------------------------------------------------------------ */}
-//         {/* LIFE AT COMMEDIA                                                  */}
-//         {/* ------------------------------------------------------------------ */}
-//         <section className="mt-28 mx-auto max-w-6xl px-6 md:px-10 lg:px-16">
-//           <motion.div
-//             {...fadeUp}
-//             className="grid gap-10 md:grid-cols-[1.1fr,1fr]"
-//           >
-//             <div>
-//               <p className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-200">
-//                 Life at Commedia
-//               </p>
-//               <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
-//                 The work is intense. The environment doesn’t have to be.
-//               </h2>
-//               <p className="mt-3 text-sm text-slate-300/85 md:text-base">
-//                 We’re building serious products, but we try not to take ourselves too
-//                 seriously. Expect focused work blocks, plenty of whiteboarding, and
-//                 healthy respect for life outside Slack.
-//               </p>
+// {/* LIFE AT COMMEDIA                                                  */}
+// {/* ------------------------------------------------------------------ */}
+// <section className="mt-28 mx-auto max-w-6xl px-6 md:px-10 lg:px-12">
+//   <motion.div
+//     {...fadeUp}
+//     className="flex flex-col gap-10"
+//   >
+//     {/* TEXT BLOCK */}
+//     <div className="max-w-3xl">
+//       <p className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-200">
+//         Life at Commedia
+//       </p>
+//       <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
+//         The work is intense. The environment doesn’t have to be.
+//       </h2>
+//       <p className="mt-3 text-sm text-slate-300/85 md:text-base">
+//         We’re building serious products, but we try not to take ourselves too
+//         seriously. Expect focused work blocks, plenty of whiteboarding, and
+//         healthy respect for life outside Slack.
+//       </p>
 
-//               <ul className="mt-6 space-y-3 text-sm text-slate-100/90">
-//                 <li className="flex gap-2">
-//                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-//                   <span>
-//                     Hybrid-first: a few anchor days in office for deep collaboration,
-//                     remote-friendly for focused work.
-//                   </span>
-//                 </li>
-//                 <li className="flex gap-2">
-//                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-//                   <span>
-//                     Makers’ schedule: long, protected blocks for building instead of
-//                     back-to-back meetings.
-//                   </span>
-//                 </li>
-//                 <li className="flex gap-2">
-//                   <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-//                   <span>
-//                     Real ownership over product areas, with visibility to customers and
-//                     leadership.
-//                   </span>
-//                 </li>
-//               </ul>
-//             </div>
+//       <ul className="mt-6 space-y-3 text-sm text-slate-100/90">
+//         <li className="flex gap-2">
+//           <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+//           <span>
+//             Hybrid-first: a few anchor days in office for deep collaboration,
+//             remote-friendly for focused work.
+//           </span>
+//         </li>
+//         <li className="flex gap-2">
+//           <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+//           <span>
+//             Makers’ schedule: long, protected blocks for building instead of
+//             back-to-back meetings.
+//           </span>
+//         </li>
+//         <li className="flex gap-2">
+//           <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+//           <span>
+//             Real ownership over product areas, with visibility to customers and
+//             leadership.
+//           </span>
+//         </li>
+//       </ul>
+//     </div>
 
-//             {/* RIGHT: LITTLE TIMELINE / WEEK SNAPSHOT */}
-//             <motion.div
-//               {...fadeIn}
-//               className="flex justify-center md:justify-end"
-//             >
-//               <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_28px_100px_rgba(0,0,0,1)]">
-//                 <div className="mb-3 flex items-center justify-between text-xs text-slate-300">
-//                   <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.16em]">
-//                     A week in the team
-//                   </span>
-//                   <span className="text-slate-500">Sample</span>
-//                 </div>
+//     {/* ROW: CAROUSEL LEFT, WEEK CARD RIGHT */}
+//     <div className="grid gap-8 md:grid-cols-2 items-stretch">
+//       {/* LEFT: PHOTO CAROUSEL */}
+//       <div className="flex justify-center md:justify-start items-center,mb:13">
+//         <ImageCarousel
+//           className="w-full"
+//           background="transparent"
+//           cardWidth={380}      // wider landscape cards
+//           cardHeight={250}
+//           cardRadius={28}
+//           visibleCards={1}
+//           autoPlay={4500}
+//           pauseOnHover
+//           grayscaleEffect
+//           dotColor="#38bdf8"
+//           slides={[
+//             { id: '1', image: life1.src, alt: 'Life at Commedia 1' },
+//             { id: '2', image: life2.src, alt: 'Life at Commedia 2' },
+//             { id: '3', image: life3.src, alt: 'Life at Commedia 3' },
+//             { id: '4', image: life4.src, alt: 'Life at Commedia 4' },
+//             { id: '5', image: life5.src, alt: 'Life at Commedia 5' },
+//           ]}
+//         />
+//       </div>
 
-//                 <div className="space-y-3 text-[11px] text-slate-200">
-//                   <div className="flex items-start gap-3 rounded-lg bg-black/60 p-3">
-//                     <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-//                     <div>
-//                       <div className="font-semibold text-white">Monday</div>
-//                       <div className="text-slate-300">
-//                         Product review &amp; planning. Align on goals, unblock work.
-//                       </div>
-//                     </div>
-//                   </div>
+//       {/* RIGHT: A WEEK IN THE TEAM CARD */}
+//       <motion.div
+//         {...fadeIn}
+//         className="flex justify-center md:justify-end"
+//       >
+//         <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_28px_100px_rgba(0,0,0,1)]">
+//           <div className="mb-3 flex items-center justify-between text-xs text-slate-300">
+//             <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.16em]">
+//               A week in the team
+//             </span>
+//             <span className="text-slate-500">Sample</span>
+//           </div>
 
-//                   <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
-//                     <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-sky-400" />
-//                     <div>
-//                       <div className="font-semibold text-white">Tue–Thu</div>
-//                       <div className="text-slate-300">
-//                         Deep build time. Pairing, async updates, customer calls when
-//                         needed.
-//                       </div>
-//                     </div>
-//                   </div>
-
-//                   <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
-//                     <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
-//                     <div>
-//                       <div className="font-semibold text-white">Friday</div>
-//                       <div className="text-slate-300">
-//                         Demo hour, tech talks and retros. Close the loop and celebrate
-//                         wins.
-//                       </div>
-//                     </div>
-//                   </div>
-//                 </div>
-
-//                 <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
-//                   <span>Minimal bureaucracy. Maximum context.</span>
-//                   <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px]">
-//                     v1.0
-//                   </span>
+//           <div className="space-y-3 text-[11px] text-slate-200">
+//             <div className="flex items-start gap-3 rounded-lg bg-black/60 p-3">
+//               <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+//               <div>
+//                 <div className="font-semibold text-white">Monday</div>
+//                 <div className="text-slate-300">
+//                   Product review &amp; planning. Align on goals, unblock work.
 //                 </div>
 //               </div>
-//             </motion.div>
-//           </motion.div>
-//         </section>
+//             </div>
+
+//             <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
+//               <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-sky-400" />
+//               <div>
+//                 <div className="font-semibold text-white">Tue–Thu</div>
+//                 <div className="text-slate-300">
+//                   Deep build time. Pairing, async updates, customer calls when
+//                   needed.
+//                 </div>
+//               </div>
+//             </div>
+
+//             <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
+//               <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
+//               <div>
+//                 <div className="font-semibold text-white">Friday</div>
+//                 <div className="text-slate-300">
+//                   Demo hour, tech talks and retros. Close the loop and celebrate
+//                   wins.
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
+//             <span>Minimal bureaucracy. Maximum context.</span>
+//             <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px]">
+//               v1.0
+//             </span>
+//           </div>
+//         </div>
+//       </motion.div>
+//     </div>
+//   </motion.div>
+// </section>
+
 
 //         {/* ------------------------------------------------------------------ */}
 //         {/* OPEN ROLES                                                         */}
@@ -495,7 +532,7 @@
 //               </div>
 //             </div>
 
-//             <div className="relative flex justify-center">
+//             {/* <div className="relative flex justify-center">
 //               <div className="relative w-full max-w-md rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_32px_110px_rgba(0,0,0,1)]">
 //                 <div className="mb-4 flex items-center justify-between">
 //                   <div className="flex gap-1.5">
@@ -534,7 +571,92 @@
 //                   want to learn, and what our customers need.
 //                 </div>
 //               </div>
-//             </div>
+//             </div> */}
+
+//             <div className="relative flex justify-center">
+//   <div className="relative w-full max-w-md rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-5 shadow-[0_32px_110px_rgba(0,0,0,1)]">
+//     {/* window chrome */}
+//     <div className="mb-5 flex items-center justify-between">
+//       <div className="flex gap-1.5">
+//         <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
+//         <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
+//         <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
+//       </div>
+//       <div className="h-4 w-20 rounded-full bg-zinc-800/80" />
+//     </div>
+
+//     {/* form – no submit button, "Share your profile" handles that */}
+//     <form className="space-y-4 text-xs text-slate-200">
+//       <div>
+//         <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+//           Name
+//         </label>
+//         <input
+//           type="text"
+//           placeholder="Enter your name"
+//           className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+//           Phone Number
+//         </label>
+//         <input
+//           type="tel"
+//           placeholder="Enter your phone number"
+//           className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+//           Email ID
+//         </label>
+//         <input
+//           type="email"
+//           placeholder="Enter your email"
+//           className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
+//         />
+//       </div>
+
+//       <div>
+//         <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+//           Preferred Role
+//         </label>
+//         <select
+//           className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 focus:border-emerald-400 focus:outline-none focus:ring-0"
+//           defaultValue=""
+//         >
+//           <option value="" disabled>
+//             Select role
+//           </option>
+//           {roles.map((role) => (
+//             <option key={role.title} value={role.title}>
+//               {role.title}
+//             </option>
+//           ))}
+//         </select>
+//       </div>
+
+//       <div>
+//         <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+//           Upload your resume
+//         </label>
+//         <input
+//           type="file"
+//           className="w-full cursor-pointer rounded-lg border border-dashed border-white/25 bg-zinc-900/60 px-3 py-2 text-[13px] text-slate-100 file:mr-3 file:rounded-md file:border-0 file:bg-emerald-500/10 file:px-3 file:py-1 file:text-[11px] file:font-medium file:text-emerald-200"
+//         />
+//       </div>
+
+//       <p className="pt-1 text-[10px] text-slate-500">
+//         Use the <span className="text-emerald-300 font-medium">Share your profile</span>{' '}
+//         button to send this information to us.
+//       </p>
+//     </form>
+//   </div>
+// </div>
+
 //           </motion.div>
 //         </section>
 //       </div>
@@ -543,11 +665,21 @@
 // }
 
 
-//pp//
+
+// pp
 'use client';
 
 import Link from 'next/link';
 import { motion, cubicBezier } from 'framer-motion';
+
+import ImageCarousel from '@/components/ImageCarousel';
+
+// change these paths/names to match your actual files
+import life1 from '../../../assets/life1.jpg';
+import life2 from '../../../assets/life2.jpg';
+import life3 from '../../../assets/life3.jpg';
+import life4 from '../../../assets/life4.jpg';
+import life5 from '../../../assets/life5.jpg';
 
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
@@ -777,109 +909,135 @@ export default function CareersPage() {
           </motion.div>
         </section>
 
-        {/* ------------------------------------------------------------------ */}
-        {/* LIFE AT COMMEDIA                                                  */}
-        {/* ------------------------------------------------------------------ */}
-        <section className="mt-28 mx-auto max-w-6xl px-6 md:px-10 lg:px-16">
-          <motion.div
-            {...fadeUp}
-            className="grid gap-10 md:grid-cols-[1.1fr,1fr]"
-          >
-            <div>
-              <p className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-200">
-                Life at Commedia
-              </p>
-              <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
-                The work is intense. The environment doesn’t have to be.
-              </h2>
-              <p className="mt-3 text-sm text-slate-300/85 md:text-base">
-                We’re building serious products, but we try not to take ourselves too
-                seriously. Expect focused work blocks, plenty of whiteboarding, and
-                healthy respect for life outside Slack.
-              </p>
+       {/* ------------------------------------------------------------------ */}
+{/* LIFE AT COMMEDIA                                                  */}
+{/* ------------------------------------------------------------------ */}
+<section className="mt-28 mx-auto max-w-6xl px-6 md:px-10 lg:px-12">
+  <motion.div
+    {...fadeUp}
+    className="flex flex-col gap-10"
+  >
+    {/* TEXT BLOCK */}
+    <div className="max-w-3xl">
+      <p className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-200">
+        Life at Commedia
+      </p>
+      <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
+        The work is intense. The environment doesn’t have to be.
+      </h2>
+      <p className="mt-3 text-sm text-slate-300/85 md:text-base">
+        We’re building serious products, but we try not to take ourselves too
+        seriously. Expect focused work blocks, plenty of whiteboarding, and
+        healthy respect for life outside Slack.
+      </p>
 
-              <ul className="mt-6 space-y-3 text-sm text-slate-100/90">
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  <span>
-                    Hybrid-first: a few anchor days in office for deep collaboration,
-                    remote-friendly for focused work.
-                  </span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  <span>
-                    Makers’ schedule: long, protected blocks for building instead of
-                    back-to-back meetings.
-                  </span>
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                  <span>
-                    Real ownership over product areas, with visibility to customers and
-                    leadership.
-                  </span>
-                </li>
-              </ul>
-            </div>
+      <ul className="mt-6 space-y-3 text-sm text-slate-100/90">
+        <li className="flex gap-2">
+          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          <span>
+            Hybrid-first: a few anchor days in office for deep collaboration,
+            remote-friendly for focused work.
+          </span>
+        </li>
+        <li className="flex gap-2">
+          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          <span>
+            Makers’ schedule: long, protected blocks for building instead of
+            back-to-back meetings.
+          </span>
+        </li>
+        <li className="flex gap-2">
+          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          <span>
+            Real ownership over product areas, with visibility to customers and
+            leadership.
+          </span>
+        </li>
+      </ul>
+    </div>
 
-            {/* RIGHT: LITTLE TIMELINE / WEEK SNAPSHOT */}
-            <motion.div
-              {...fadeIn}
-              className="flex justify-center md:justify-end"
-            >
-              <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_28px_100px_rgba(0,0,0,1)]">
-                <div className="mb-3 flex items-center justify-between text-xs text-slate-300">
-                  <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.16em]">
-                    A week in the team
-                  </span>
-                  <span className="text-slate-500">Sample</span>
-                </div>
+    {/* ROW: CAROUSEL LEFT, WEEK CARD RIGHT */}
+    <div className="grid items-stretch gap-8 md:grid-cols-2">
+      {/* LEFT: PHOTO CAROUSEL */}
+      <div className="flex items-center justify-center md:justify-start">
+        <ImageCarousel
+          className="w-full"
+          background="transparent"
+          cardWidth={380}
+          cardHeight={250}
+          cardRadius={28}
+          autoPlay={4500}
+          pauseOnHover
+          dotColor="#38bdf8"
+          slides={[
+            { id: '1', image: life1.src, alt: 'Life at Commedia 1' },
+            { id: '2', image: life2.src, alt: 'Life at Commedia 2' },
+            { id: '3', image: life3.src, alt: 'Life at Commedia 3' },
+            { id: '4', image: life4.src, alt: 'Life at Commedia 4' },
+            { id: '5', image: life5.src, alt: 'Life at Commedia 5' },
+          ]}
+        />
+      </div>
 
-                <div className="space-y-3 text-[11px] text-slate-200">
-                  <div className="flex items-start gap-3 rounded-lg bg-black/60 p-3">
-                    <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    <div>
-                      <div className="font-semibold text-white">Monday</div>
-                      <div className="text-slate-300">
-                        Product review &amp; planning. Align on goals, unblock work.
-                      </div>
-                    </div>
-                  </div>
+      {/* RIGHT: A WEEK IN THE TEAM CARD */}
+      <motion.div
+        {...fadeIn}
+        className="flex justify-center md:justify-end"
+      >
+        <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_28px_100px_rgba(0,0,0,1)]">
+          <div className="mb-3 flex items-center justify-between text-xs text-slate-300">
+            <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.16em]">
+              A week in the team
+            </span>
+            <span className="text-slate-500">Sample</span>
+          </div>
 
-                  <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
-                    <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-sky-400" />
-                    <div>
-                      <div className="font-semibold text-white">Tue–Thu</div>
-                      <div className="text-slate-300">
-                        Deep build time. Pairing, async updates, customer calls when
-                        needed.
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
-                    <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
-                    <div>
-                      <div className="font-semibold text-white">Friday</div>
-                      <div className="text-slate-300">
-                        Demo hour, tech talks and retros. Close the loop and celebrate
-                        wins.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
-                  <span>Minimal bureaucracy. Maximum context.</span>
-                  <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px]">
-                    v1.0
-                  </span>
+          <div className="space-y-3 text-[11px] text-slate-200">
+            <div className="flex items-start gap-3 rounded-lg bg-black/60 p-3">
+              <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+              <div>
+                <div className="font-semibold text-white">Monday</div>
+                <div className="text-slate-300">
+                  Product review &amp; planning. Align on goals, unblock work.
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
-        </section>
+            </div>
+
+            <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
+              <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-sky-400" />
+              <div>
+                <div className="font-semibold text-white">Tue–Thu</div>
+                <div className="text-slate-300">
+                  Deep build time. Pairing, async updates, customer calls when
+                  needed.
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
+              <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
+              <div>
+                <div className="font-semibold text-white">Friday</div>
+                <div className="text-slate-300">
+                  Demo hour, tech talks and retros. Close the loop and celebrate
+                  wins.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
+            <span>Minimal bureaucracy. Maximum context.</span>
+            <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px]">
+              v1.0
+            </span>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  </motion.div>
+</section>
+
 
         {/* ------------------------------------------------------------------ */}
         {/* OPEN ROLES                                                         */}
@@ -1039,9 +1197,10 @@ export default function CareersPage() {
               </div>
             </div>
 
-            {/* <div className="relative flex justify-center">
-              <div className="relative w-full max-w-md rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_32px_110px_rgba(0,0,0,1)]">
-                <div className="mb-4 flex items-center justify-between">
+            <div className="relative flex justify-center">
+              <div className="relative w-full max-w-md rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-5 shadow-[0_32px_110px_rgba(0,0,0,1)]">
+                {/* window chrome */}
+                <div className="mb-5 flex items-center justify-between">
                   <div className="flex gap-1.5">
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
                     <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
@@ -1050,120 +1209,80 @@ export default function CareersPage() {
                   <div className="h-4 w-20 rounded-full bg-zinc-800/80" />
                 </div>
 
-                <div className="space-y-2 text-[11px] text-slate-300">
-                  <div className="rounded-lg bg-black/70 p-3">
-                    <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-300">
-                      You
-                    </div>
-                    <div className="h-3 w-3/4 rounded bg-zinc-800" />
-                    <div className="mt-1 h-3 w-2/3 rounded bg-zinc-900" />
+                {/* form – visual only */}
+                <form className="space-y-4 text-xs text-slate-200">
+                  <div>
+                    <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter your name"
+                      className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
+                    />
                   </div>
-                  <div className="rounded-lg bg-black/60 p-3">
-                    <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-300">
-                      Us
-                    </div>
-                    <div className="h-3 w-1/2 rounded bg-zinc-800" />
-                    <div className="mt-1 h-3 w-4/5 rounded bg-zinc-900" />
-                  </div>
-                  <div className="rounded-lg bg-black/50 p-3">
-                    <div className="mb-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-sky-300">
-                      Together
-                    </div>
-                    <div className="h-16 rounded bg-[radial-gradient(circle_at_20%_20%,rgba(52,211,153,0.3),transparent_55%),radial-gradient(circle_at_80%_70%,rgba(56,189,248,0.35),transparent_55%)]" />
-                  </div>
-                </div>
 
-                <div className="mt-4 text-[10px] text-slate-500">
-                  Let&apos;s find the overlap between what you&apos;re great at, what you
-                  want to learn, and what our customers need.
-                </div>
+                  <div>
+                    <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="Enter your phone number"
+                      className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                      Email ID
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="Enter your email"
+                      className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                      Preferred Role
+                    </label>
+                    <select
+                      className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 focus:border-emerald-400 focus:outline-none focus:ring-0"
+                      defaultValue=""
+                    >
+                      <option value="" disabled>
+                        Select role
+                      </option>
+                      {roles.map((role) => (
+                        <option key={role.title} value={role.title}>
+                          {role.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                      Upload your resume
+                    </label>
+                    <input
+                      type="file"
+                      className="w-full cursor-pointer rounded-lg border border-dashed border-white/25 bg-zinc-900/60 px-3 py-2 text-[13px] text-slate-100 file:mr-3 file:rounded-md file:border-0 file:bg-emerald-500/10 file:px-3 file:py-1 file:text-[11px] file:font-medium file:text-emerald-200"
+                    />
+                  </div>
+
+                  <p className="pt-1 text-[10px] text-slate-500">
+                    Use the{' '}
+                    <span className="font-medium text-emerald-300">
+                      Share your profile
+                    </span>{' '}
+                    button to send this information to us.
+                  </p>
+                </form>
               </div>
-            </div> */}
-
-            <div className="relative flex justify-center">
-  <div className="relative w-full max-w-md rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-5 shadow-[0_32px_110px_rgba(0,0,0,1)]">
-    {/* window chrome */}
-    <div className="mb-5 flex items-center justify-between">
-      <div className="flex gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/80" />
-        <span className="h-2.5 w-2.5 rounded-full bg-amber-400/80" />
-        <span className="h-2.5 w-2.5 rounded-full bg-rose-500/80" />
-      </div>
-      <div className="h-4 w-20 rounded-full bg-zinc-800/80" />
-    </div>
-
-    {/* form – no submit button, "Share your profile" handles that */}
-    <form className="space-y-4 text-xs text-slate-200">
-      <div>
-        <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Name
-        </label>
-        <input
-          type="text"
-          placeholder="Enter your name"
-          className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
-        />
-      </div>
-
-      <div>
-        <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Phone Number
-        </label>
-        <input
-          type="tel"
-          placeholder="Enter your phone number"
-          className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
-        />
-      </div>
-
-      <div>
-        <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Email ID
-        </label>
-        <input
-          type="email"
-          placeholder="Enter your email"
-          className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 placeholder:text-slate-500 focus:border-emerald-400 focus:outline-none focus:ring-0"
-        />
-      </div>
-
-      <div>
-        <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Preferred Role
-        </label>
-        <select
-          className="w-full rounded-lg border border-white/10 bg-zinc-900/70 px-3 py-2 text-[13px] text-slate-100 focus:border-emerald-400 focus:outline-none focus:ring-0"
-          defaultValue=""
-        >
-          <option value="" disabled>
-            Select role
-          </option>
-          {roles.map((role) => (
-            <option key={role.title} value={role.title}>
-              {role.title}
-            </option>
-          ))}
-        </select>
-      </div>
-
-      <div>
-        <label className="mb-1 block text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400">
-          Upload your resume
-        </label>
-        <input
-          type="file"
-          className="w-full cursor-pointer rounded-lg border border-dashed border-white/25 bg-zinc-900/60 px-3 py-2 text-[13px] text-slate-100 file:mr-3 file:rounded-md file:border-0 file:bg-emerald-500/10 file:px-3 file:py-1 file:text-[11px] file:font-medium file:text-emerald-200"
-        />
-      </div>
-
-      <p className="pt-1 text-[10px] text-slate-500">
-        Use the <span className="text-emerald-300 font-medium">Share your profile</span>{' '}
-        button to send this information to us.
-      </p>
-    </form>
-  </div>
-</div>
-
+            </div>
           </motion.div>
         </section>
       </div>
