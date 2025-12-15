@@ -81,12 +81,12 @@ const verticalsContent = {
         {
           title: 'Service Provider',
           description: 'End-to-end solutions for telecom and service operators',
-          href: '/verticals/service-provider',
+          href: '/Vertical-ServiceProvider',
         },
         {
           title: 'Digital Media',
           description: 'Infrastructure and delivery for broadcast and OTT platforms',
-          href: '/verticals/digital-media',
+          href: '/Vertical-DigitalMedia',
         },
       ],
     },
@@ -98,12 +98,12 @@ const verticalsContent = {
         {
           title: 'Enterprise',
           description: 'Secure, scalable networks for modern enterprises',
-          href: '/verticals/enterprise',
+          href: '/Vertical-Enterprise',
         },
         {
           title: 'Government',
           description: 'Resilient communication for public sector and defence',
-          href: '/verticals/government',
+          href: '/Vertical-Government',
         },
       ],
     },
