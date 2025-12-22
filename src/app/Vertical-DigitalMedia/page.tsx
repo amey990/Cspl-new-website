@@ -1,7 +1,8 @@
 'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
-
+import Image from 'next/image';
+import Digitalmedia from '../../../assets/DigitalM.png';
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
 const fadeUp = {
@@ -135,13 +136,12 @@ export default function DigitalMediaSection() {
               {/* main placeholder image area */}
               <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                 <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 text-center text-[11px] text-zinc-500 px-4">
-                  <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                    Control room / OTT still
-                  </span>
-                  <p className="max-w-[16rem] leading-relaxed">
-                    Replace this box with a high-impact image from your NOC, studio,
-                    editing bay or OTT operations.
-                  </p>
+                  <Image
+    src={Digitalmedia}
+    alt="Government Operations"
+    className="h-full w-full object-contain"
+    priority
+  />
                 </div>
               </div>
 

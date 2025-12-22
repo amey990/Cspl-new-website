@@ -1,6 +1,9 @@
 'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
+import Image from 'next/image';
+import Enterprise from '../../../assets/Enterprise.png';
+
 
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
@@ -105,13 +108,12 @@ export default function EnterpriseSection() {
               {/* main placeholder image area */}
               <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                 <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                  <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                    Enterprise workspace / network visual
-                  </span>
-                  <p className="max-w-[16rem] leading-relaxed">
-                    Replace this box with a photo from your office, datacentre or
-                    collaboration spaces to localise this vertical.
-                  </p>
+                  <Image
+    src={Enterprise}
+    alt="Government Operations"
+    className="h-full w-full object-contain"
+    priority
+  />
                 </div>
               </div>
 

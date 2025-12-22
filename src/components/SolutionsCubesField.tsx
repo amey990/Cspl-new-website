@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Lottie from 'lottie-react';
 
-import orbAnimation from '../../assets/lottie/Verticalscube.json';
+import Solutionanimation from '../../assets/lottie/solutions-animation.json';
 
 // === icon imports (same grid as Verticals) ===
 import IconBinoculars from '../../assets/icons/icons8-binoculars-100.png';
@@ -213,7 +213,7 @@ export default function SolutionsCubesField() {
         >
           <div className="pointer-events-auto flex h-full w-full items-center justify-center">
             <Lottie
-              animationData={orbAnimation}
+              animationData={Solutionanimation}
               loop
               autoplay
               className="h-[250%] w-[250%]"

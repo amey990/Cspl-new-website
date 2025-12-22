@@ -1,382 +1,17 @@
-// // app/solutions/page.tsx
-// 'use client';
-
-// import { motion, cubicBezier } from 'framer-motion';
-// import {
-//   Server,
-//   Network as NetworkIcon,
-//   ShieldCheck,
-//   Cloud,
-//   Wifi,
-//   MonitorPlay,
-//   Satellite,
-// } from 'lucide-react';
-
-// const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
-
-// const fadeUp = {
-//   initial: { opacity: 0, y: 30 },
-//   whileInView: { opacity: 1, y: 0 },
-//   viewport: { once: true, amount: 0.25 },
-//   transition: { duration: 0.7, ease: easeOutExpo },
-// };
-
-// type SolutionBand = {
-//   id: string;
-//   badgeLabel: string;
-//   badgeTone: string;
-//   icon: React.ComponentType<{ className?: string }>;
-//   name: string;
-//   tagline: string;
-//   intro: string;
-//   covers: string[];
-//   outcomes: string[];
-//   href: string;
-// };
-
-// const solutions: SolutionBand[] = [
-//   {
-//     id: 'data-center-networking',
-//     badgeLabel: 'Core network fabric',
-//     badgeTone: 'text-cyan-300 border-cyan-400/50 bg-cyan-400/10',
-//     icon: Server,
-//     name: 'Data Center & Networking',
-//     tagline: 'Policy-driven networks from core to edge.',
-//     intro:
-//       'We design, build and run data center, campus, WAN and edge networks as a single, policy-driven fabric – instead of separate, siloed projects.',
-//     covers: [
-//       'Data center design and deployment across compute, storage and leaf-spine fabrics.',
-//       'Campus and WAN architecture, including routing, switching and backbone connectivity.',
-//       'Network infrastructure planning, capacity modelling and performance optimisation.',
-//       'Managed network services for rollouts, upgrades and day-2 operations.',
-//     ],
-//     outcomes: [
-//       'Fabric-based network you can scale without constant re-architecture.',
-//       'Consistent policies from DC to campus to WAN and edge.',
-//       'Faster deployments with predictable performance and uptime.',
-//     ],
-//     href: '/solutions/data-center-networking',
-//   },
-//   {
-//     id: 'sd-wan',
-//     badgeLabel: 'Optimised WAN',
-//     badgeTone: 'text-emerald-300 border-emerald-400/50 bg-emerald-400/10',
-//     icon: NetworkIcon,
-//     name: 'SD-WAN',
-//     tagline: 'Make every path behave like the best path.',
-//     intro:
-//       'Application-aware SD-WAN that continuously picks the best path per flow across MPLS, broadband, LTE and internet – with security baked in.',
-//     covers: [
-//       'Dynamic path selection for latency, jitter and loss per application.',
-//       'Integrated NGFW, IPS/IDS and zero-trust access for all WAN edges.',
-//       'Multi-cloud and hybrid cloud on-ramps to AWS, Azure and private clouds.',
-//       'Policy-driven WAN management that reduces dependency on expensive MPLS.',
-//     ],
-//     outcomes: [
-//       'Better user experience for SaaS, voice, video and critical apps.',
-//       'Lower connectivity costs by safely mixing broadband, 5G/LTE and MPLS.',
-//       'Pan-India and global SD-WAN footprints that you can manage centrally.',
-//     ],
-//     href: '/solutions/sd-wan',
-//   },
-//   {
-//     id: 'network-security',
-//     badgeLabel: 'Zero-trust ready',
-//     badgeTone: 'text-fuchsia-300 border-fuchsia-400/50 bg-fuchsia-500/10',
-//     icon: ShieldCheck,
-//     name: 'Network Security',
-//     tagline: 'Security that follows users, apps and devices everywhere.',
-//     intro:
-//       'We bring together Cisco NGFWs, IDS/IPS, endpoint controls and zero-trust design so your security posture is consistent across DC, campus, WAN and cloud.',
-//     covers: [
-//       'Next-Generation Firewalls (NGFWs) with IPS/IDS and advanced threat protection.',
-//       'Inline and out-of-band IDS/IPS for real-time detection and blocking of malicious traffic.',
-//       'Endpoint security stack: AMP, NAC, PAM and VMS for users, devices and privileged access.',
-//       'Zero-Trust network architecture with segmented zones and least-privilege access.',
-//     ],
-//     outcomes: [
-//       'Smaller blast radius for incidents through micro-segmentation.',
-//       'Better visibility into who and what is on the network at all times.',
-//       'Compliance-ready posture for audits, regulators and customer assessments.',
-//     ],
-//     href: '/solutions/network-security',
-//   },
-//   {
-//     id: 'cloud-solutions',
-//     badgeLabel: 'Hybrid & media cloud',
-//     badgeTone: 'text-amber-300 border-amber-400/60 bg-amber-400/10',
-//     icon: Cloud,
-//     name: 'Cloud Solutions',
-//     tagline: 'Cloud that understands networks, media and your existing stack.',
-//     intro:
-//       'From migration to media workflows, we design AWS-first and multi-cloud architectures that are secure, observable and tuned to your workloads.',
-//     covers: [
-//       'Cloud infrastructure design and workload migration to AWS and other cloud platforms.',
-//       'Cloud security using CASB and native controls for safer enterprise SaaS and IaaS.',
-//       'Media streaming, transcoding and packaging pipelines for OTT and broadcast.',
-//       'IoT cloud services using AWS IoT Core for near real-time telemetry and analytics.',
-//     ],
-//     outcomes: [
-//       'Faster time-to-market for new applications and media services.',
-//       'Stronger security and governance without slowing down engineering teams.',
-//       'Unified view of on-prem and cloud workloads for operations and finance.',
-//     ],
-//     href: '/solutions/cloud-solutions',
-//   },
-//   {
-//     id: 'wireless-networking',
-//     badgeLabel: 'Wi-Fi & outdoor',
-//     badgeTone: 'text-sky-300 border-sky-400/60 bg-sky-400/10',
-//     icon: Wifi,
-//     name: 'Wireless Networking',
-//     tagline: 'High-density Wi-Fi and outdoor links that feel wired.',
-//     intro:
-//       'We plan and deploy enterprise Wi-Fi, point-to-point and mesh networks for campuses, warehouses, plants and outdoor venues – with security and scale built in.',
-//     covers: [
-//       'High-speed indoor Wi-Fi design, site surveys and controller-based architectures.',
-//       'Point-to-point, point-to-multipoint and mesh links for campus and industrial sites.',
-//       'Roaming optimisation for scanners, handhelds, cameras and IoT endpoints.',
-//       'Tight integration with your wired network, identity store and security stack.',
-//     ],
-//     outcomes: [
-//       'Consistent user and device experience across dense, complex spaces.',
-//       'Reduced dead zones and RF issues thanks to design-led deployments.',
-//       'Wireless that scales with headcount, devices and new applications.',
-//     ],
-//     href: '/solutions/wireless-networking',
-//   },
-//   {
-//     id: 'audio-video-services',
-//     badgeLabel: 'Rooms & live',
-//     badgeTone: 'text-violet-300 border-violet-400/60 bg-violet-500/15',
-//     icon: MonitorPlay,
-//     name: 'Audio / Video Services',
-//     tagline: 'Spaces, studios and streams that just work.',
-//     intro:
-//       'We build AV environments for boardrooms, studios, classrooms and live venues – from acoustics and cameras to control, networking and streaming.',
-//     covers: [
-//       'End-to-end AV for corporate, broadcast and education environments.',
-//       'High-quality video conferencing rooms with integrated control and scheduling.',
-//       'Custom AV designs for boardrooms, auditoriums and town-hall spaces.',
-//       'Live streaming and recording workflows for events, training and broadcast.',
-//     ],
-//     outcomes: [
-//       'Better hybrid collaboration experiences for internal and external meetings.',
-//       'AV systems that are reliable enough for executive and broadcast use.',
-//       'Simpler operations with centralised monitoring and support.',
-//     ],
-//     href: '/solutions/audio-video-services',
-//   },
-//   {
-//     id: 'satellite-communication',
-//     badgeLabel: 'Teleport & VSAT',
-//     badgeTone: 'text-cyan-200 border-cyan-300/60 bg-cyan-500/10',
-//     icon: Satellite,
-//     name: 'Satellite Communication',
-//     tagline: 'Satellite links that behave like part of your core network.',
-//     intro:
-//       'From remote VSAT sites to carrier-grade teleports, we design and operate satellite connectivity that stays predictable – even in infrastructure-poor locations.',
-//     covers: [
-//       'Design and rollout of VSAT networks for remote branches and sites.',
-//       'Teleport operations and integration into your IP/MPLS backbone.',
-//       'High-speed satellite backhaul for mobile networks and enterprises.',
-//       'End-to-end expertise across C, Ku and Ka-band technologies.',
-//     ],
-//     outcomes: [
-//       'Reach into locations where terrestrial networks are not viable.',
-//       'Consistent performance for broadcast, voice, data and control traffic.',
-//       'Simpler operations with one team handling both satellite and IP layers.',
-//     ],
-//     href: '/solutions/satellite-communication',
-//   },
-// ];
-
-// export default function SolutionsPage() {
-//   return (
-//     <main className="relative min-h-screen overflow-hidden bg-[#010101] text-white">
-//       {/* Grid background */}
-//       <div
-//         className="pointer-events-none absolute inset-0 z-0"
-//         style={{
-//           backgroundImage: `
-//             linear-gradient(to right, rgba(148,163,184,0.16) 1px, transparent 1px),
-//             linear-gradient(to bottom, rgba(148,163,184,0.16) 1px, transparent 1px)
-//           `,
-//           backgroundSize: '80px 80px',
-//           backgroundPosition: 'center',
-//         }}
-//       />
-
-//       <div className="relative z-10 pb-28 pt-24">
-//         {/* Hero */}
-//         <section className="mx-auto max-w-6xl px-6 md:px-10 lg:px-16">
-//           <motion.div {...fadeUp}>
-//             <p className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-200">
-//               Solutions
-//             </p>
-//             <h1 className="mt-5 text-4xl font-semibold leading-snug text-white md:text-5xl">
-//               High-leverage solutions across
-//               <span className="text-cyan-300"> networks, cloud and media.</span>
-//             </h1>
-//             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-slate-300 md:text-base">
-//               Every solution here is built to run 24×7: designed with real-world
-//               rollout constraints, operations, safety and long-term support in
-//               mind. Explore how we combine infrastructure, software and managed
-//               services for each area.
-//             </p>
-//           </motion.div>
-//         </section>
-
-//         {/* Solution bands */}
-//         <section className="mx-auto mt-14 max-w-6xl space-y-10 px-6 md:px-10 lg:px-16">
-//           {solutions.map((s, index) => {
-//             const Icon = s.icon;
-//             const isEven = index % 2 === 0;
-
-//             return (
-//               <motion.article
-//                 key={s.id}
-//                 id={s.id}
-//                 {...fadeUp}
-//                 className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-slate-950/85 via-black to-black p-6 shadow-[0_28px_120px_rgba(0,0,0,0.9)] md:p-8"
-//               >
-//                 {/* subtle colour wash per band */}
-//                 <div
-//                   className={`pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full blur-3xl ${
-//                     isEven ? 'bg-cyan-500/10' : 'bg-fuchsia-500/10'
-//                   }`}
-//                 />
-//                 <div
-//                   className={`pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full blur-3xl ${
-//                     isEven ? 'bg-emerald-400/10' : 'bg-amber-400/10'
-//                   }`}
-//                 />
-
-//                 <div className="relative grid gap-10 md:grid-cols-[1.6fr,1fr]">
-//                   {/* Left: content */}
-//                   <div>
-//                     <div className="flex flex-wrap items-center gap-3">
-//                       <span
-//                         className={`inline-flex items-center gap-2 rounded-full border px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] ${s.badgeTone}`}
-//                       >
-//                         <span className="h-1.5 w-1.5 rounded-full bg-current" />
-//                         {s.badgeLabel}
-//                       </span>
-//                     </div>
-
-//                     <h2 className="mt-4 text-2xl font-semibold md:text-3xl">
-//                       {s.name}
-//                     </h2>
-//                     <p className="mt-1 text-sm font-medium text-cyan-200/90">
-//                       {s.tagline}
-//                     </p>
-
-//                     <p className="mt-4 text-sm leading-relaxed text-slate-200 md:text-[15px]">
-//                       {s.intro}
-//                     </p>
-
-//                     <div className="mt-6 grid gap-6 md:grid-cols-2">
-//                       <div>
-//                         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-//                           What it covers
-//                         </p>
-//                         <ul className="mt-3 space-y-2 text-sm text-slate-200">
-//                           {s.covers.map((item) => (
-//                             <li key={item} className="flex gap-2">
-//                               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-cyan-400" />
-//                               <span>{item}</span>
-//                             </li>
-//                           ))}
-//                         </ul>
-//                       </div>
-
-//                       <div>
-//                         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
-//                           Outcomes we drive
-//                         </p>
-//                         <ul className="mt-3 space-y-2 text-sm text-slate-200">
-//                           {s.outcomes.map((item) => (
-//                             <li key={item} className="flex gap-2">
-//                               <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-//                               <span>{item}</span>
-//                             </li>
-//                           ))}
-//                         </ul>
-
-//                         <a
-//                           href={s.href}
-//                           className="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300 hover:text-cyan-200"
-//                         >
-//                           View full solution
-//                           <span className="ml-2 text-[11px]">↗</span>
-//                         </a>
-//                       </div>
-//                     </div>
-//                   </div>
-
-//                   {/* Right: visual stack */}
-//                   <div className="flex items-center md:justify-end">
-//                     <div className="w-full max-w-xs rounded-3xl border border-white/12 bg-black/40 p-4 backdrop-blur">
-//                       <div className="flex items-center justify-between">
-//                         <div className="flex items-center gap-2">
-//                           <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-white/5">
-//                             <Icon className="h-4 w-4 text-cyan-200" />
-//                           </div>
-//                           <div className="text-xs text-slate-200">
-//                             <p className="font-semibold">{s.name}</p>
-//                             <p className="text-[11px] text-slate-400">
-//                               Solution snapshot
-//                             </p>
-//                           </div>
-//                         </div>
-//                       </div>
-
-//                       <div className="mt-4 space-y-2 text-[11px] text-slate-200">
-//                         <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/5 px-3 py-2">
-//                           <span className="text-slate-300">Design</span>
-//                           <span className="text-slate-400">
-//                             Workshops &amp; architecture
-//                           </span>
-//                         </div>
-//                         <div className="flex items-center justify-between rounded-xl border border-white/10 bg-white/3 px-3 py-2">
-//                           <span className="text-slate-300">Deploy</span>
-//                           <span className="text-slate-400">
-//                             Projects &amp; rollouts
-//                           </span>
-//                         </div>
-//                         <div className="flex items-center justify-between rounded-xl border border-emerald-400/40 bg-emerald-400/10 px-3 py-2">
-//                           <span className="text-emerald-200">Operate</span>
-//                           <span className="text-emerald-100">
-//                             24×7 support &amp; optimisation
-//                           </span>
-//                         </div>
-//                       </div>
-
-//                       <p className="mt-3 text-[10px] leading-relaxed text-slate-400">
-//                         We typically combine consulting, implementation and
-//                         managed services so you’re not left stitching pieces
-//                         together.
-//                       </p>
-//                     </div>
-//                   </div>
-//                 </div>
-//               </motion.article>
-//             );
-//           })}
-//         </section>
-//       </div>
-//     </main>
-//   );
-// }
-
-
-
 //pp//
 'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
 import SolutionsCubesField from '../../components/SolutionsCubesField'; // hero for Solutions
 
+import Image from 'next/image';
+import Datacenter from '../../../assets/Datacenter.png'; 
+import Sdwan from '../../../assets/SDWAN.png'; 
+import NetworkSecurity from '../../../assets/NetworkSec.png'; 
+import CloudSol from '../../../assets/Cloudsolu.png'; 
+import AVsolution from '../../../assets/AudioVideo.png';
+import Satcom from '../../../assets/Satcom.png';
+import WirelessNet from '../../../assets/WirelessNetworking.png';
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
 const fadeUp = {
@@ -593,15 +228,12 @@ export default function SolutionsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/80">
                     <div className="flex aspect-[16/10] items-center justify-center px-4 text-center text-[11px] text-zinc-500">
-                      <div>
-                        <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-300">
-                          Core network fabric visual
-                        </div>
-                        <p className="max-w-[14rem] leading-relaxed">
-                          Drop a rack / NOC / topology visual here to
-                          localise the solution for your customers.
-                        </p>
-                      </div>
+                          <Image
+                          src={Datacenter}
+                          alt="Datacenter Operations"
+                          className="h-full w-full object-contain"
+                          priority
+                        />
                     </div>
                   </div>
 
@@ -724,13 +356,12 @@ export default function SolutionsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        SD-WAN topology visual
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Replace this with a schematic showing branch, DC and
-                        cloud sites connected via SD-WAN fabric.
-                      </p>
+                      <Image
+                          src={Sdwan}
+                          alt="Datacenter Operations"
+                          className="h-full w-full object-contain"
+                          priority
+                        />
                     </div>
                   </div>
 
@@ -848,13 +479,12 @@ export default function SolutionsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        Security stack visual
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Swap this with a diagram of firewalls, IDS/IPS and
-                        endpoints protecting users and apps.
-                      </p>
+                      <Image
+                          src={NetworkSecurity}
+                          alt="Datacenter Operations"
+                          className="h-full w-full object-contain"
+                          priority
+                        />
                     </div>
                   </div>
 
@@ -971,13 +601,12 @@ export default function SolutionsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        Cloud architecture / console still
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Replace this with a visual from your AWS console or
-                        reference architecture.
-                      </p>
+                       <Image
+                          src={CloudSol}
+                          alt="Datacenter Operations"
+                          className="h-full w-full object-contain"
+                          priority
+                        />
                     </div>
                   </div>
 
@@ -1096,13 +725,12 @@ export default function SolutionsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        Floor plan / RF heatmap
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Swap this with a Wi-Fi survey map or AP layout from one
-                        of your deployments.
-                      </p>
+                     <Image
+                          src={WirelessNet}
+                          alt="Datacenter Operations"
+                          className="h-full w-full object-contain"
+                          priority
+                        />
                     </div>
                   </div>
 
@@ -1219,13 +847,12 @@ export default function SolutionsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        Boardroom / studio still
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Replace with a hero shot from your best boardroom or
-                        studio installation.
-                      </p>
+                      <Image
+                          src={AVsolution}
+                          alt="Datacenter Operations"
+                          className="h-full w-full object-contain"
+                          priority
+                        />
                     </div>
                   </div>
 
@@ -1343,13 +970,12 @@ export default function SolutionsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        VSAT / teleport visual
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Replace this with a shot of your dishes, teleport or a
-                        network coverage map.
-                      </p>
+                      <Image
+                          src={Satcom}
+                          alt="Datacenter Operations"
+                          className="h-full w-full object-contain"
+                          priority
+                        />
                     </div>
                   </div>
 

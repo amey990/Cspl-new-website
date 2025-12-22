@@ -1,7 +1,8 @@
 'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
-
+import Image from 'next/image';
+import TelecomImage from '../../../assets/Telco.png';
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
 const fadeUp = {
@@ -105,15 +106,12 @@ export default function ServiceProviderSection() {
               {/* Placeholder image window */}
               <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/80">
                 <div className="flex aspect-[16/10] items-center justify-center">
-                  <div className="text-center text-xs text-zinc-500">
-                    <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-400">
-                      Telecom imagery
-                    </div>
-                    <p className="max-w-[14rem] text-[11px] leading-relaxed">
-                      Drop a tower, NOC or field-team photo here to localise this
-                      vertical for your customers.
-                    </p>
-                  </div>
+                  <Image
+    src={TelecomImage}
+    alt="Government Operations"
+    className="h-full w-full object-contain"
+    priority
+  />
                 </div>
               </div>
 

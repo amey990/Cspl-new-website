@@ -3,8 +3,10 @@
 import { motion, cubicBezier } from 'framer-motion';
 import VerticalsCubesField from '../../components/VerticalsHeroViz'; // adjust path if needed
 import Image from 'next/image';
-import TelecomImage from '../../../assets/Teleco.png'; // update path if your structure is different
-
+import TelecomImage from '../../../assets/Telco.png'; 
+import Digitalmedia from '../../../assets/DigitalM.png';
+import Enterprise from '../../../assets/Enterprise.png';
+import Government from '../../../assets/Government.png';
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
 const fadeUp = {
@@ -207,7 +209,7 @@ export default function VerticalsPage() {
         <div className="aspect-[16/10] w-full overflow-hidden -p-4">
   <Image
     src={TelecomImage}
-    alt="Telecom NOC and field operations"
+    alt="Digital Media Operations"
     className="h-full w-full object-contain"
     priority
   />
@@ -367,13 +369,12 @@ export default function VerticalsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        Control room / OTT still
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Replace this with a high-impact image from your NOC,
-                        studio, editing bay or OTT operations.
-                      </p>
+                     <Image
+    src={Digitalmedia}
+    alt="Telecom NOC and field operations"
+    className="h-full w-full object-contain"
+    priority
+  />
                     </div>
                   </div>
 
@@ -503,13 +504,12 @@ export default function VerticalsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        Enterprise workspace / network visual
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Replace this with a photo from your office, datacentre
-                        or collaboration spaces to localise this vertical.
-                      </p>
+                      <Image
+    src={Enterprise}
+    alt="Enterprise Operations"
+    className="h-full w-full object-contain"
+    priority
+  />
                     </div>
                   </div>
 
@@ -628,14 +628,12 @@ export default function VerticalsPage() {
                 <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
                   <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/85">
                     <div className="flex aspect-[16/10] flex-col items-center justify-center gap-2 px-4 text-center text-[11px] text-zinc-500">
-                      <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-300">
-                        Govt. building / project visual
-                      </span>
-                      <p className="max-w-[16rem] leading-relaxed">
-                        Replace this area with an image from one of your
-                        government deployments – broadcast tower, control room
-                        or flagship site.
-                      </p>
+                      <Image
+    src={Government}
+    alt="Government Operations"
+    className="h-full w-full object-contain"
+    priority
+  />
                     </div>
                   </div>
 
