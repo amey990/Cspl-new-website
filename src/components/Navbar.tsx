@@ -118,22 +118,22 @@ const solutionsContent = {
         {
           title: 'Data Center & Networking',
           description: 'High-performance switching, routing, and compute fabrics',
-          href: '/solutions/data-center-networking',
+          href: '/Solutions-Datacenter',
         },
         {
           title: 'SDWAN',
           description: 'Application-aware WAN with centralized orchestration',
-          href: '/solutions/sdwan',
+          href: '/Solutions-Sdwan',
         },
         {
           title: 'Network Security',
           description: 'Firewalls, zero-trust access, and threat protection',
-          href: '/solutions/network-security',
+          href: '/Solutions-NetworkSecurity',
         },
         {
           title: 'Cloud Solutions',
           description: 'Hybrid and multi-cloud architectures and services',
-          href: '/solutions/cloud-solutions',
+          href: '/Solutions-Cloudsolutions',
         },
       ],
     },
@@ -145,17 +145,17 @@ const solutionsContent = {
         {
           title: 'Wireless Networking',
           description: 'Secure Wi-Fi and private wireless connectivity',
-          href: '/solutions/wireless-networking',
+          href: '/Solutions-Wireless',
         },
         {
           title: 'Audio / Video Solutions',
           description: 'Collaboration, conferencing, and digital signage systems',
-          href: '/solutions/audio-video-solutions',
+          href: '/Solutions-Audio',
         },
         {
           title: 'Satellite Communications',
           description: 'Reliable connectivity in remote and mission-critical locations',
-          href: '/solutions/satellite-communications',
+          href: '/Solutions-Satcom',
         },
       ],
     },

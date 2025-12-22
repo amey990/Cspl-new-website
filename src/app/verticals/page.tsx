@@ -1,18 +1,9 @@
-
-
-// // src/app/verticals/page.tsx
-// import VerticalsCubesField from '../../components/VerticalsHeroViz';
-
-// export default function VerticalsPage() {
-//   return <VerticalsCubesField />;
-// }
-
-
-//pp//
 'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
 import VerticalsCubesField from '../../components/VerticalsHeroViz'; // adjust path if needed
+import Image from 'next/image';
+import TelecomImage from '../../../assets/Teleco.png'; // update path if your structure is different
 
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
@@ -124,144 +115,148 @@ export default function VerticalsPage() {
         {/* ================================================================== */}
         {/* SERVICE PROVIDER – TEXT THEN CARD RIGHT                           */}
         {/* ================================================================== */}
-        <section
-          id="service-provider"
-          className="mx-auto mt-24 max-w-6xl px-6 md:px-10 lg:px-16"
-        >
-          <motion.div {...fadeUp} className="space-y-10">
-            {/* TEXT BLOCK */}
-            <div>
-              <p className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-200">
-                Service Provider · Vertical
-              </p>
+       <section
+  id="service-provider"
+  className="mx-auto mt-24 max-w-6xl px-6 md:px-10 lg:px-16"
+>
+  <motion.div {...fadeUp} className="space-y-10">
+    {/* TEXT BLOCK */}
+    <div>
+      <p className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-200">
+        Service Provider · Vertical
+      </p>
 
-              <h2 className="mt-5 text-3xl font-semibold leading-snug text-white md:text-4xl">
-                Stay ahead of rapid change in telecom.
-              </h2>
+      <h2 className="mt-5 text-3xl font-semibold leading-snug text-white md:text-4xl">
+        Stay ahead of rapid change in telecom.
+      </h2>
 
-              <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
-                Telecom companies in India and globally are seeing transition in
-                terms of technology, shifts in customer preferences, ARPUs and
-                services offered. Competition today demands rapid project
-                execution, multi-location deployments and consistently high
-                customer satisfaction at every engagement.
-              </p>
+      <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
+        Telecom companies in India and globally are seeing transition in
+        terms of technology, shifts in customer preferences, ARPUs and
+        services offered. Competition today demands rapid project execution,
+        multi-location deployments and consistently high customer satisfaction
+        at every engagement.
+      </p>
 
-              <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
-                Commedia works with leading global service providers to help
-                them implement networks and programs at scale. We stay close to
-                requirements on the ground, engaging through long-running
-                projects and delivering solutions that match how their
-                operations run.
-              </p>
+      <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
+        Commedia works with leading global service providers to help
+        them implement networks and programs at scale. We stay close to
+        requirements on the ground, engaging through long-running
+        projects and delivering solutions that match how their
+        operations run.
+      </p>
 
-              <div className="mt-6 rounded-2xl border border-white/10 bg-zinc-950/70 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
-                  Where we help
-                </p>
-                <div className="mt-3 grid gap-3 text-sm text-zinc-200 md:grid-cols-2">
-                  <ul className="space-y-2">
-                    <li className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                      <span>Setting up connectivity networks and NOCs.</span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                      <span>
-                        Installation, testing and commissioning of servers and
-                        systems.
-                      </span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                      <span>
-                        Network and system upgrades, transformation projects.
-                      </span>
-                    </li>
-                  </ul>
+      <div className="mt-6 rounded-2xl border border-white/10 bg-zinc-950/70 p-4">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
+          Where we help
+        </p>
+        <div className="mt-3 grid gap-3 text-sm text-zinc-200 md:grid-cols-2">
+          <ul className="space-y-2">
+            <li className="flex gap-2">
+              <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
+              <span>Setting up connectivity networks and NOCs.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
+              <span>
+                Installation, testing and commissioning of servers and
+                systems.
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
+              <span>
+                Network and system upgrades, transformation projects.
+              </span>
+            </li>
+          </ul>
 
-                  <ul className="mt-3 space-y-2 md:mt-0">
-                    <li className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                      <span>
-                        Managed services for telecom infrastructure and
-                        migration work.
-                      </span>
-                    </li>
-                    <li className="flex gap-2">
-                      <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                      <span>
-                        Software for network management, billing, analytics
-                        &amp; OSS tools.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <ul className="mt-3 space-y-2 md:mt-0">
+            <li className="flex gap-2">
+              <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
+              <span>
+                Managed services for telecom infrastructure and
+                migration work.
+              </span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
+              <span>
+                Software for network management, billing, analytics
+                &amp; OSS tools.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-            {/* CARD BELOW, ALIGNED RIGHT */}
-            <motion.div
-              {...fadeIn}
-              className="flex justify-end"
-            >
-              <div className="relative w-full max-w-md">
-                <div className="pointer-events-none absolute -left-6 top-0 h-24 w-24 rounded-full bg-sky-500/15 blur-2xl" />
-                <div className="pointer-events-none absolute -right-10 bottom-4 h-28 w-28 rounded-full bg-emerald-400/20 blur-3xl" />
+    {/* CARD BELOW, ALIGNED RIGHT WITH REAL IMAGE */}
+    <motion.div
+  {...fadeIn}
+  className="flex justify-end"
+>
+  <div className="relative w-full max-w-md">
+    <div className="pointer-events-none absolute -left-6 top-0 h-24 w-24 rounded-full bg-sky-500/15 blur-2xl" />
+    <div className="pointer-events-none absolute -right-10 bottom-4 h-28 w-28 rounded-full bg-emerald-400/20 blur-3xl" />
 
-                <div className="relative overflow-hidden rounded-3xl border border-white/12 bg-gradient-to-b from-zinc-900 via-zinc-950 to-black p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
-                  <div className="relative overflow-hidden rounded-2xl border border-dashed border-white/18 bg-zinc-950/80">
-                    <div className="flex aspect-[16/10] items-center justify-center px-4 text-center text-[11px] text-zinc-500">
-                      <div>
-                        <div className="mb-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-zinc-300">
-                          Telecom imagery
-                        </div>
-                        <p className="max-w-[14rem] leading-relaxed">
-                          Drop a tower, NOC or field-team photo here to localise
-                          this vertical for your customers.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+    {/* CARD WITH BRIGHT IMAGE */}
+    <div className="relative overflow-hidden rounded-3xl border border-white/14 bg-zinc-950/60 p-4 shadow-[0_26px_90px_rgba(0,0,0,1)]">
+      {/* image container */}
+      <div className="relative overflow-hidden rounded-2xl border border-white/18 bg-black/40">
+        <div className="aspect-[16/10] w-full overflow-hidden -p-4">
+  <Image
+    src={TelecomImage}
+    alt="Telecom NOC and field operations"
+    className="h-full w-full object-contain"
+    priority
+  />
+</div>
 
-                  <div className="mt-4 flex flex-wrap gap-3 text-[11px]">
-                    <div className="flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-3 py-1 text-emerald-200">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                      <span>NOC visibility</span>
-                    </div>
-                    <div className="flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/5 px-3 py-1 text-sky-200">
-                      <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-                      <span>Roll-out at scale</span>
-                    </div>
-                    <div className="flex items-center gap-2 rounded-full border border-fuchsia-400/30 bg-fuchsia-400/5 px-3 py-1 text-fuchsia-200">
-                      <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
-                      <span>AI-assisted operations</span>
-                    </div>
-                  </div>
+      </div>
 
-                  <div className="mt-4 flex items-center justify-between rounded-xl bg-black/50 px-3 py-2 text-[11px] text-zinc-300">
-                    <div>
-                      <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">
-                        Typical engagement
-                      </p>
-                      <p className="text-xs text-zinc-100">
-                        Multi-circle deployments · 6–18 months
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">
-                        Focus
-                      </p>
-                      <p className="text-xs text-zinc-100">
-                        Uptime &amp; experience
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        </section>
+      {/* chips */}
+      <div className="mt-4 flex flex-wrap gap-3 text-[11px]">
+        <div className="flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/5 px-3 py-1 text-emerald-200">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          <span>NOC visibility</span>
+        </div>
+        <div className="flex items-center gap-2 rounded-full border border-sky-400/30 bg-sky-400/5 px-3 py-1 text-sky-200">
+          <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
+          <span>Roll-out at scale</span>
+        </div>
+        <div className="flex items-center gap-2 rounded-full border border-fuchsia-400/30 bg-fuchsia-400/5 px-3 py-1 text-fuchsia-200">
+          <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
+          <span>AI-assisted operations</span>
+        </div>
+      </div>
+
+      {/* footer row */}
+      <div className="mt-4 flex items-center justify-between rounded-xl bg-black/60 px-3 py-2 text-[11px] text-zinc-300">
+        <div>
+          <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+            Typical engagement
+          </p>
+          <p className="text-xs text-zinc-100">
+            Multi-circle deployments · 6–18 months
+          </p>
+        </div>
+        <div className="text-right">
+          <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">
+            Focus
+          </p>
+          <p className="text-xs text-zinc-100">
+            Uptime &amp; experience
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</motion.div>
+
+  </motion.div>
+</section>
+
 
         {/* ================================================================== */}
         {/* DIGITAL MEDIA – TEXT THEN CARD LEFT                               */}
