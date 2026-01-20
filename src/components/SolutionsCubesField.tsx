@@ -3,14 +3,8 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-// import { useEffect, useState } from 'react';
-// import Lottie from 'lottie-react';
 
 import { useEffect, useState, useRef } from 'react';
-import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
-
-
-import Solutionanimation from '../../assets/lottie/Tri-cube loader #3.json';
 
 // === icon imports (same grid as Verticals) ===
 import IconBinoculars from '../../assets/icons/icons8-binoculars-100.png';
@@ -117,11 +111,9 @@ export default function SolutionsCubesField() {
     setAppearOrder(order);
   }, [totalCubes]);
 
-  const lottieRef = useRef<LottieRefCurrentProps>(null);
+ 
 
-useEffect(() => {
-  lottieRef.current?.setSpeed(0.25); // try 0.25–0.6
-}, []);
+
 
 
   const centerRow = (ROWS - 1) / 2;
@@ -223,15 +215,13 @@ useEffect(() => {
           }}
         >
           <div className="pointer-events-auto flex h-full w-full items-center justify-center">
-          <Lottie
-  lottieRef={lottieRef}
-  animationData={Solutionanimation}
-  loop
-  autoplay
-  className="h-[250%] w-[250%]"
-/>
+  <Image
+    src={IconConnect}
+    alt="Solutions"
+    className="h-12 w-12 opacity-95"
+  />
+</div>
 
-          </div>
         </div>
       </motion.div>
 
@@ -241,18 +231,16 @@ useEffect(() => {
           Solutions
         </p>
 
-        <h2
-          className="max-w-5xl text-[40px] font-medium leading-tight text-white sm:text-[48px] md:text-[54px]"
-          style={{
-            fontFamily:
-              '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
-          }}
-        >
-          High-leverage solutions across{' '}
-          <span className="text-sky-400">networks</span>,{' '}
-          <span className="text-sky-400">cloud</span> and{' '}
-          <span className="text-sky-400">media</span>.
-        </h2>
+       <h2
+  className="max-w-5xl text-[40px] font-medium leading-tight text-white sm:text-[48px] md:text-[54px]"
+  style={{
+    fontFamily:
+      '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
+  }}
+>
+  High-leverage solutions across networks, cloud and media.
+</h2>
+
 
         <p
           className="mt-4 max-w-3xl text-sm text-[#9CA3AF] md:text-base"

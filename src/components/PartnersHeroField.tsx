@@ -211,7 +211,12 @@ export default function PartnersCubesField() {
         >
           {/* Keep your hand element here – using lucide Handshake as default */}
           <div className="flex h-full w-full items-center justify-center">
-            <Handshake className="h-12 w-12 text-white" />
+            {/* <Handshake className="h-12 w-12 text-white" /> */}
+            <Handshake
+  className="h-12 w-12 text-white/95 drop-shadow-[0_0_18px_rgba(255,255,255,0.08)]"
+  strokeWidth={1.8}
+/>
+
           </div>
         </div>
       </motion.div>

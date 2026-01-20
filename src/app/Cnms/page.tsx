@@ -6,7 +6,10 @@ import { motion, cubicBezier } from 'framer-motion';
 
 // import CNMSImage from '../../../assets/CNMS_dummy.jpg';
 import CNMSImage from '../../../assets/products/Nms2.png';
-import CNMSImage2 from "../../../assets/products/Nms3.png"; // change to Nms4.png etc if you want
+import Nms4Image from "../../../assets/products/Nms4.png";
+import Nms5Image from "../../../assets/products/Nms5.png";
+import Nms6Image from "../../../assets/products/nms6.png";
+
 
 
 
@@ -389,86 +392,24 @@ export default function CNMSPage() {
         {/* ------------------------------------------------------------------ */}
         {/* 3. LIVE TOPOLOGY & HEALTH                                          */}
         {/* ------------------------------------------------------------------ */}
-        <section className="mt-32 mx-auto max-w-6xl px-6 md:px-10 lg:px-16">
+        <section className="mt-32 mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
           <div className="grid items-center gap-12 md:grid-cols-2">
-            {/* Left: mock topology board */}
-            <motion.div
-              {...fadeIn}
-              className="flex justify-center"
-            >
-              <div className="relative w-full max-w-xl rounded-2xl border border-white/12 bg-gradient-to-b from-[#151320] via-[#020108] to-black p-4 md:p-5 shadow-[0_40px_130px_rgba(0,0,0,1)]">
-                {/* header */}
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="flex gap-1.5">
-                    <span className="h-2.5 w-2.5 rounded-full bg-rose-500/70" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-amber-400/70" />
-                    <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
-                  </div>
-                  <div className="h-5 w-28 rounded-full bg-zinc-800/80" />
-                </div>
+           <motion.div {...fadeIn} className="flex justify-center">
+  <Image
+    src={Nms4Image}
+    alt="CNMS topology and health view"
+    quality={100}
+    className="w-full max-w-xl h-auto rounded-1xl"
+    style={{
+      boxShadow: "0 40px 130px rgba(0,0,0,1)",
+      WebkitMaskImage:
+        "linear-gradient(to bottom, rgba(0,0,0,1) 88%, rgba(0,0,0,0) 100%)",
+      maskImage:
+        "linear-gradient(to bottom, rgba(0,0,0,1) 88%, rgba(0,0,0,0) 100%)",
+    }}
+  />
+</motion.div>
 
-                <div className="grid grid-cols-12 gap-3">
-                  {/* left: topology */}
-                  <div className="col-span-7 rounded-xl bg-zinc-950/80 p-3">
-                    <div className="mb-2 flex items-center justify-between">
-                      <div className="h-3 w-20 rounded bg-zinc-700" />
-                      <div className="h-3 w-16 rounded bg-zinc-800" />
-                    </div>
-                    <div className="relative h-40 rounded-xl bg-[radial-gradient(circle_at_10%_10%,rgba(149,2,168,0.4),transparent_55%),radial-gradient(circle_at_80%_30%,rgba(59,130,246,0.45),transparent_55%),radial-gradient(circle_at_40%_80%,rgba(16,185,129,0.45),transparent_60%)]">
-                      {/* little nodes */}
-                      {[['20%', '25%'], ['60%', '30%'], ['40%', '70%'], ['75%', '65%']].map(
-                        ([left, top], i) => (
-                          <div
-                            // eslint-disable-next-line react/no-array-index-key
-                            key={i}
-                            className="absolute h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/60 bg-black/70 shadow-[0_0_10px_rgba(255,255,255,0.4)]"
-                            style={{ left, top }}
-                          />
-                        ),
-                      )}
-                    </div>
-                    <div className="mt-3 flex justify-between text-[10px] text-zinc-400">
-                      <span>Sites</span>
-                      <span>Links</span>
-                      <span>Critical paths</span>
-                    </div>
-                  </div>
-
-                  {/* right: health bars */}
-                  <div className="col-span-5 rounded-xl bg-zinc-950/80 p-3">
-                    <div className="mb-2 flex items-center justify-between">
-                      <div className="h-3 w-20 rounded bg-zinc-700" />
-                      <div className="h-3 w-10 rounded bg-zinc-800" />
-                    </div>
-                    <div className="space-y-1.5">
-                      {[75, 92, 54, 68].map((score, i) => (
-                        <div
-                          // eslint-disable-next-line react/no-array-index-key
-                          key={i}
-                          className="flex items-center gap-2"
-                        >
-                          <div className="h-2 w-12 rounded bg-zinc-800" />
-                          <div className="flex-1 h-2 rounded-full bg-zinc-900">
-                            <div
-                              className="h-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-400"
-                              style={{ width: `${score}%` }}
-                            />
-                          </div>
-                          <span className="w-7 text-right text-[10px] text-zinc-300">
-                            {score}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 flex items-center justify-between text-[10px] text-zinc-400">
-                  <span>Topology &amp; health overview</span>
-                  <span>Updated a few seconds ago</span>
-                </div>
-              </div>
-            </motion.div>
 
             {/* Right: text */}
             <motion.div {...fadeUp}>
@@ -581,78 +522,38 @@ export default function CNMSPage() {
             </motion.div>
 
             {/* Right: alert panel mock */}
-            <motion.div
-              {...fadeIn}
-              className="flex justify-center"
-            >
-              <div className="w-full max-w-xl rounded-2xl border border-white/12 bg-gradient-to-b from-[#130f1c] via-[#050310] to-black p-5 shadow-[0_32px_110px_rgba(0,0,0,1)]">
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="h-4 w-24 rounded bg-zinc-800" />
-                  <div className="flex gap-2">
-                    <div className="h-4 w-10 rounded bg-zinc-900" />
-                    <div className="h-4 w-10 rounded bg-zinc-900" />
-                  </div>
-                </div>
+           <motion.div {...fadeIn} className="flex justify-center">
+  <div className="relative w-full max-w-xl" style={{ perspective: "1200px" }}>
+    {/* Main image */}
+    <Image
+      src={Nms5Image}
+      alt="CNMS alerts list"
+      quality={100}
+      className="w-full rounded-2xl border border-white/10 shadow-[0_32px_110px_rgba(0,0,0,1)]"
+      style={{
+        transform: "rotateX(10deg) rotateZ(-1.5deg)",
+        WebkitMaskImage:
+          "linear-gradient(to bottom, rgba(0,0,0,1) 88%, rgba(0,0,0,0) 100%)",
+        maskImage:
+          "linear-gradient(to bottom, rgba(0,0,0,1) 88%, rgba(0,0,0,0) 100%)",
+      }}
+      sizes="(min-width: 768px) 640px, 100vw"
+    />
 
-                <div className="space-y-2">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      // eslint-disable-next-line react/no-array-index-key
-                      key={i}
-                      className="flex items-center justify-between rounded-xl bg-zinc-950/90 px-3 py-2"
-                    >
-                      <div className="flex items-center gap-3">
-                        <span
-                          className="h-2.5 w-2.5 rounded-full"
-                          style={{
-                            background:
-                              i === 1
-                                ? '#fb7185'
-                                : i === 2
-                                ? '#facc15'
-                                : '#22c55e',
-                          }}
-                        />
-                        <div className="space-y-1">
-                          <div className="h-3 w-32 rounded bg-zinc-800" />
-                          <div className="h-2 w-20 rounded bg-zinc-900" />
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3 text-[10px] text-zinc-400">
-                        <div className="h-3 w-10 rounded bg-zinc-800" />
-                        <div className="h-3 w-8 rounded bg-zinc-800/80" />
-                      </div>
-                    </div>
-                  ))}
-                </div>
+    {/* Overlay image */}
+    <Image
+      src={Nms6Image}
+      alt="CNMS incident details"
+      quality={95}
+      className="absolute -bottom-10 right-2 w-[78%] rounded-2xl border border-white/10 shadow-[0_28px_90px_rgba(0,0,0,0.95)]"
+      style={{
+        transform: "rotateX(10deg) rotateZ(2deg)",
+      }}
+      sizes="(min-width: 768px) 520px, 80vw"
+    />
+  </div>
+</motion.div>
 
-                <div className="mt-4 grid grid-cols-[1.2fr,1.4fr] gap-3 text-[11px] text-zinc-200">
-                  <div className="rounded-xl bg-zinc-950/90 p-3">
-                    <div className="mb-2 h-3 w-24 rounded bg-zinc-700" />
-                    <div className="space-y-1.5">
-                      <div className="h-2 w-full rounded bg-zinc-800" />
-                      <div className="h-2 w-4/5 rounded bg-zinc-800" />
-                      <div className="h-2 w-2/3 rounded bg-zinc-800" />
-                    </div>
-                  </div>
-                  <div className="rounded-xl bg-zinc-950/90 p-3">
-                    <div className="mb-2 h-3 w-24 rounded bg-zinc-700" />
-                    <div className="h-16 rounded bg-[linear-gradient(to_right,rgba(24,24,27,1),rgba(24,24,27,1)),repeating-linear-gradient(to_right,rgba(63,63,70,0.6)_0,rgba(63,63,70,0.6)_1px,transparent_1px,transparent_10px)] relative overflow-hidden">
-                      <div className="absolute inset-y-1 left-1 right-1 flex items-center gap-1">
-                        {[40, 60, 30, 70, 50].map((w, i) => (
-                          <div
-                            // eslint-disable-next-line react/no-array-index-key
-                            key={i}
-                            className="h-2 rounded-full bg-gradient-to-r from-rose-500 via-amber-400 to-emerald-400"
-                            style={{ width: `${w}%` }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </section>
 

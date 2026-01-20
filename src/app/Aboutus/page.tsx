@@ -20,8 +20,8 @@ import MissionImg from '../../../assets/Mission.png';
 import ImpactImg from '../../../assets/Impact.png';
 
 // Presence Images
-import IndiaUp from '../../../assets/IndiaUp.png';
-import GlobalUp from '../../../assets/GlobalUp.png';
+import IndiaUp from '../../../assets/Aboutus/Indiamap.png';
+import GlobalUp from '../../../assets/Aboutus/Global.png';
 
 // ---------------------------------------------
 // INTERSECTION OBSERVER HOOK

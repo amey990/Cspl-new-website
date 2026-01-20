@@ -7,10 +7,7 @@ import { motion } from 'framer-motion';
 // import Lottie from 'lottie-react';
 
 import { useEffect, useState, useRef } from 'react';
-import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
 
-
-import orbAnimation from '../../assets/lottie/Verticalscube.json';
 
 // === icon imports (re-use same icons as products hero) ===
 import IconBinoculars from '../../assets/icons/icons8-binoculars-100.png';
@@ -98,14 +95,12 @@ export default function VerticalsCubesField() {
   const COLS = 10;
   const totalCubes = ROWS * COLS;
 
-  const lottieRef = useRef<LottieRefCurrentProps>(null);
+ 
 
 
   const [appearOrder, setAppearOrder] = useState<number[]>([]);
 
-  useEffect(() => {
-  lottieRef.current?.setSpeed(0.5); // ✅ slow (try 0.25–0.6)
-}, []);
+  
 
 
   useEffect(() => {
@@ -224,16 +219,13 @@ export default function VerticalsCubesField() {
           }}
         >
           <div className="pointer-events-auto flex h-full w-full items-center justify-center">
-         <Lottie
-  lottieRef={lottieRef}
-  animationData={orbAnimation}
-  loop
-  autoplay
-  className="h-[250%] w-[250%]"
-/>
+  <Image
+    src={IconBriefcase}
+    alt="Verticals"
+    className="h-12 w-12 opacity-95"
+  />
+</div>
 
-
-          </div>
         </div>  
       </motion.div>
 
