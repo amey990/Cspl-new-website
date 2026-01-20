@@ -19,9 +19,9 @@ import {
 } from 'lucide-react';
 
 // 🔹 Replace these with your real high-res images
-import DcHallImage from '../../../assets/CNMS_dummy.jpg';
-import NocWallImage from '../../../assets/CNMS_dummy.jpg';
-import RackCloseupImage from '../../../assets/CNMS_dummy.jpg';
+import DcHallImage from '../../../assets/DC_1.png';
+import NocWallImage from '../../../assets/DC_2.png';
+import RackCloseupImage from '../../../assets/DC_3.png';
 
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
@@ -559,45 +559,6 @@ function MetricCard({
   );
 }
 
-// type NodeTone = Tone;
-// type NodePos = 'top' | 'right' | 'bottom' | 'left';
-
-// function NodeChip({
-//   icon,
-//   label,
-//   tone,
-//   position,
-// }: {
-//   icon: ReactNode;
-//   label: string;
-//   tone: NodeTone;
-//   position: NodePos;
-// }) {
-//   const base =
-//     'inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] bg-black/70 backdrop-blur-sm';
-//   const toneClasses: Record<NodeTone, string> = {
-//     sky: 'border-sky-400/60 text-sky-100',
-//     emerald: 'border-emerald-400/60 text-emerald-100',
-//     fuchsia: 'border-fuchsia-400/60 text-fuchsia-100',
-//     amber: 'border-amber-300/60 text-amber-100',
-//   };
-//   const posClasses: Record<NodePos, string> = {
-//     top: 'absolute left-1/2 top-0 -translate-x-1/2 -translate-y-4',
-//     right: 'absolute right-0 top-1/2 translate-x-4 -translate-y-1/2',
-//     bottom: 'absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-4',
-//     left: 'absolute left-0 top-1/2 -translate-x-4 -translate-y-1/2',
-//   };
-
-//   return (
-//     <div className={posClasses[position]}>
-//       <div className={`${base} ${toneClasses[tone]}`}>
-//         <span className="h-1.5 w-1.5 rounded-full bg-current" />
-//         {icon}
-//         <span>{label}</span>
-//       </div>
-//     </div>
-//   );
-// }
 
 function PillarCard({
   tone,

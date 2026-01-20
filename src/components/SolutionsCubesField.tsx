@@ -3,10 +3,14 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import Lottie from 'lottie-react';
+// import { useEffect, useState } from 'react';
+// import Lottie from 'lottie-react';
 
-import Solutionanimation from '../../assets/lottie/solutions-animation.json';
+import { useEffect, useState, useRef } from 'react';
+import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
+
+
+import Solutionanimation from '../../assets/lottie/Tri-cube loader #3.json';
 
 // === icon imports (same grid as Verticals) ===
 import IconBinoculars from '../../assets/icons/icons8-binoculars-100.png';
@@ -113,6 +117,13 @@ export default function SolutionsCubesField() {
     setAppearOrder(order);
   }, [totalCubes]);
 
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
+
+useEffect(() => {
+  lottieRef.current?.setSpeed(0.25); // try 0.25–0.6
+}, []);
+
+
   const centerRow = (ROWS - 1) / 2;
   const centerCol = (COLS - 1) / 2;
   const maxDistance = Math.hypot(centerRow, centerCol);
@@ -212,12 +223,14 @@ export default function SolutionsCubesField() {
           }}
         >
           <div className="pointer-events-auto flex h-full w-full items-center justify-center">
-            <Lottie
-              animationData={Solutionanimation}
-              loop
-              autoplay
-              className="h-[250%] w-[250%]"
-            />
+          <Lottie
+  lottieRef={lottieRef}
+  animationData={Solutionanimation}
+  loop
+  autoplay
+  className="h-[250%] w-[250%]"
+/>
+
           </div>
         </div>
       </motion.div>

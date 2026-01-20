@@ -1,18 +1,11 @@
-// src/app/components/VerticalsCubesField.tsx
 'use client';
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { FileText } from 'lucide-react';
 
-// import Lottie from 'lottie-react';
-
-import { useEffect, useState, useRef } from 'react';
-import Lottie, { type LottieRefCurrentProps } from 'lottie-react';
-
-
-import orbAnimation from '../../assets/lottie/Verticalscube.json';
-
-// === icon imports (re-use same icons as products hero) ===
+// === icon imports (same set you use in VerticalsCubesField / Partners) ===
 import IconBinoculars from '../../assets/icons/icons8-binoculars-100.png';
 import IconBookmark from '../../assets/icons/icons8-bookmark-100.png';
 import IconBox from '../../assets/icons/icons8-box-100.png';
@@ -93,20 +86,12 @@ const iconList = [
   { src: IconWrench, alt: 'Wrench' },
 ];
 
-export default function VerticalsCubesField() {
+export default function CaseStudiesCubesField() {
   const ROWS = 4;
   const COLS = 10;
   const totalCubes = ROWS * COLS;
 
-  const lottieRef = useRef<LottieRefCurrentProps>(null);
-
-
   const [appearOrder, setAppearOrder] = useState<number[]>([]);
-
-  useEffect(() => {
-  lottieRef.current?.setSpeed(0.5); // ✅ slow (try 0.25–0.6)
-}, []);
-
 
   useEffect(() => {
     const ids = Array.from({ length: totalCubes }, (_, i) => i);
@@ -203,7 +188,7 @@ export default function VerticalsCubesField() {
         </div>
       </div>
 
-      {/* Foreground orb cube */}
+      {/* Foreground cube – same styling, but Case Studies icon */}
       <motion.div
         className="pointer-events-none absolute left-1/2 top-[40%] z-20 -translate-x-1/2 -translate-y-1/2 md:top-[35%]"
         initial={{ opacity: 0, scale: 0.7, y: 20 }}
@@ -223,40 +208,27 @@ export default function VerticalsCubesField() {
               'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12), transparent 55%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06), transparent 60%), #141515',
           }}
         >
-          <div className="pointer-events-auto flex h-full w-full items-center justify-center">
-         <Lottie
-  lottieRef={lottieRef}
-  animationData={orbAnimation}
-  loop
-  autoplay
-  className="h-[250%] w-[250%]"
-/>
-
-
+          <div className="flex h-full w-full items-center justify-center">
+            <FileText className="h-12 w-12 text-white" />
           </div>
-        </div>  
+        </div>
       </motion.div>
 
-      {/* Heading + description for Verticals */}
+      {/* Heading + description + chips */}
       <div className="pointer-events-none absolute inset-x-0 top-[55%] z-10 flex flex-col items-center px-6 text-center md:top-[57%]">
-        {/* <p className="mb-3 inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-[11px] font-medium uppercase tracking-[0.20em] text-sky-200">
-          Verticals
-        </p> */}
-
         <p className="mb-4 inline-flex items-center rounded-full border border-sky-400/60 bg-sky-400/15 px-5 py-1.5 text-[13px] font-semibold uppercase tracking-[0.22em] text-sky-200">
-            Verticals
-            </p>
+          Case Studies
+        </p>
 
-
-        <h2
-          className="max-w-4xl text-[40px] font-medium leading-tight text-white sm:text-[48px] md:text-[54px]"
+        <h1
+          className="max-w-5xl text-[40px] font-medium leading-tight text-white sm:text-[48px] md:text-[54px]"
           style={{
             fontFamily:
               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
           }}
         >
-          Infrastructure-heavy industries, one product stack.
-        </h2>
+          Real outcomes. Proven deployments.
+        </h1>
 
         <p
           className="mt-4 max-w-3xl text-sm text-[#9CA3AF] md:text-base"
@@ -265,32 +237,36 @@ export default function VerticalsCubesField() {
               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
           }}
         >
-          The same core platform powers four core verticals – with workflows,
-          integrations and rollout models tuned to the needs of each industry.
+          Explore implementation stories across solutions and verticals — with measurable results,
+          clear scope, and lessons learned.
         </p>
 
-        {/* small chips for each vertical */}
+        {/* quick chips (placeholder — we’ll align with your real categories later) */}
         <div className="mt-4 flex flex-wrap justify-center gap-2 text-[11px] text-slate-200">
           <span className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1">
             <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
-            Service Providers
+            SD-WAN
           </span>
           <span className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1">
             <span className="h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
-            Digital Media
+            Network Security
           </span>
           <span className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-            Enterprise
+            Data Center
           </span>
           <span className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />
+            Enterprise
+          </span>
+          <span className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1">
+            <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
             Government
           </span>
         </div>
       </div>
 
-      {/* Vignettes to keep edges dark */}
+      {/* Vignettes – identical styling */}
       <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_55%,rgba(0,0,0,0.95)_60%,rgba(0,0,0,1)_100%)]" />
       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(0,0,0,1),rgba(0,0,0,0.8)_10%,rgba(0,0,0,0)_22%,rgba(0,0,0,0)_78%,rgba(0,0,0,0.8)_90%,rgba(0,0,0,1))]" />
       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0)_20%,rgba(0,0,0,0)_40%,rgba(0,0,0,0.9)_100%)]" />

@@ -4,8 +4,8 @@ import { motion, cubicBezier } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import PmgtImage from '../../assets/pmgt_new.png';
-import OperationAdvisorImage from '../../assets/Operation_advisor.png';
-import AIChatbotImage from '../../assets/Cpal.png';
+import OperationAdvisorImage from '../../assets/ops.png';
+import AIChatbotImage from '../../assets/cpal_nn.png';
 import SmartHelmetImage from '../../assets/Smarthelmet.png';
 
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);

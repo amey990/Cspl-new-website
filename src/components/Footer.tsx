@@ -1,7 +1,10 @@
 // 'use client';
 
 // import Link from 'next/link';
+// import Image from 'next/image';
 // import { Instagram, Twitter, Linkedin, Youtube } from 'lucide-react';
+
+// import NewsletterImage from '../../assets/main.png';
 
 // const brand = {
 //   name: 'Commedia',
@@ -14,22 +17,32 @@
 //     { label: 'Business Automation', href: '#' },
 //     { label: 'Network Security', href: '#' },
 //     { label: 'Cloud Services', href: '#' },
-//     { label: 'A/v Solutions', href: '#' },
+//     { label: 'A/V Solutions', href: '#' },
 //     { label: 'Satcom', href: '#' },
 //   ],
 //   resources: [
 //     { label: 'Documentation', href: '#' },
-//     { label: 'Case Studies', href: '#' },
+//     // { label: 'Case Studies', href: '#' },
+//     { label: 'Case Studies', href: '/case-studies' },
+
 //     { label: 'Blog', href: '#' },
 //     { label: 'Webinars', href: '#' },
 //     { label: 'Community', href: '#' },
 //   ],
+//   // company: [
+//   //   { label: 'About Us', href: '#' },
+//   //   { label: 'Careers', href: '#' },
+//   //   { label: 'Contact', href: '#' },
+//   //   { label: 'Partners', href: '#' },
+//   // ],
+
 //   company: [
-//     { label: 'About Us', href: '#' },
-//     { label: 'Careers', href: '#' },
-//     { label: 'Contact', href: '#' },
-//     { label: 'Partners', href: '#' },
-//   ],
+//   { label: 'About Us', href: '/Aboutus' },
+//   { label: 'Careers', href: '/Careers' },
+//   { label: 'Contact', href: '/contact' },
+//   { label: 'Partners', href: '/partners' },
+// ],
+
 // };
 
 // const socials = [
@@ -41,7 +54,7 @@
 
 // export default function Footer() {
 //   return (
-//     <footer className="relative mt-24 w-full border-t border-white/10 bg-[#010000] overflow-hidden">
+//     <footer className="relative mt-24 w-full overflow-hidden border-t border-white/10 bg-[#010000]">
 //       {/* subtle radial glow */}
 //       <div className="pointer-events-none absolute inset-0 opacity-60">
 //         <div className="absolute left-1/2 top-[45%] h-[1200px] w-[1200px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08),rgba(0,0,0,0)_60%)]" />
@@ -53,12 +66,16 @@
 //           <div>
 //             <h2
 //               className="text-3xl font-semibold tracking-tight text-white sm:text-4xl"
-//               style={{ fontFamily: '"Inter var","InterVariable",Inter,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial' }}
+//               style={{
+//                 fontFamily:
+//                   '"Inter var","InterVariable",Inter,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial',
+//               }}
 //             >
 //               Stay ahead with {brand.name}.
 //             </h2>
 //             <p className="mt-3 max-w-2xl text-lg text-zinc-300">
-//               Join thousands of professionals who trust {brand.name} for innovative business solutions.
+//               Join thousands of professionals who trust {brand.name} for innovative business
+//               solutions.
 //             </p>
 
 //             <div className="mt-8 flex max-w-xl flex-col gap-3 sm:flex-row">
@@ -73,11 +90,13 @@
 //             </div>
 //           </div>
 
-//           <div className="relative mx-auto w-full max-w-md">
+//           {/* <div className="relative mx-auto w-full max-w-md"> */}
+//           <div className="relative mx-auto w-full max-w-[400px]">
+
 //             <div className="absolute -left-3 -top-5 h-[88%] w-[92%] -rotate-3 rounded-3xl bg-white/10" />
 //             <div className="absolute -right-2 -bottom-5 h-[88%] w-[92%] rotate-3 rounded-3xl bg-white/10" />
-//             <img
-//               src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop"
+//             <Image
+//               src={NewsletterImage}
 //               alt="Newsletter visual"
 //               className="relative z-10 rounded-3xl"
 //             />
@@ -91,7 +110,10 @@
 //           <div>
 //             <div
 //               className="text-xl font-semibold text-white"
-//               style={{ fontFamily: '"Inter var","InterVariable",Inter,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial' }}
+//               style={{
+//                 fontFamily:
+//                   '"Inter var","InterVariable",Inter,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial',
+//               }}
 //             >
 //               {brand.name}.
 //             </div>
@@ -160,19 +182,25 @@
 //           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
 //             <p>© {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
 //             <div className="flex items-center gap-6">
-//               <Link href="#" className="hover:text-white">Terms of Service</Link>
-//               <Link href="#" className="hover:text-white">Privacy Policy</Link>
-//               <Link href="#" className="hover:text-white">Cookie Settings</Link>
-//               <Link href="#" className="hover:text-white">Accessibility</Link>
+//               <Link href="#" className="hover:text-white">
+//                 Terms of Service
+//               </Link>
+//               <Link href="#" className="hover:text-white">
+//                 Privacy Policy
+//               </Link>
+//               <Link href="#" className="hover:text-white">
+//                 Cookie Settings
+//               </Link>
+//               <Link href="#" className="hover:text-white">
+//                 Accessibility
+//               </Link>
 //             </div>
 //           </div>
 //         </div>
 //       </div>
-//       {/* nothing after this */}
 //     </footer>
 //   );
 // }
-
 
 
 'use client';
@@ -189,37 +217,42 @@ const brand = {
     'Empowering teams with reliable, scalable, and elegant product experiences.',
 };
 
+// ✅ central place for routes (easy to change later)
+const ROUTES = {
+  solutions: '/solutions',
+  businessAutomation: '/solutions', // change later if you create a dedicated page
+  networkSecurity: '/Solutions-NetworkSecurity',
+  cloudSolutions: '/Solutions-Cloudsolutions',
+  avSolutions: '/Solutions-Audio',
+  satcom: '/Solutions-Satcom',
+  caseStudies: '/case-studies',
+  about: '/Aboutus',
+  careers: '/Careers',
+  contact: '/contact',
+  partners: '/partners',
+};
+
 const columns = {
   solutions: [
-    { label: 'Business Automation', href: '#' },
-    { label: 'Network Security', href: '#' },
-    { label: 'Cloud Services', href: '#' },
-    { label: 'A/V Solutions', href: '#' },
-    { label: 'Satcom', href: '#' },
+    { label: 'Business Automation', href: ROUTES.businessAutomation },
+    { label: 'Network Security', href: ROUTES.networkSecurity },
+    { label: 'Cloud Services', href: ROUTES.cloudSolutions },
+    { label: 'A/V Solutions', href: ROUTES.avSolutions },
+    { label: 'Satcom', href: ROUTES.satcom },
   ],
   resources: [
     { label: 'Documentation', href: '#' },
-    // { label: 'Case Studies', href: '#' },
-    { label: 'Case Studies', href: '/case-studies' },
-
+    { label: 'Case Studies', href: ROUTES.caseStudies },
     { label: 'Blog', href: '#' },
     { label: 'Webinars', href: '#' },
     { label: 'Community', href: '#' },
   ],
-  // company: [
-  //   { label: 'About Us', href: '#' },
-  //   { label: 'Careers', href: '#' },
-  //   { label: 'Contact', href: '#' },
-  //   { label: 'Partners', href: '#' },
-  // ],
-
   company: [
-  { label: 'About Us', href: '/Aboutus' },
-  { label: 'Careers', href: '/Careers' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Partners', href: '/partners' },
-],
-
+    { label: 'About Us', href: ROUTES.about },
+    { label: 'Careers', href: ROUTES.careers },
+    { label: 'Contact', href: ROUTES.contact },
+    { label: 'Partners', href: ROUTES.partners },
+  ],
 };
 
 const socials = [
@@ -267,16 +300,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* <div className="relative mx-auto w-full max-w-md"> */}
           <div className="relative mx-auto w-full max-w-[400px]">
-
             <div className="absolute -left-3 -top-5 h-[88%] w-[92%] -rotate-3 rounded-3xl bg-white/10" />
             <div className="absolute -right-2 -bottom-5 h-[88%] w-[92%] rotate-3 rounded-3xl bg-white/10" />
-            <Image
-              src={NewsletterImage}
-              alt="Newsletter visual"
-              className="relative z-10 rounded-3xl"
-            />
+            <Image src={NewsletterImage} alt="Newsletter visual" className="relative z-10 rounded-3xl" />
           </div>
         </div>
       </div>
@@ -313,7 +340,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-white">Solutions</h3>
+            {/* ✅ Make the section title clickable too */}
+            <Link href={ROUTES.solutions} className="text-lg font-semibold text-white hover:text-white/90">
+              Solutions
+            </Link>
+
             <ul className="mt-5 space-y-3 text-sm">
               {columns.solutions.map((item) => (
                 <li key={item.label}>
@@ -353,24 +384,16 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar — last element, no extra spacing after */}
+      {/* Bottom bar */}
       <div className="mt-10 border-t border-white/10">
         <div className="mx-auto max-w-screen-2xl px-4 py-6 text-sm text-zinc-400 md:px-6 lg:px-8">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p>© {new Date().getFullYear()} {brand.name}. All rights reserved.</p>
             <div className="flex items-center gap-6">
-              <Link href="#" className="hover:text-white">
-                Terms of Service
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Privacy Policy
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Cookie Settings
-              </Link>
-              <Link href="#" className="hover:text-white">
-                Accessibility
-              </Link>
+              <Link href="#" className="hover:text-white">Terms of Service</Link>
+              <Link href="#" className="hover:text-white">Privacy Policy</Link>
+              <Link href="#" className="hover:text-white">Cookie Settings</Link>
+              <Link href="#" className="hover:text-white">Accessibility</Link>
             </div>
           </div>
         </div>

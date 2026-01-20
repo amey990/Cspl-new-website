@@ -10,7 +10,7 @@ import { motion } from 'framer-motion';
 import GradientText from '@/components/GradientText';
 
 import NetworkSecurityImg from '../../assets/Network Security.png';
-import CloudSolutionsImg from '../../assets/Cloud Solutions.png';
+import CloudSolutionsImg from '../../assets/Cloud_new.png';
 import SatelliteImg from '../../assets/Satellite.png';
 
 const CARD_BG = '#141516';
@@ -53,7 +53,7 @@ export default function Solutions() {
           className="relative h-full w-full flex items-center justify-center"
           style={{ backgroundColor: CARD_BG }}
         >
-          <div className="relative h-[150%] w-[152%]">
+          <div className="relative h-[100%] w-[132%]">
             <Image
               src={CloudSolutionsImg}
               alt="Cloud Solutions"

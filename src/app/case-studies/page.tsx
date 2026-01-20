@@ -1,12 +1,26 @@
+import CaseStudiesCubesField from '../../components/CaseStudiesCubesField';
+import CaseStudiesGrid from './CaseStudiesGrid';
+import { CASE_STUDIES } from './caseStudies.data';
+
 export default function CaseStudiesPage() {
   return (
-    <section className="px-6 py-24 md:px-8 lg:px-16">
-      <h1 className="text-4xl md:text-5xl font-semibold mb-4">
-        Case Studies
-      </h1>
-      <p className="text-lg text-zinc-300 max-w-2xl">
-        Showcase customer success stories and measurable outcomes.
-      </p>
-    </section>
+    <main className="bg-[#050506]">
+      <CaseStudiesCubesField />
+
+      <section className="px-6 py-16 md:px-8 lg:px-16">
+        <div className="mx-auto max-w-[1200px]">
+          <h2 className="text-4xl md:text-5xl font-semibold text-white">
+            Explore case studies
+          </h2>
+          <p className="mt-3 text-zinc-300 max-w-2xl">
+            Browse deployments by verticals and solutions — open any case study for full details.
+          </p>
+        </div>
+
+        <div className="mt-10">
+          <CaseStudiesGrid items={CASE_STUDIES} />
+        </div>
+      </section>
+    </main>
   );
 }
