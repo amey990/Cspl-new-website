@@ -4,7 +4,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, cubicBezier } from 'framer-motion';
 
-import CNMSImage from '../../../assets/CNMS_dummy.jpg';
+// import CNMSImage from '../../../assets/CNMS_dummy.jpg';
+import CNMSImage from '../../../assets/products/Nms2.png';
+import CNMSImage2 from "../../../assets/products/Nms3.png"; // change to Nms4.png etc if you want
+
+
 
 
 import dynamic from 'next/dynamic';
@@ -152,34 +156,31 @@ export default function CNMSPage() {
           </motion.div>
 
           {/* RIGHT: Hero image with slight 3D tilt */}
-         <motion.div
+       <motion.div
   {...fadeIn}
   className="relative flex-1 md:flex-[0.6]"
   style={{ perspective: '1200px' }}
 >
-  <div
-    className="relative mx-auto w-full max-w-[560px] rounded-2xl border border-white/10 bg-[#121316]"
-    style={{
-      transform: 'rotateX(14deg) rotateZ(-2deg)',
-      boxShadow:
-        '0 20px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06), 0 0 0 1px rgba(255,255,255,.04)',
-      WebkitMaskImage:
-        'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-      maskImage:
-        'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-    }}
-  >
-    <div className="relative overflow-hidden rounded-2xl">
-      <Image
-        src={CNMSImage}
-        alt="CNMS network management dashboard"
-        className="h-auto w-full"
-        quality={100}
-        priority
-      />
-    </div>
-  </div>
+  <Image
+  src={CNMSImage}
+  alt="CNMS network management dashboard"
+  quality={100}
+  priority
+  className="mx-auto w-full max-w-[720px] md:max-w-[780px] lg:max-w-[860px] rounded-2xl border border-white/10"
+  style={{
+    transform: "translateY(-14px) rotateX(14deg) rotateZ(-2deg) scale(1.08)",
+    boxShadow:
+      "0 20px 40px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06), 0 0 0 1px rgba(255,255,255,.04)",
+    WebkitMaskImage:
+      "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+    maskImage:
+      "linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)",
+  }}
+  sizes="(min-width: 1024px) 860px, (min-width: 768px) 780px, 100vw"
+/>
+
 </motion.div>
+
 
         </section>
 

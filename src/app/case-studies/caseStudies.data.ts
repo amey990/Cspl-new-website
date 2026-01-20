@@ -1,10 +1,40 @@
-// // src/app/case-studies/caseStudies.data.ts
 
-// export type Vertical =
-//   | "Service Provider"
-//   | "Digital Media"
-//   | "Enterprise"
-//   | "Government";
+
+// import type { StaticImageData } from "next/image";
+
+// /* =========================
+//  * Service Provider
+//  * ========================= */
+// import sp1 from "../../../assets/case studies/sp1.png";
+// import sp2 from "../../../assets/case studies/sp2.png";
+// import sp3 from "../../../assets/case studies/sp3.png";
+// import sp4 from "../../../assets/case studies/sp4.png";
+
+// /* =========================
+//  * Digital Media (Dm1..Dm6)
+//  * ========================= */
+// import dm1 from "../../../assets/case studies/Dm1.png";
+// import dm2 from "../../../assets/case studies/Dm2.png";
+// import dm3 from "../../../assets/case studies/Dm3.png";
+// import dm4 from "../../../assets/case studies/Dm4.png";
+// import dm5 from "../../../assets/case studies/Dm5.png";
+// import dm6 from "../../../assets/case studies/Dm6.png";
+
+// /* =========================
+//  * Enterprise (En1..En3)
+//  * ========================= */
+// import en1 from "../../../assets/case studies/En1.png";
+// import en2 from "../../../assets/case studies/En2.png";
+// import en3 from "../../../assets/case studies/En3.png";
+
+// /* =========================
+//  * Government (Go1..Go3)
+//  * ========================= */
+// import go1 from "../../../assets/case studies/Go1.png";
+// import go2 from "../../../assets/case studies/Go2.png";
+// import go3 from "../../../assets/case studies/Go3.png";
+
+// export type Vertical = "Service Provider" | "Digital Media" | "Enterprise" | "Government";
 
 // export type Solution =
 //   | "Data Center"
@@ -13,23 +43,28 @@
 //   | "Wireless Networking"
 //   | "Digital Media";
 
-// export type CaseStudyKind = "vertical" | "solution";
-
 // export type CaseStudy = {
 //   id: string;
-//   kind: CaseStudyKind; // ✅ separates vertical cards vs solution cards
-
 //   title: string;
 //   subtitle: string;
-//   cover: string;
 
-//   vertical: Vertical;
+//   // ✅ single cover (default)
+//   cover?: StaticImageData | string | null;
 
-//   // Tags shown on cards + modal
+//   // ✅ optional per-vertical override (needed for MAM which appears in 2 verticals)
+//   coverByVertical?: Partial<Record<Vertical, StaticImageData | string | null>>;
+
+//   // ✅ object-position (fix cut-off)
+//   coverPos?: string;
+
+//   // ✅ optional per-vertical position override
+//   coverPosByVertical?: Partial<Record<Vertical, string>>;
+
+//   verticals: Vertical[];
 //   solutions: Solution[];
 
-//   // ✅ used ONLY for grouping in Solutions mode (prevents duplicates across groups)
-//   primarySolution?: Solution;
+//   showInVerticals?: boolean;
+//   showInSolutions?: boolean;
 
 //   tags: string[];
 //   metrics: { label: string; value: string }[];
@@ -41,12 +76,7 @@
 //   stack?: string[];
 // };
 
-// export const VERTICALS: Vertical[] = [
-//   "Service Provider",
-//   "Digital Media",
-//   "Enterprise",
-//   "Government",
-// ];
+// export const VERTICALS: Vertical[] = ["Service Provider", "Digital Media", "Enterprise", "Government"];
 
 // export const SOLUTIONS: Solution[] = [
 //   "Data Center",
@@ -56,577 +86,381 @@
 //   "Digital Media",
 // ];
 
-// // Reuse existing covers (safe). Replace later with your actual images.
-// const COVERS = ["/case-studies/cs-1.jpg", "/case-studies/cs-2.jpg", "/case-studies/cs-3.jpg"];
-// const coverAt = (i: number) => COVERS[i % COVERS.length];
-
-// const baseMetrics = [
-//   { label: "Scope", value: "Multi-site" },
-//   { label: "Reliability", value: "Improved" },
-//   { label: "Ops Load", value: "Reduced" },
-// ];
-
-// const baseText = {
-//   overview:
-//     "Delivered a scoped deployment with measurable outcomes, improved reliability, and repeatable operating procedures for long-term stability.",
-//   challenge: [
-//     "Fragmented tooling and inconsistent operational visibility.",
-//     "Hard-to-predict performance during peak hours.",
-//     "Manual processes increasing time-to-resolution.",
+// const base = {
+//   tags: [] as string[],
+//   metrics: [
+//     { label: "Scope", value: "Multi-site" },
+//     { label: "Reliability", value: "Improved" },
+//     { label: "Ops Load", value: "Reduced" },
 //   ],
-//   approach: [
-//     "Baseline assessment + rollout plan with checkpoints.",
-//     "Deployment with validation gates and rollback strategy.",
-//     "Standardized runbooks + monitoring and handover.",
-//   ],
-//   results: [
-//     "More stable operations with fewer escalations.",
-//     "Improved service quality and faster troubleshooting.",
-//     "Cleaner standardization for future expansions.",
-//   ],
+//   overview: "Customer success story with measurable outcomes.",
+//   challenge: ["Legacy constraints", "Scale + reliability needs", "Operational complexity"],
+//   approach: ["Assessment + design", "Phased rollout", "Validation + handover"],
+//   results: ["Improved stability", "Faster issue resolution", "Lower operational overhead"],
+//   stack: ["Planning", "Execution", "Monitoring"],
 // };
 
 // export const CASE_STUDIES: CaseStudy[] = [
-//   /* ------------------------------------------------------------------ */
-//   /* VERTICALS: Service Provider (ONLY these 4) */
-//   /* ------------------------------------------------------------------ */
+//   /* =========================
+//    * VERTICALS — Service Provider
+//    * ========================= */
 //   {
 //     id: "sp-video-streaming-private-network",
-//     kind: "vertical",
 //     title: "Video Streaming Solution on Private Network",
 //     subtitle: "Low-latency private video delivery with consistent uptime.",
-//     cover: coverAt(0),
-//     vertical: "Service Provider",
-//     solutions: ["Digital Media", "Network Security"],
-//     tags: ["Service Provider", "Digital Media", "Network Security"],
-//     metrics: baseMetrics,
-//     overview:
-//       "Implemented a private video streaming stack designed for consistent delivery, controlled access, and predictable performance across distributed sites.",
-//     challenge: [
-//       "Maintaining stable video quality across variable network conditions.",
-//       "Securing access while supporting operational monitoring.",
-//       "Reducing outages caused by inconsistent routing and policy.",
-//     ],
-//     approach: [
-//       "Designed traffic paths for priority media flows.",
-//       "Implemented access controls + secure segmentation policies.",
-//       "Established monitoring dashboards and SOPs for NOC operations.",
-//     ],
-//     results: [
-//       "Smoother video playback with fewer buffering events.",
-//       "Stronger security boundaries for media access.",
-//       "Reduced operational escalations via consistent monitoring.",
-//     ],
-//     stack: ["Private Network", "Streaming", "Segmentation", "Monitoring"],
+//     cover: sp1,
+//     verticals: ["Service Provider"],
+//     solutions: [],
+//     showInVerticals: true,
+//     showInSolutions: false,
+//     ...base,
 //   },
 //   {
 //     id: "sp-seamless-video-noc-management",
-//     kind: "vertical",
 //     title: "Seamless Video NOC Management",
 //     subtitle: "Centralized monitoring + faster response for media operations.",
-//     cover: coverAt(1),
-//     vertical: "Service Provider",
-//     solutions: ["Digital Media"],
-//     tags: ["Service Provider", "Digital Media"],
-//     metrics: baseMetrics,
-//     overview:
-//       "Built a NOC workflow for media operations with clear escalation paths, consistent dashboards, and simplified incident response.",
-//     challenge: [
-//       "Disjointed visibility across multiple media touchpoints.",
-//       "Slow incident triage due to scattered tools.",
-//       "Operational overload during peak broadcast hours.",
-//     ],
-//     approach: [
-//       "Unified monitoring views + alert thresholds.",
-//       "Defined incident triage flows and escalation ladders.",
-//       "Standardized reporting for daily/weekly operational reviews.",
-//     ],
-//     results: [
-//       "Faster issue detection and triage.",
-//       "Reduced manual coordination overhead.",
-//       "Improved reliability through consistent operations.",
-//     ],
-//     stack: ["NOC Dashboards", "Alerting", "Runbooks", "Reporting"],
+//     cover: sp2,
+//     coverPos: "50% 20%",
+//     verticals: ["Service Provider"],
+//     solutions: [],
+//     showInVerticals: true,
+//     showInSolutions: false,
+//     ...base,
 //   },
 //   {
 //     id: "sp-national-network-rollout-enterprise-wifi",
-//     kind: "vertical",
 //     title: "National Network Rollout for Enterprise Wi-Fi",
 //     subtitle: "Multi-site Wi-Fi rollout with consistent policy and security.",
-//     cover: coverAt(2),
-//     vertical: "Service Provider",
-//     solutions: ["Wireless Networking", "Network Security"],
-//     tags: ["Service Provider", "Wireless Networking", "Network Security"],
-//     metrics: baseMetrics,
-//     overview:
-//       "Delivered a nationwide wireless rollout with standardized deployment patterns, policy-driven access, and repeatable operational controls.",
-//     challenge: [
-//       "Inconsistent deployments across sites leading to roaming issues.",
-//       "Difficulty maintaining standard security across zones.",
-//       "Operational complexity across distributed teams.",
-//     ],
-//     approach: [
-//       "Standardized site rollout templates and validations.",
-//       "Implemented consistent security and onboarding workflows.",
-//       "Created runbooks + post-deployment health checks.",
-//     ],
-//     results: [
-//       "Improved roaming and site stability.",
-//       "Cleaner security policy enforcement.",
-//       "Reduced rollout friction with repeatable templates.",
-//     ],
-//     stack: ["Wi-Fi", "Access Control", "Segmentation", "Operations"],
+//     cover: sp3,
+//     coverPos: "50% 14%", // ✅ brings subject down / prevents head cut-off
+//     verticals: ["Service Provider"],
+//     solutions: [],
+//     showInVerticals: true,
+//     showInSolutions: false,
+//     ...base,
 //   },
 //   {
 //     id: "sp-global-enterprise-presales-support",
-//     kind: "vertical",
 //     title: "Global Enterprise Presales Support",
 //     subtitle: "Solution architecture, sizing, and rollout planning support.",
-//     cover: coverAt(0),
-//     vertical: "Service Provider",
-//     solutions: ["Network Security"],
-//     tags: ["Service Provider", "Network Security"],
-//     metrics: baseMetrics,
-//     overview:
-//       "Supported global presales efforts with architecture guidance, deployment planning, and security posture alignment for enterprise environments.",
-//     challenge: [
-//       "Rapidly scoping multi-region requirements.",
-//       "Aligning security requirements with rollout timelines.",
-//       "Reducing risk during design-to-deploy transitions.",
-//     ],
-//     approach: [
-//       "Created reference architectures and validation checklists.",
-//       "Mapped requirements to deployment patterns and controls.",
-//       "Provided documentation for rollout + operational readiness.",
-//     ],
-//     results: [
-//       "Faster presales cycles with clearer technical plans.",
-//       "Reduced deployment risk through validated designs.",
-//       "Improved stakeholder alignment with documented scope.",
-//     ],
-//     stack: ["Architecture", "Security", "Sizing", "Documentation"],
+//     cover: sp4,
+//     coverPos: "50% 17%", // ✅ same fix
+//     verticals: ["Service Provider"],
+//     solutions: [],
+//     showInVerticals: true,
+//     showInSolutions: false,
+//     ...base,
 //   },
 
-//   /* ------------------------------------------------------------------ */
-//   /* VERTICALS: Digital Media (ONLY these 6) */
-//   /* ------------------------------------------------------------------ */
+//   /* =========================
+//    * VERTICALS — Digital Media (Dm1..Dm6)
+//    * ========================= */
 //   {
 //     id: "dm-video-headend-satellite-fiber",
-//     kind: "vertical",
 //     title: "Video Head-End Setup via Satellite & Fiber",
-//     subtitle: "Hybrid head-end delivery designed for stable distribution.",
-//     cover: coverAt(1),
-//     vertical: "Digital Media",
-//     solutions: ["Digital Media", "Data Center"],
-//     tags: ["Digital Media", "Digital Media", "Data Center"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Head-End", "Satellite", "Fiber", "Monitoring"],
+//     subtitle: "Robust head-end infrastructure for satellite + fiber feeds.",
+//     cover: dm1,
+//     verticals: ["Digital Media"],
+//     solutions: ["Digital Media"],
+//     showInVerticals: true,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
 //     id: "dm-reduced-channel-opex-smart-upgrade",
-//     kind: "vertical",
 //     title: "Reduced Channel OPEX through Smart Network Upgrade",
-//     subtitle: "Operational savings via network modernization and tooling.",
-//     cover: coverAt(2),
-//     vertical: "Digital Media",
+//     subtitle: "Lower recurring costs with modernization and better monitoring.",
+//     cover: dm2,
+//     verticals: ["Digital Media"],
 //     solutions: ["Digital Media"],
-//     tags: ["Digital Media", "Digital Media"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Network Upgrade", "Telemetry", "Automation"],
+//     showInVerticals: true,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
 //     id: "dm-45m-cband-tvro-turnaround",
-//     kind: "vertical",
 //     title: "4.5M C Band TVRO Setup for Turnaround Services",
-//     subtitle: "Reliable reception and turnaround for broadcast workflows.",
-//     cover: coverAt(0),
-//     vertical: "Digital Media",
+//     subtitle: "Fast deployment for reliable turnaround operations.",
+//     cover: dm3,
+//     verticals: ["Digital Media"],
 //     solutions: ["Digital Media"],
-//     tags: ["Digital Media", "Digital Media"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["TVRO", "RF", "Turnaround", "Ops"],
+//     showInVerticals: true,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "dm-satellite-uplink-cas-integration",
-//     kind: "vertical",
+//     id: "dm-advanced-uplink-cas-integration",
 //     title: "Advanced Satellite Uplink with CAS Integration",
-//     subtitle: "Secure uplink workflow with integrated conditional access.",
-//     cover: coverAt(1),
-//     vertical: "Digital Media",
-//     solutions: ["Digital Media", "Network Security"],
-//     tags: ["Digital Media", "Digital Media", "Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Uplink", "CAS", "Security", "Monitoring"],
+//     subtitle: "Secure uplink workflow with CAS compatibility.",
+//     cover: dm4,
+//       coverPos: "50% 17%",
+//     verticals: ["Digital Media"],
+//     solutions: ["Digital Media"],
+//     showInVerticals: true,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "dm-enterprise-mam-platform-integration",
-//     kind: "vertical",
+//     id: "mam-platform-integration",
 //     title: "Enterprise MAM Platform Integration",
-//     subtitle: "Unified media asset management workflows and automation.",
-//     cover: coverAt(2),
-//     vertical: "Digital Media",
+//     subtitle: "Unified media asset workflows across teams and locations.",
+//     // ✅ use different cover depending on the vertical section
+//     cover: dm5, // default (also used in Solutions mode)
+//      coverPos: "50% 22%",
+//     coverByVertical: {
+//       "Digital Media": dm5,
+//       "Government": go3,
+//     },
+//     verticals: ["Digital Media", "Government"],
 //     solutions: ["Digital Media"],
-//     tags: ["Digital Media", "Digital Media"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["MAM", "Workflow", "Integration", "Automation"],
+//     showInVerticals: true,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
 //     id: "dm-multi-layer-compliance-monitoring",
-//     kind: "vertical",
 //     title: "Multi-Layer Compliance Monitoring System",
-//     subtitle: "Compliance monitoring with reliable alerting and reporting.",
-//     cover: coverAt(0),
-//     vertical: "Digital Media",
-//     solutions: ["Digital Media", "Network Security"],
-//     tags: ["Digital Media", "Digital Media", "Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Compliance", "Monitoring", "Alerting", "Reporting"],
+//     subtitle: "Automated checks for content compliance and audit readiness.",
+//     cover: dm6,
+//     coverPos: "50% 22%",
+//     verticals: ["Digital Media"],
+//     solutions: ["Digital Media"],
+//     showInVerticals: true,
+//     showInSolutions: true,
+//     ...base,
 //   },
 
-//   /* ------------------------------------------------------------------ */
-//   /* VERTICALS: Enterprise (ONLY these 3) */
-//   /* ------------------------------------------------------------------ */
+//   /* =========================
+//    * VERTICALS — Enterprise (En1..En3)
+//    * ========================= */
 //   {
-//     id: "ent-chromaflo-it-infra-mumbai",
-//     kind: "vertical",
+//     id: "ent-chromaflo-end-to-end-it-infra",
 //     title: "End-to-End IT Infrastructure for Chromaflo Technologies (Mumbai)",
-//     subtitle: "Foundation infra design with stronger reliability and controls.",
-//     cover: coverAt(1),
-//     vertical: "Enterprise",
-//     solutions: ["Data Center", "Network Security"],
-//     tags: ["Enterprise", "Data Center", "Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Core Network", "Security", "Standardization"],
+//     subtitle: "Core IT + network foundation with clean operations.",
+//     cover: en1,
+//     verticals: ["Enterprise"],
+//     solutions: [],
+//     showInVerticals: true,
+//     showInSolutions: false,
+//     ...base,  
 //   },
 //   {
 //     id: "ent-cex-wireless-infra-mumbai",
-//     kind: "vertical",
 //     title: "Wireless Network Infrastructure for CeX WeBuy (Mumbai)",
-//     subtitle: "Stable Wi-Fi with policy-based access and cleaner roaming.",
-//     cover: coverAt(2),
-//     vertical: "Enterprise",
-//     solutions: ["Wireless Networking", "Network Security"],
-//     tags: ["Enterprise", "Wireless Networking", "Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Wi-Fi", "Access Control", "Monitoring"],
+//     subtitle: "High-performance Wi-Fi with stable roaming and control.",
+//     cover: en2,
+//     coverPos: "50% 19%",
+//     verticals: ["Enterprise"],
+//     solutions: ["Wireless Networking"],
+//     showInVerticals: true,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
 //     id: "ent-leeco-multi-location-wifi-office-automation",
-//     kind: "vertical",
 //     title: "Multi-Location Wi-Fi & Office Automation for LeEco (India)",
-//     subtitle: "Multi-site connectivity with operational simplification.",
-//     cover: coverAt(0),
-//     vertical: "Enterprise",
-//     solutions: ["Wireless Networking", "Network Security"],
-//     tags: ["Enterprise", "Wireless Networking", "Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Wi-Fi", "Automation", "Operations"],
+//     subtitle: "Multi-branch wireless + office automation rollout.",
+//     cover: en3,
+//     verticals: ["Enterprise"],
+//     solutions: ["Wireless Networking"],
+//     showInVerticals: true,
+//     showInSolutions: true,
+//     ...base,
 //   },
 
-//   /* ------------------------------------------------------------------ */
-//   /* VERTICALS: Government (ONLY these 3) */
-//   /* ------------------------------------------------------------------ */
+//   /* =========================
+//    * VERTICALS — Government (Go1..Go2 + MAM uses Go3 via coverByVertical)
+//    * ========================= */
 //   {
-//     id: "gov-isro-istrac-noc-45-centers",
-//     kind: "vertical",
+//     id: "gov-noc-management-45-isro-centers",
 //     title: "NOC Management Across 45 ISRO Centers (ISTRAC)",
-//     subtitle: "Centralized operations with clearer visibility and response.",
-//     cover: coverAt(2),
-//     vertical: "Government",
-//     solutions: ["Network Security", "Data Center"],
-//     tags: ["Government", "Network Security", "Data Center"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["NOC", "Ops", "Monitoring", "Runbooks"],
+//     subtitle: "Operational visibility and standardized incident handling.",
+//     cover: go1,
+//     verticals: ["Government"],
+//     solutions: [],
+//     showInVerticals: true,
+//     showInSolutions: false,
+//     ...base,
 //   },
 //   {
-//     id: "gov-isro-mars-mission-redundant-satellite-network",
-//     kind: "vertical",
+//     id: "gov-satellite-network-redundancy-mars-mission",
 //     title: "Satellite Network with Redundancy for Mars Mission (ISRO)",
-//     subtitle: "Redundant comms design with reliability-first operations.",
-//     cover: coverAt(1),
-//     vertical: "Government",
-//     solutions: ["Digital Media", "Network Security"],
-//     tags: ["Government", "Digital Media", "Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Redundancy", "Satellite", "Security", "Ops"],
-//   },
-//   {
-//     id: "gov-enterprise-mam-platform-integration",
-//     kind: "vertical",
-//     title: "Enterprise MAM Platform Integration",
-//     subtitle: "Media workflow integration for institutional operations.",
-//     cover: coverAt(0),
-//     vertical: "Government",
-//     solutions: ["Digital Media"],
-//     tags: ["Government", "Digital Media"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["MAM", "Workflow", "Integration"],
+//     subtitle: "Redundant design for resilient mission communications.",
+//     cover: go2,
+//     verticals: ["Government"],
+//     solutions: [],
+//     showInVerticals: true,
+//     showInSolutions: false,
+//     ...base,
 //   },
 
-//   /* ------------------------------------------------------------------ */
-//   /* SOLUTIONS: Data Center (ONLY these 5) */
-//   /* ------------------------------------------------------------------ */
+//   /* =========================
+//    * SOLUTIONS — (kept as-is for now)
+//    * ========================= */
 //   {
-//     id: "sol-dc-chhattisgarh-statewide-network",
-//     kind: "solution",
-//     primarySolution: "Data Center",
+//     id: "dc-chhattisgarh-statewide-network",
 //     title: "Chhattisgarh Statewide Network",
-//     subtitle: "Core infrastructure modernization for statewide operations.",
-//     cover: coverAt(1),
-//     vertical: "Government",
+//     subtitle: "Statewide backbone modernization and operations readiness.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Data Center"],
-//     tags: ["Data Center"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Core", "Routing", "Ops"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-dc-tech-upgrade",
-//     kind: "solution",
-//     primarySolution: "Data Center",
+//     id: "dc-data-center-tech-upgrade",
 //     title: "Data Center Tech Upgrade",
-//     subtitle: "Infrastructure refresh with smoother operations and handover.",
-//     cover: coverAt(2),
-//     vertical: "Service Provider",
+//     subtitle: "Modernized DC stack to improve reliability and provisioning.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Data Center"],
-//     tags: ["Data Center"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Refresh", "Validation", "Change Control"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-dc-banking-ops",
-//     kind: "solution",
-//     primarySolution: "Data Center",
+//     id: "dc-banking-data-center-ops",
 //     title: "Banking Data Center Ops",
-//     subtitle: "Operational improvements for banking-grade environments.",
-//     cover: coverAt(0),
-//     vertical: "Enterprise",
+//     subtitle: "Operational hardening, monitoring, and process runbooks.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Data Center"],
-//     tags: ["Data Center"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Ops", "Monitoring", "SOPs"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-dc-embassy-wan-deployment",
-//     kind: "solution",
-//     primarySolution: "Data Center",
+//     id: "dc-embassy-wan-deployment",
 //     title: "Embassy WAN Deployment",
-//     subtitle: "Secure connectivity with controlled deployment approach.",
-//     cover: coverAt(1),
-//     vertical: "Government",
+//     subtitle: "Secure connectivity and managed operations across locations.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Data Center"],
-//     tags: ["Data Center"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["WAN", "Security", "Operations"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-dc-chromaflo-setup",
-//     kind: "solution",
-//     primarySolution: "Data Center",
+//     id: "dc-chromaflo-data-center-setup",
 //     title: "Chromaflo Data Center Setup",
-//     subtitle: "Data center setup and standardization for enterprise needs.",
-//     cover: coverAt(2),
-//     vertical: "Enterprise",
+//     subtitle: "DC setup + operational handover for enterprise workloads.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Data Center"],
-//     tags: ["Data Center"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Setup", "Standardization", "Monitoring"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
-
-//   /* ------------------------------------------------------------------ */
-//   /* SOLUTIONS: SD-WAN (ONLY these 3) */
-//   /* ------------------------------------------------------------------ */
 //   {
-//     id: "sol-sdwan-retail-chain",
-//     kind: "solution",
-//     primarySolution: "SD-WAN",
+//     id: "sdwan-retail-chain-deployment",
 //     title: "SD-WAN Deployment for Retail Chain",
-//     subtitle: "Branch connectivity improvements with cleaner policy control.",
-//     cover: coverAt(0),
-//     vertical: "Enterprise",
+//     subtitle: "Consistent policy and better uptime across branch networks.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["SD-WAN"],
-//     tags: ["SD-WAN"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["SD-WAN", "Policy", "Telemetry"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-sdwan-indian-bank-ops",
-//     kind: "solution",
-//     primarySolution: "SD-WAN",
+//     id: "sdwan-indian-bank-ops",
 //     title: "Indian Bank SDWAN Ops",
-//     subtitle: "Operational stability and visibility for banking WAN.",
-//     cover: coverAt(1),
-//     vertical: "Enterprise",
+//     subtitle: "Centralized operations and troubleshooting improvements.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["SD-WAN"],
-//     tags: ["SD-WAN"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["SD-WAN", "Ops", "Monitoring"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-sdwan-networking-office-automation",
-//     kind: "solution",
-//     primarySolution: "SD-WAN",
+//     id: "sdwan-networking-office-automation",
 //     title: "Networking & Office Automation",
-//     subtitle: "Connectivity and automation aligned to business workflows.",
-//     cover: coverAt(2),
-//     vertical: "Enterprise",
+//     subtitle: "Network modernization aligned with workplace automation needs.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["SD-WAN"],
-//     tags: ["SD-WAN"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Connectivity", "Automation", "Ops"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
-
-//   /* ------------------------------------------------------------------ */
-//   /* SOLUTIONS: Network Security (ONLY these 4) */
-//   /* ------------------------------------------------------------------ */
 //   {
-//     id: "sol-secure-network-psu",
-//     kind: "solution",
-//     primarySolution: "Network Security",
+//     id: "sec-psu-infrastructure",
 //     title: "Secure Network Infrastructure for PSU",
-//     subtitle: "Hardening and segmentation for PSU environments.",
-//     cover: coverAt(1),
-//     vertical: "Government",
+//     subtitle: "Segmentation and access controls for critical environments.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Network Security"],
-//     tags: ["Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Segmentation", "Policies", "Controls"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-lic-collaboration-systems",
-//     kind: "solution",
-//     primarySolution: "Network Security",
+//     id: "sec-lic-collaboration-systems",
 //     title: "LIC Collaboration Systems",
-//     subtitle: "Secure collaboration and controlled access workflows.",
-//     cover: coverAt(2),
-//     vertical: "Government",
+//     subtitle: "Secure collaboration stack design and rollout support.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Network Security"],
-//     tags: ["Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Security", "Access Control", "Ops"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-fortinet-device-migration",
-//     kind: "solution",
-//     primarySolution: "Network Security",
+//     id: "sec-fortinet-device-migration",
 //     title: "Fortinet Device Migration",
-//     subtitle: "Migration planning and execution with minimal downtime.",
-//     cover: coverAt(0),
-//     vertical: "Enterprise",
+//     subtitle: "Controlled migration with validation and minimal downtime.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Network Security"],
-//     tags: ["Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Firewall", "Migration", "Validation"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-isro-shipborne-terminal",
-//     kind: "solution",
-//     primarySolution: "Network Security",
+//     id: "sec-isro-shipborne-terminal",
 //     title: "ISRO Shipborne Terminal",
-//     subtitle: "Secure comms setup for mission-grade operations.",
-//     cover: coverAt(1),
-//     vertical: "Government",
+//     subtitle: "Secure connectivity for mission-critical shipborne systems.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Network Security"],
-//     tags: ["Network Security"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Security", "Ops", "Monitoring"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
-
-//   /* ------------------------------------------------------------------ */
-//   /* SOLUTIONS: Wireless Networking (ONLY these 5) */
-//   /* ------------------------------------------------------------------ */
 //   {
-//     id: "sol-wifi-campuswide-deployment",
-//     kind: "solution",
-//     primarySolution: "Wireless Networking",
+//     id: "wifi-campuswide-deployment",
 //     title: "Campuswide Wireless Deployment",
-//     subtitle: "High-coverage Wi-Fi with consistent roaming.",
-//     cover: coverAt(2),
-//     vertical: "Enterprise",
+//     subtitle: "High-density wireless with stable roaming and coverage.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Wireless Networking"],
-//     tags: ["Wireless Networking"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Wi-Fi", "RF", "Monitoring"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-wifi-cisco-meraki-project",
-//     kind: "solution",
-//     primarySolution: "Wireless Networking",
+//     id: "wifi-cisco-meraki-project",
 //     title: "Cisco Meraki WiFi Project",
-//     subtitle: "Policy-driven wireless with simplified operations.",
-//     cover: coverAt(0),
-//     vertical: "Enterprise",
+//     subtitle: "Managed Wi-Fi rollout with visibility and controls.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Wireless Networking"],
-//     tags: ["Wireless Networking"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Meraki", "Policy", "Ops"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 //   {
-//     id: "sol-wifi-railway-execution",
-//     kind: "solution",
-//     primarySolution: "Wireless Networking",
+//     id: "wifi-railway-execution",
 //     title: "Railway WiFi Execution",
-//     subtitle: "Public Wi-Fi execution with operational readiness.",
-//     cover: coverAt(1),
-//     vertical: "Government",
+//     subtitle: "Execution support for large public Wi-Fi environments.",
+//     cover: null,
+//     verticals: [],
 //     solutions: ["Wireless Networking"],
-//     tags: ["Wireless Networking"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Wi-Fi", "Operations", "Monitoring"],
-//   },
-//   {
-//     id: "sol-wifi-leeco-it-infrastructure",
-//     kind: "solution",
-//     primarySolution: "Wireless Networking",
-//     title: "LeEco IT Infrastructure",
-//     subtitle: "Wireless foundation built for enterprise operations.",
-//     cover: coverAt(2),
-//     vertical: "Enterprise",
-//     solutions: ["Wireless Networking"],
-//     tags: ["Wireless Networking"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Wi-Fi", "Access", "Ops"],
-//   },
-//   {
-//     id: "sol-wifi-cex-wireless-setup",
-//     kind: "solution",
-//     primarySolution: "Wireless Networking",
-//     title: "CeX Wireless Setup",
-//     subtitle: "Retail-grade Wi-Fi with stable roaming and control.",
-//     cover: coverAt(0),
-//     vertical: "Enterprise",
-//     solutions: ["Wireless Networking"],
-//     tags: ["Wireless Networking"],
-//     metrics: baseMetrics,
-//     ...baseText,
-//     stack: ["Wi-Fi", "RF", "Access Control"],
+//     showInVerticals: false,
+//     showInSolutions: true,
+//     ...base,
 //   },
 // ];
 
@@ -634,11 +468,46 @@
 
 import type { StaticImageData } from "next/image";
 
-// ✅ Service Provider images you already added
+// ===== VERTICAL IMAGES =====
 import sp1 from "../../../assets/case studies/sp1.png";
 import sp2 from "../../../assets/case studies/sp2.png";
 import sp3 from "../../../assets/case studies/sp3.png";
 import sp4 from "../../../assets/case studies/sp4.png";
+
+import dm1 from "../../../assets/case studies/Dm1.png";
+import dm2 from "../../../assets/case studies/Dm2.png";
+import dm3 from "../../../assets/case studies/Dm3.png";
+import dm4 from "../../../assets/case studies/Dm4.png";
+import dm5 from "../../../assets/case studies/Dm5.png";
+import dm6 from "../../../assets/case studies/Dm6.png";
+
+import en1 from "../../../assets/case studies/En1.png";
+import en2 from "../../../assets/case studies/En2.png";
+import en3 from "../../../assets/case studies/En3.png";
+
+import go1 from "../../../assets/case studies/Go1.png";
+import go2 from "../../../assets/case studies/Go2.png";
+import go3 from "../../../assets/case studies/Go3.png";
+
+// ===== SOLUTION IMAGES =====
+import dc1 from "../../../assets/case studies/Dc1.png";
+import dc2 from "../../../assets/case studies/Dc2.png";
+import dc3 from "../../../assets/case studies/Dc3.png";
+import dc4 from "../../../assets/case studies/Dc4.png";
+import dc5 from "../../../assets/case studies/Dc5.png";
+
+import sdwan1 from "../../../assets/case studies/Sdwan1.png";
+import sdwan2 from "../../../assets/case studies/Sdwan2.png";
+import sdwan3 from "../../../assets/case studies/Sdwan3.png";
+
+import ns1 from "../../../assets/case studies/Ns1.png";
+import ns2 from "../../../assets/case studies/Ns2.png";
+import ns3 from "../../../assets/case studies/Ns3.png";
+import ns4 from "../../../assets/case studies/Ns4.png";
+
+import wn1 from "../../../assets/case studies/Wn1.png";
+import wn2 from "../../../assets/case studies/wn2.png";
+import wn3 from "../../../assets/case studies/wn3.png";
 
 export type Vertical =
   | "Service Provider"
@@ -650,24 +519,22 @@ export type Solution =
   | "Data Center"
   | "SD-WAN"
   | "Network Security"
-  | "Wireless Networking"
-  | "Digital Media";
+  | "Wireless Networking";
 
 export type CaseStudy = {
   id: string;
   title: string;
   subtitle: string;
 
-  // ✅ can be imported image or null (we render a nice fallback)
+  // ✅ for adjusting image cropping per case (grid + modal)
+  // examples: "50% 70%" (x y), "center 75%", "center bottom"
+  coverPos?: string;
+
   cover?: StaticImageData | string | null;
 
-  // ✅ supports cases that belong to multiple verticals (ex: MAM integration)
   verticals: Vertical[];
-
-  // ✅ same as before
   solutions: Solution[];
 
-  // ✅ controls what shows in each toggle (prevents mixing)
   showInVerticals?: boolean;
   showInSolutions?: boolean;
 
@@ -693,10 +560,9 @@ export const SOLUTIONS: Solution[] = [
   "SD-WAN",
   "Network Security",
   "Wireless Networking",
-  "Digital Media",
 ];
 
-// helper (keeps things consistent while you finalize content later)
+// helper
 const base = {
   tags: [] as string[],
   metrics: [
@@ -713,7 +579,7 @@ const base = {
 
 export const CASE_STUDIES: CaseStudy[] = [
   /* =========================
-   * VERTICALS — Service Provider (✅ with images)
+   * VERTICALS — Service Provider
    * ========================= */
   {
     id: "sp-video-streaming-private-network",
@@ -721,7 +587,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     subtitle: "Low-latency private video delivery with consistent uptime.",
     cover: sp1,
     verticals: ["Service Provider"],
-    solutions: [], // not listed under Solutions in your list (so keep empty)
+    solutions: [],
     showInVerticals: true,
     showInSolutions: false,
     ...base,
@@ -742,6 +608,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "National Network Rollout for Enterprise Wi-Fi",
     subtitle: "Multi-site Wi-Fi rollout with consistent policy and security.",
     cover: sp3,
+    // ✅ push image down a bit in modal to avoid cutting off
+    coverPos: "50% 12%",
     verticals: ["Service Provider"],
     solutions: [],
     showInVerticals: true,
@@ -753,6 +621,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Global Enterprise Presales Support",
     subtitle: "Solution architecture, sizing, and rollout planning support.",
     cover: sp4,
+    // ✅ push image down a bit in modal to avoid cutting off
+    coverPos: "50% 15%",
     verticals: ["Service Provider"],
     solutions: [],
     showInVerticals: true,
@@ -761,83 +631,85 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   /* =========================
-   * VERTICALS — Digital Media
+   * VERTICALS — Digital Media (✅ with images)
    * ========================= */
   {
     id: "dm-video-headend-satellite-fiber",
     title: "Video Head-End Setup via Satellite & Fiber",
     subtitle: "Robust head-end infrastructure for satellite + fiber feeds.",
-    cover: null,
+    cover: dm1,
     verticals: ["Digital Media"],
-    solutions: ["Digital Media"],
+    solutions: [],
     showInVerticals: true,
-    showInSolutions: true,
+    showInSolutions: false, // ✅ remove Digital Media from Solutions side
     ...base,
   },
   {
     id: "dm-reduced-channel-opex-smart-upgrade",
     title: "Reduced Channel OPEX through Smart Network Upgrade",
     subtitle: "Lower recurring costs with modernization and better monitoring.",
-    cover: null,
+    cover: dm2,
     verticals: ["Digital Media"],
-    solutions: ["Digital Media"],
+    solutions: [],
     showInVerticals: true,
-    showInSolutions: true,
+    showInSolutions: false,
     ...base,
   },
   {
     id: "dm-45m-cband-tvro-turnaround",
     title: "4.5M C Band TVRO Setup for Turnaround Services",
     subtitle: "Fast deployment for reliable turnaround operations.",
-    cover: null,
+    cover: dm3,
     verticals: ["Digital Media"],
-    solutions: ["Digital Media"],
+    solutions: [],
     showInVerticals: true,
-    showInSolutions: true,
+    showInSolutions: false,
     ...base,
   },
   {
     id: "dm-advanced-uplink-cas-integration",
     title: "Advanced Satellite Uplink with CAS Integration",
     subtitle: "Secure uplink workflow with CAS compatibility.",
-    cover: null,
+    cover: dm6,
+      coverPos: "50% 15%",
     verticals: ["Digital Media"],
-    solutions: ["Digital Media"],
+    solutions: [],
     showInVerticals: true,
-    showInSolutions: true,
+    showInSolutions: false,
     ...base,
   },
   {
     id: "mam-platform-integration",
     title: "Enterprise MAM Platform Integration",
     subtitle: "Unified media asset workflows across teams and locations.",
-    cover: null,
-    verticals: ["Digital Media", "Government"], // ✅ appears in both sections
-    solutions: ["Digital Media"],
+    cover: dm5,
+    verticals: ["Digital Media", "Government"],
+    solutions: [],
     showInVerticals: true,
-    showInSolutions: true,
+    showInSolutions: false, // ✅ remove Digital Media from Solutions side
     ...base,
   },
   {
     id: "dm-multi-layer-compliance-monitoring",
     title: "Multi-Layer Compliance Monitoring System",
     subtitle: "Automated checks for content compliance and audit readiness.",
-    cover: null,
+    cover: dm4,
+    coverPos: "50% 15%",
     verticals: ["Digital Media"],
-    solutions: ["Digital Media"],
+    solutions: [],
     showInVerticals: true,
-    showInSolutions: true,
+    showInSolutions: false,
     ...base,
   },
 
   /* =========================
-   * VERTICALS — Enterprise
+   * VERTICALS — Enterprise (✅ with images)
    * ========================= */
   {
     id: "ent-chromaflo-end-to-end-it-infra",
     title: "End-to-End IT Infrastructure for Chromaflo Technologies (Mumbai)",
     subtitle: "Core IT + network foundation with clean operations.",
-    cover: null,
+    cover: en1,
     verticals: ["Enterprise"],
     solutions: [],
     showInVerticals: true,
@@ -848,33 +720,46 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "ent-cex-wireless-infra-mumbai",
     title: "Wireless Network Infrastructure for CeX WeBuy (Mumbai)",
     subtitle: "High-performance Wi-Fi with stable roaming and control.",
-    cover: null,
+    cover: en2,
+      coverPos: "50% 15%",
     verticals: ["Enterprise"],
-    solutions: ["Wireless Networking"], // ✅ also appears under Wireless solutions
+    solutions: ["Wireless Networking"],
     showInVerticals: true,
-    showInSolutions: true,
+    showInSolutions: false, // ✅ remove from Wireless Networking solutions as requested
     ...base,
   },
   {
     id: "ent-leeco-multi-location-wifi-office-automation",
     title: "Multi-Location Wi-Fi & Office Automation for LeEco (India)",
     subtitle: "Multi-branch wireless + office automation rollout.",
-    cover: null,
+    cover: en3,
+      coverPos: "50% 10%",
     verticals: ["Enterprise"],
-    solutions: ["Wireless Networking"], // ✅ also appears under Wireless solutions
+    solutions: ["Wireless Networking"],
     showInVerticals: true,
-    showInSolutions: true,
+    showInSolutions: false, // ✅ remove from Wireless Networking solutions as requested
     ...base,
   },
 
   /* =========================
-   * VERTICALS — Government
+   * VERTICALS — Government (✅ with images)
    * ========================= */
+  {
+    id: "gov-mam-platform-integration",
+    title: "Enterprise MAM Platform Integration",
+    subtitle: "Unified media asset workflows across teams and locations.",
+    cover: go1,
+    verticals: ["Government"],
+    solutions: [],
+    showInVerticals: true,
+    showInSolutions: false,
+    ...base,
+  },
   {
     id: "gov-noc-management-45-isro-centers",
     title: "NOC Management Across 45 ISRO Centers (ISTRAC)",
     subtitle: "Operational visibility and standardized incident handling.",
-    cover: null,
+    cover: go2,
     verticals: ["Government"],
     solutions: [],
     showInVerticals: true,
@@ -885,7 +770,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "gov-satellite-network-redundancy-mars-mission",
     title: "Satellite Network with Redundancy for Mars Mission (ISRO)",
     subtitle: "Redundant design for resilient mission communications.",
-    cover: null,
+    cover: go3,
     verticals: ["Government"],
     solutions: [],
     showInVerticals: true,
@@ -894,13 +779,13 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   /* =========================
-   * SOLUTIONS — Data Center (solution-only)
+   * SOLUTIONS — Data Center (✅ with images)
    * ========================= */
   {
     id: "dc-chhattisgarh-statewide-network",
     title: "Chhattisgarh Statewide Network",
     subtitle: "Statewide backbone modernization and operations readiness.",
-    cover: null,
+    cover: dc1,
     verticals: [],
     solutions: ["Data Center"],
     showInVerticals: false,
@@ -911,7 +796,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "dc-data-center-tech-upgrade",
     title: "Data Center Tech Upgrade",
     subtitle: "Modernized DC stack to improve reliability and provisioning.",
-    cover: null,
+    cover: dc2,
     verticals: [],
     solutions: ["Data Center"],
     showInVerticals: false,
@@ -922,7 +807,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "dc-banking-data-center-ops",
     title: "Banking Data Center Ops",
     subtitle: "Operational hardening, monitoring, and process runbooks.",
-    cover: null,
+    cover: dc3,
     verticals: [],
     solutions: ["Data Center"],
     showInVerticals: false,
@@ -933,7 +818,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "dc-embassy-wan-deployment",
     title: "Embassy WAN Deployment",
     subtitle: "Secure connectivity and managed operations across locations.",
-    cover: null,
+    cover: dc4,
     verticals: [],
     solutions: ["Data Center"],
     showInVerticals: false,
@@ -944,7 +829,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "dc-chromaflo-data-center-setup",
     title: "Chromaflo Data Center Setup",
     subtitle: "DC setup + operational handover for enterprise workloads.",
-    cover: null,
+    cover: dc5,
     verticals: [],
     solutions: ["Data Center"],
     showInVerticals: false,
@@ -953,13 +838,14 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   /* =========================
-   * SOLUTIONS — SD-WAN (solution-only)
+   * SOLUTIONS — SD-WAN (✅ with images)
    * ========================= */
   {
     id: "sdwan-retail-chain-deployment",
     title: "SD-WAN Deployment for Retail Chain",
     subtitle: "Consistent policy and better uptime across branch networks.",
-    cover: null,
+    cover: sdwan1,
+      coverPos: "50% 15%",
     verticals: [],
     solutions: ["SD-WAN"],
     showInVerticals: false,
@@ -970,7 +856,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "sdwan-indian-bank-ops",
     title: "Indian Bank SDWAN Ops",
     subtitle: "Centralized operations and troubleshooting improvements.",
-    cover: null,
+    cover: sdwan2,
     verticals: [],
     solutions: ["SD-WAN"],
     showInVerticals: false,
@@ -981,7 +867,8 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "sdwan-networking-office-automation",
     title: "Networking & Office Automation",
     subtitle: "Network modernization aligned with workplace automation needs.",
-    cover: null,
+    cover: sdwan3,
+      coverPos: "50% 15%",
     verticals: [],
     solutions: ["SD-WAN"],
     showInVerticals: false,
@@ -990,13 +877,13 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   /* =========================
-   * SOLUTIONS — Network Security (solution-only)
+   * SOLUTIONS — Network Security (✅ with images)
    * ========================= */
   {
     id: "sec-psu-infrastructure",
     title: "Secure Network Infrastructure for PSU",
     subtitle: "Segmentation and access controls for critical environments.",
-    cover: null,
+    cover: ns1,
     verticals: [],
     solutions: ["Network Security"],
     showInVerticals: false,
@@ -1007,7 +894,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "sec-lic-collaboration-systems",
     title: "LIC Collaboration Systems",
     subtitle: "Secure collaboration stack design and rollout support.",
-    cover: null,
+    cover: ns2,
     verticals: [],
     solutions: ["Network Security"],
     showInVerticals: false,
@@ -1018,7 +905,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "sec-fortinet-device-migration",
     title: "Fortinet Device Migration",
     subtitle: "Controlled migration with validation and minimal downtime.",
-    cover: null,
+    cover: ns3,
     verticals: [],
     solutions: ["Network Security"],
     showInVerticals: false,
@@ -1029,7 +916,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "sec-isro-shipborne-terminal",
     title: "ISRO Shipborne Terminal",
     subtitle: "Secure connectivity for mission-critical shipborne systems.",
-    cover: null,
+    cover: ns4,
     verticals: [],
     solutions: ["Network Security"],
     showInVerticals: false,
@@ -1038,13 +925,14 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   /* =========================
-   * SOLUTIONS — Wireless Networking
+   * SOLUTIONS — Wireless Networking (✅ with images)
    * ========================= */
   {
     id: "wifi-campuswide-deployment",
     title: "Campuswide Wireless Deployment",
     subtitle: "High-density wireless with stable roaming and coverage.",
-    cover: null,
+    cover: wn1,
+      coverPos: "50% 15%",
     verticals: [],
     solutions: ["Wireless Networking"],
     showInVerticals: false,
@@ -1055,7 +943,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "wifi-cisco-meraki-project",
     title: "Cisco Meraki WiFi Project",
     subtitle: "Managed Wi-Fi rollout with visibility and controls.",
-    cover: null,
+    cover: wn2,
     verticals: [],
     solutions: ["Wireless Networking"],
     showInVerticals: false,
@@ -1066,15 +954,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     id: "wifi-railway-execution",
     title: "Railway WiFi Execution",
     subtitle: "Execution support for large public Wi-Fi environments.",
-    cover: null,
+    cover: wn3,
+      coverPos: "50% 15%",
     verticals: [],
     solutions: ["Wireless Networking"],
     showInVerticals: false,
     showInSolutions: true,
     ...base,
   },
-
-  // ✅ these are shared with Enterprise verticals already:
-  // - ent-leeco-multi-location-wifi-office-automation
-  // - ent-cex-wireless-infra-mumbai
 ];
