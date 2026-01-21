@@ -5,16 +5,16 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 // TODO: Replace these paths with your actual logo paths
-import Logo1 from '../../assets/React-3dl.png';
+import Logo1 from '../../assets/Softwaresol.png'; 
 import Logo2 from '../../assets/AWS-3d.png';
 import Logo3 from '../../assets/Flutter-3d.png';
 import Logo4 from '../../assets/Azure-3d.png';
 import Logo5 from '../../assets/SDWAN-3d.png';
-import Logo6 from '../../assets/webdev-3d.png';
+import Logo6 from '../../assets/Avvc.png';  
 import Logo7 from '../../assets/Satelliterf-3d.png';
 import Logo8 from '../../assets/Statmux-3d.png';
 import Logo9 from '../../assets/Multiplex-3d.png';
-import Logo10 from '../../assets/Cloudmanage-3d.png';
+import Logo10 from '../../assets/Ai.png'; 
 import Logo11 from '../../assets/NMS-3d.png';
 import Logo12 from '../../assets/software-3d.png';
 
@@ -55,30 +55,30 @@ export default function TechnologiesStats() {
 
   const stats = [
     { label: 'Founded in', value: '2012' },
-    { label: 'Projects completed', value: '100+' },
+    { label: 'Projects completed', value: '1000+' },
     { label: 'Team size', value: '150+' },
     { label: 'Countries served', value: '100+' },
   ];
 
   // Count up values
-  const projectsCount = useCountUp(100, 2000, startCounting);
+  const projectsCount = useCountUp(1000, 2000, startCounting);
   const teamCount = useCountUp(150, 2000, startCounting);
   const countriesCount = useCountUp(100, 2000, startCounting);
 
   const technologies = [
     // Row 1
-    { name: 'React', logo: Logo1, color: '#646CFF' },
+    { name: 'Software Solutions', logo: Logo1, color: '#646CFF' },
     { name: 'AWS Cloud', logo: Logo2, color: '#42B883' },
     { name: 'Mobile Development', logo: Logo3, color: '#DD0031' },
     { name: 'Azure Infrastructure', logo: Logo4, color: '#42B883' },
     // Row 2
     { name: 'SD-WAN', logo: Logo5, color: '#FF3E00' },
-    { name: 'Software Solutions', logo: Logo6, color: '#CC6699' },
+    { name: 'Audio/Video', logo: Logo6, color: '#CC6699' },
     { name: 'Satellites and RF', logo: Logo7, color: '#764ABC' },
     { name: 'Digital Media', logo: Logo8, color: '#311C87' },
     // Row 3
     { name: 'Streaming', logo: Logo9, color: '#0070F3' },
-    { name: 'Cloud Services', logo: Logo10, color: '#00DC82' },
+    { name: 'Artificial Intelligence', logo: Logo10, color: '#00DC82' },
     { name: 'Network Management', logo: Logo11, color: '#0070F3' },
     { name: 'Customized SaaS', logo: Logo12, color: '#673AB8' },
   ];

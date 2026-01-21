@@ -5,6 +5,8 @@
 
 import Link from 'next/link';
 import { motion, cubicBezier } from 'framer-motion';
+import { Rocket, Target, HeartHandshake } from 'lucide-react';
+
 
 import ImageCarousel from '@/components/ImageCarousel';
 
@@ -212,35 +214,43 @@ export default function CareersPage() {
           </motion.div>
 
           <motion.div
-            {...fadeIn}
-            className="mt-10 grid gap-6 md:grid-cols-3"
-          >
-            {[
-              {
-                title: 'Ship to learn',
-                body: 'We bias towards small, end-to-end releases that reach real customers fast.',
-              },
-              {
-                title: 'Own the problem',
-                body: 'You’ll sit close to users, data and the roadmap – not just tickets.',
-              },
-              {
-                title: 'Stay kind, stay sharp',
-                body: 'Direct feedback, low ego, and space to grow your craft.',
-              },
-            ].map((item) => (
-              <div
-                key={item.title}
-                className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 via-black/40 to-black/90 p-5 shadow-[0_26px_90px_rgba(0,0,0,0.9)]"
-              >
-                <div className="mb-3 h-8 w-8 rounded-xl bg-gradient-to-br from-emerald-400/70 to-sky-400/80 p-[1px]">
-                  <div className="h-full w-full rounded-[10px] bg-black/90" />
-                </div>
-                <h3 className="text-base font-semibold text-white">{item.title}</h3>
-                <p className="mt-2 text-sm text-slate-300/85">{item.body}</p>
-              </div>
-            ))}
-          </motion.div>
+  {...fadeIn}
+  className="mt-10 grid gap-6 md:grid-cols-3"
+>
+  {[
+    {
+      title: 'Ship to learn',
+      body: 'We bias towards small, end-to-end releases that reach real customers fast.',
+      Icon: Rocket,
+    },
+    {
+      title: 'Own the problem',
+      body: 'You’ll sit close to users, data and the roadmap – not just tickets.',
+      Icon: Target,
+    },
+    {
+      title: 'Stay kind, stay sharp',
+      body: 'Direct feedback, low ego, and space to grow your craft.',
+      Icon: HeartHandshake,
+    },
+  ].map(({ title, body, Icon }) => (
+    <div
+      key={title}
+      className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 via-black/40 to-black/90 p-5 shadow-[0_26px_90px_rgba(0,0,0,0.9)]"
+    >
+      {/* Smooth, premium icon badge (no blue) */}
+      {/* Icon directly inside the grey cube (no inner black tile) */}
+<div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-b from-white/12 via-white/6 to-black/55 shadow-[0_18px_55px_rgba(0,0,0,0.8)]">
+  <Icon className="h-5 w-5 text-emerald-200/90 drop-shadow-[0_0_12px_rgba(52,211,153,0.16)]" />
+</div>
+
+
+      <h3 className="text-base font-semibold text-white">{title}</h3>
+      <p className="mt-2 text-sm text-slate-300/85">{body}</p>
+    </div>
+  ))}
+</motion.div>
+
         </section>
 
        {/* ------------------------------------------------------------------ */}
@@ -470,7 +480,7 @@ export default function CareersPage() {
           >
             {[
               {
-                title: 'Healthy base + ESOPs',
+                title: 'Healthy base',
                 body: 'Competitive compensation with meaningful ownership as we grow.',
               },
               {

@@ -82,7 +82,7 @@ export default function Products() {
 
           <div className="mt-6">
             <Link
-              href="#"
+              href="/products"
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80 hover:border-white/20 hover:bg-white/[0.05]"
             >
               Learn more
@@ -244,7 +244,8 @@ export default function Products() {
         </div>
 
         {/* --- Smart Helmet Section --- */}
-        <div className="relative mt-12">
+        {/* <div className="relative mt-12"> */}
+        <div className="relative mt-12 pt-12 md:pt-16">
           <div className="grid gap-12 md:grid-cols-2 items-center">
             {/* Left side - Content */}
             <motion.div
