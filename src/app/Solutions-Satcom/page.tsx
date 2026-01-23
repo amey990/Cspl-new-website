@@ -15,7 +15,7 @@ import Image from 'next/image';
 
 // TODO: replace with your actual high-res image asset
 // e.g. '../../../assets/solutions/satellite-hero.png'
-import SatelliteHero from '../../../assets/CNMS_dummy.jpg';
+import SatelliteHero from '../../../assets/Satcommm.png';
 
 const easeOutExpo = cubicBezier(0.22, 1, 0.36, 1);
 
@@ -80,6 +80,33 @@ function Pill({
     </span>
   );
 }
+
+
+function ChipCard({
+  icon,
+  title,
+  subtitle,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  subtitle: string;
+}) {
+  return (
+    <div className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/85 px-5 py-4 shadow-[0_18px_60px_rgba(0,0,0,0.65)]">
+      <div className="mt-0.5 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-black/40">
+        {icon}
+      </div>
+
+      <div className="min-w-0">
+        <p className="text-sm font-semibold text-white">{title}</p>
+        <p className="mt-1 text-[12px] leading-relaxed text-slate-400">
+          {subtitle}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 
 function MetricCard({
   label,
@@ -325,65 +352,84 @@ export default function SatelliteCommunicationPage() {
           >
             <div className="grid gap-10 md:grid-cols-[1.35fr,1fr] md:items-center">
               {/* Diagram */}
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/75 px-6 py-8">
-                {/* Centre: Teleport / Core */}
-                <div className="relative mx-auto flex h-16 w-44 items-center justify-center rounded-2xl border border-sky-400/70 bg-slate-950 shadow-[0_18px_80px_rgba(0,0,0,1)]">
-                  <RadioTower className="mr-2 h-5 w-5 text-sky-200" />
-                  <span className="text-xs font-semibold text-sky-50">
-                    Teleport &amp; Core POP
-                  </span>
-                </div>
+              {/* Diagram (meaningful + responsive, no random floating chips) */}
+<div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black/75 px-6 py-8">
+  {/* subtle rings behind */}
+  <div className="pointer-events-none absolute left-1/2 top-16 h-44 w-44 -translate-x-1/2 rounded-full border border-sky-500/25" />
+  <div className="pointer-events-none absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full border border-sky-500/10" />
 
-                {/* Satellite icon above */}
-                <div className="absolute left-1/2 top-6 flex -translate-x-1/2 flex-col items-center gap-2 text-xs text-slate-200">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/80 bg-slate-950">
-                    <Satellite className="h-6 w-6 text-sky-100" />
-                  </div>
-                  <span className="text-[11px] text-slate-300">
-                    GEO / HTS Satellite
-                  </span>
-                </div>
+  <div className="relative grid gap-8 md:grid-cols-3 md:items-center">
+    {/* LEFT: Edge sites */}
+   <div className="space-y-3">
+  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+    Edge sites
+  </p>
 
-                {/* Arcs / links */}
-                <div className="pointer-events-none absolute left-1/2 top-24 h-40 w-40 -translate-x-1/2 rounded-full border border-sky-500/40" />
-                <div className="pointer-events-none absolute left-1/2 top-32 h-64 w-64 -translate-x-1/2 rounded-full border border-sky-500/15" />
+  <ChipCard
+    icon={<Building2 className="h-4 w-4 text-emerald-300" />}
+    title="Enterprise branches / plants"
+    subtitle="Production sites, offices, depots"
+  />
 
-                {/* Remote sites */}
-                <div className="absolute left-4 bottom-10 space-y-3 text-xs text-slate-200">
-                  <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-slate-950/85 px-3 py-2">
-                    <Building2 className="h-3.5 w-3.5 text-emerald-300" />
-                    <span>Enterprise branches / plants</span>
-                  </div>
-                  <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2">
-                    <RadioTower className="h-3.5 w-3.5 text-amber-300" />
-                    <span>Remote towers &amp; POPs</span>
-                  </div>
-                </div>
+  <ChipCard
+    icon={<RadioTower className="h-4 w-4 text-amber-300" />}
+    title="Remote towers & POPs"
+    subtitle="RAN sites, rural POPs, rigs"
+  />
+</div>
 
-                {/* Data centre / cloud */}
-                <div className="absolute right-4 bottom-12 space-y-3 text-xs text-slate-200">
-                  <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-slate-950/85 px-3 py-2">
-                    <Network className="h-3.5 w-3.5 text-sky-300" />
-                    <span>IP/MPLS / SD-WAN core</span>
-                  </div>
-                  <div className="flex items-center gap-2 rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2">
-                    <Cloud className="h-3.5 w-3.5 text-emerald-300" />
-                    <span>Cloud &amp; DC workloads</span>
-                  </div>
-                </div>
 
-                {/* Bottom notes */}
-                <div className="absolute left-1/2 bottom-3 flex -translate-x-1/2 flex-wrap justify-center gap-3 text-xs text-slate-200">
-                  <div className="rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2">
-                    QoS, WAN optimisation and encryption applied end-to-end over
-                    satellite.
-                  </div>
-                  <div className="rounded-xl border border-white/10 bg-slate-950/80 px-3 py-2">
-                    Central NOC visibility into link health, bandwidth and
-                    application performance.
-                  </div>
-                </div>
-              </div>
+    {/* CENTER: Satellite + Teleport */}
+    <div className="flex flex-col items-center text-center">
+      <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-sky-400/80 bg-slate-950">
+        <Satellite className="h-6 w-6 text-sky-100" />
+      </div>
+      <p className="mt-2 text-[11px] text-slate-300">GEO / HTS Satellite</p>
+
+      <div className="mt-4 flex h-16 w-56 items-center justify-center rounded-2xl border border-sky-400/70 bg-slate-950 shadow-[0_18px_80px_rgba(0,0,0,1)]">
+        <RadioTower className="mr-2 h-5 w-5 text-sky-200" />
+        <span className="text-sm font-semibold text-sky-50">
+          Teleport &amp; Core POP
+        </span>
+      </div>
+
+      <p className="mt-4 max-w-xs text-xs leading-relaxed text-slate-300">
+        QoS, WAN optimisation and encryption applied end-to-end over satellite.
+      </p>
+    </div>
+
+    {/* RIGHT: Core + workloads */}
+   <div className="space-y-3">
+  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+    Core &amp; workloads
+  </p>
+
+  <ChipCard
+    icon={<Network className="h-4 w-4 text-sky-300" />}
+    title="IP/MPLS / SD-WAN core"
+    subtitle="Routing, security, policy"
+  />
+
+  <ChipCard
+    icon={<Cloud className="h-4 w-4 text-emerald-300" />}
+    title="Cloud & DC workloads"
+    subtitle="Apps, VMs, data platforms"
+  />
+</div>
+
+  </div>
+
+  {/* Bottom “meaning” */}
+  <div className="mt-8 grid gap-3 md:grid-cols-2">
+    <div className="rounded-2xl border border-white/10 bg-slate-950/75 px-4 py-3 text-xs text-slate-200">
+      Central NOC visibility into link health, bandwidth and application performance.
+    </div>
+    <div className="rounded-2xl border border-white/10 bg-slate-950/75 px-4 py-3 text-xs text-slate-200">
+      Optional redundancy: multi-satellite, multi-teleport, and 4G/5G backup for critical sites.
+    </div>
+  </div>
+</div>
+
 
               {/* Copy */}
               <div className="space-y-4 text-sm text-slate-200">

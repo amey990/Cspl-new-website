@@ -18,6 +18,8 @@ import {
   SignalHigh,
 } from 'lucide-react';
 
+import Link from "next/link";
+
 // 🔹 Replace these with your real high-res images
 import DcHallImage from '../../../assets/DC_1.png';
 import NocWallImage from '../../../assets/DC_2.png';
@@ -70,9 +72,11 @@ export default function DataCenterNetworkingPage() {
                 Solutions · Data Center &amp; Networking
               </p>
 
-              <h1 className="mt-5 text-4xl font-semibold leading-tight md:text-5xl">
-                Data centers and networks that don&apos;t flinch under load.
-              </h1>
+            <h1 className="mt-5 text-4xl font-semibold leading-tight md:text-5xl">
+  Data centers and networks that
+  <span className="block text-cyan-300">don&apos;t flinch under load.</span>
+</h1>
+
 
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
                 We design, build and operate the fabric your business runs on –
@@ -199,7 +203,7 @@ export default function DataCenterNetworkingPage() {
               <div className="mt-4 flex-1 space-y-4 md:mt-0">
                 <div className="relative h-32 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60">
                   <Image
-                    src={NocWallImage}
+                    src={RackCloseupImage}
                     alt="Network operations center monitoring wall"
                     className="h-full w-full object-cover opacity-85"
                   />
@@ -211,7 +215,7 @@ export default function DataCenterNetworkingPage() {
 
                 <div className="relative h-32 overflow-hidden rounded-2xl border border-white/10 bg-slate-900/60">
                   <Image
-                    src={RackCloseupImage}
+                    src={NocWallImage}
                     alt="Structured cabling and labelled network racks"
                     className="h-full w-full object-cover opacity-85"
                   />
@@ -483,12 +487,13 @@ export default function DataCenterNetworkingPage() {
               map options, timelines and where automation or observability will
               have the biggest impact.
             </p>
-            <button
-              type="button"
-              className="mt-5 rounded-full bg-white px-6 py-2 text-sm font-medium text-black shadow-[0_14px_40px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5 hover:bg-slate-100"
-            >
-              Talk to our solutions team
-            </button>
+            <Link
+  href="/contact"
+  className="mt-5 inline-flex items-center justify-center rounded-full bg-white px-6 py-2 text-sm font-medium text-black shadow-[0_14px_40px_rgba(0,0,0,0.6)] transition hover:-translate-y-0.5 hover:bg-slate-100"
+>
+  Talk to our solutions team
+</Link>
+
           </motion.div>
         </section>
       </div>

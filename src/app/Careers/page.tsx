@@ -333,7 +333,7 @@ export default function CareersPage() {
             <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.16em]">
               A week in the team
             </span>
-            <span className="text-slate-500">Sample</span>
+            
           </div>
 
           <div className="space-y-3 text-[11px] text-slate-200">
@@ -372,9 +372,6 @@ export default function CareersPage() {
 
           <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
             <span>Minimal bureaucracy. Maximum context.</span>
-            <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px]">
-              v1.0
-            </span>
           </div>
         </div>
       </motion.div>
