@@ -23,6 +23,29 @@ const fadeIn = {
   transition: { duration: 0.7, ease: easeOutExpo },
 };
 
+const openDemo = () => {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // replace with your real demo link
+        title: 'Operations Advisor — Demo',
+      },
+    })
+  );
+};
+
+const openPlaybooks = () => {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // or a PDF / notion / page link
+        title: 'Operations Advisor — Sample Playbooks',
+      },
+    })
+  );
+};
+
+
 export default function OperationsAdvisorPage() {
   return (
     <main className="relative w-full overflow-hidden bg-[#010101]">
@@ -139,6 +162,8 @@ export default function OperationsAdvisorPage() {
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <button
                 type="button"
+                 onClick={openDemo}
+                  aria-label="Watch Operations Advisor demo"
                 className="group inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-medium text-black shadow-[0_0_40px_rgba(255,89,6,0.7)] transition-transform duration-200 hover:-translate-y-0.5"
                 style={{ backgroundColor: ACCENT }}
               >
@@ -148,12 +173,7 @@ export default function OperationsAdvisorPage() {
                 </span>
               </button>
 
-              <button
-                type="button"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
-              >
-                View sample playbooks
-              </button>
+            
             </div>
           </motion.div>
 
@@ -636,6 +656,9 @@ export default function OperationsAdvisorPage() {
 
                 <button
                   type="button"
+                    onClick={openDemo}
+  aria-label="Watch Operations Advisor demo"
+
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
                 >
                   Watch demo

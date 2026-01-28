@@ -91,6 +91,16 @@ export default function CNMSNetwork() {
             <div className="mt-8">
               <button
                 type="button"
+                onClick={() => {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
+        title: 'CNMS — Network Management',                 // optional
+      },
+    })
+  );
+}}
                 className="group inline-flex items-center gap-2 rounded-full bg-[#9502A8] px-7 py-3 text-sm font-medium text-black shadow-[0_0_45px_rgba(149,2,168,0.75)] transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Watch demo

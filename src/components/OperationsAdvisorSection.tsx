@@ -79,6 +79,16 @@ export default function OperationsAdvisor() {
           <div className="mt-6">
             <button
               type="button"
+              onClick={() => {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
+        title: 'Ops-advisor — AI Agent',                 // optional
+      },
+    })
+  );
+}}
               className="group inline-flex items-center gap-2 rounded-full bg-[#FF5906] px-7 py-3 text-sm font-medium text-black shadow-[0_0_40px_rgba(255,89,6,0.6)] transition-transform duration-200 hover:-translate-y-0.5"
             >
               Watch demo

@@ -97,6 +97,16 @@ export default function CpalChatbot() {
           <div className="mt-6">
             <button
               type="button"
+              onClick={() => {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
+        title: 'CPAL — Enterprise Chatbot',                 // optional
+      },
+    })
+  );
+}}
               className="group inline-flex items-center gap-2 rounded-full bg-[#19E28F] px-7 py-3 text-sm font-medium text-black shadow-[0_0_40px_rgba(25,226,143,0.6)] transition-transform duration-200 hover:-translate-y-0.5"
             >
               Watch demo

@@ -107,7 +107,7 @@ export default function Customers() {
   href="/partners"
   className="pointer-events-auto inline-flex items-center gap-2 rounded-full border border-white/10 bg-[#0A0B0C]/80 backdrop-blur-sm px-6 py-3 text-[15px] font-medium text-white hover:border-white/20 hover:bg-[#0A0B0C]/90 transition-colors"
 >
-  Meet our customers
+  Meet our Partners
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
     <path
       d="M9 5l7 7-7 7"

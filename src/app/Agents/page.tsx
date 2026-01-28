@@ -20,6 +20,18 @@ const fadeIn = {
   transition: { duration: 0.7, ease: easeOutExpo },
 };
 
+
+const openOverview = () => {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // replace with your real overview link
+        title: 'Agentic Solutions — Overview',
+      },
+    })
+  );
+};
+
 export default function AgenticSolutionsPage() {
   return (
     <main className="relative w-full overflow-hidden bg-[#010101]">
@@ -140,9 +152,11 @@ export default function AgenticSolutionsPage() {
 
               <button
                 type="button"
+                onClick={openOverview}
+  aria-label="Watch Agentic Solutions overview"
                 className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
               >
-                Watch overview
+                Watch demo
               </button>
             </div>
           </motion.div>
@@ -508,9 +522,11 @@ export default function AgenticSolutionsPage() {
 
                 <button
                   type="button"
+                  onClick={openOverview}
+  aria-label="Watch Agentic Solutions overview"
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
                 >
-                  View sample use cases
+                  watch demo 
                 </button>
               </div>
             </div>

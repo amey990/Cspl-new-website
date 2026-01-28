@@ -148,6 +148,16 @@ export default function AtlasGrid() {
             <div className="mt-8 flex justify-start md:justify-end">
               <button
                 type="button"
+                onClick={() => {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
+        title: 'Atlas — Project Management',                 // optional
+      },
+    })
+  );
+}}
                 className="group inline-flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-sm font-medium text-black shadow-[0_0_45px_rgba(190,242,100,0.65)] transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Watch demo

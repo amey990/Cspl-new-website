@@ -33,6 +33,19 @@ const fadeIn = {
   transition: { duration: 0.7, ease: easeOutExpo },
 };
 
+function openDemo() {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder
+        title: 'Smart Helmet — Demo',
+      },
+    })
+  );
+}
+
+
+
 export default function SmartHelmetPage() {
   return (
     <main className="relative w-full overflow-hidden bg-[#010101]">
@@ -113,15 +126,17 @@ export default function SmartHelmetPage() {
             </div>
 
             <div className="pt-4">
-              <button
-                type="button"
-                className="group inline-flex items-center gap-2 rounded-full bg-yellow-400 px-7 py-3 text-sm font-medium text-black shadow-[0_0_45px_rgba(250,204,21,0.75)] transition-transform duration-200 hover:-translate-y-0.5"
-              >
-                Watch demo
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-xs transition-transform group-hover:translate-x-0.5">
-                  ↗
-                </span>
-              </button>
+             <button
+  type="button"
+  onClick={openDemo}
+  className="group inline-flex items-center gap-2 rounded-full bg-yellow-400 px-7 py-3 text-sm font-medium text-black shadow-[0_0_45px_rgba(250,204,21,0.75)] transition-transform duration-200 hover:-translate-y-0.5"
+>
+  Watch demo
+  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-xs transition-transform group-hover:translate-x-0.5">
+    ↗
+  </span>
+</button>
+
             </div>
           </motion.div>
 
@@ -793,11 +808,13 @@ export default function SmartHelmetPage() {
         </Link>
 
         <button
-          type="button"
-          className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
-        >
-          Watch demo
-        </button>
+  type="button"
+  onClick={openDemo}
+  className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
+>
+  Watch demo
+</button>
+
       </div>
     </div>
 

@@ -38,7 +38,7 @@ const columns = {
   resources: [
     { label: 'Documentation', href: '#' },
     { label: 'Case Studies', href: ROUTES.caseStudies },
-    { label: 'Blog', href: '#' },
+    // { label: 'Blog', href: '#' },
   ],
   company: [
     { label: 'About Us', href: ROUTES.about },
@@ -88,7 +88,7 @@ export default function Footer() {
                 className="h-12 w-full rounded-xl border border-white/10 bg-white/5 px-4 text-white placeholder:text-zinc-400 focus:border-white/20 focus:outline-none sm:flex-1"
               />
               <button className="h-12 rounded-xl bg-white px-5 text-sm font-medium text-black hover:bg-zinc-100">
-                Subscribe Now
+                Connect Now
               </button>
             </div>
           </div>

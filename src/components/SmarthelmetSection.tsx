@@ -87,6 +87,16 @@ export default function SmartHelmetGrid() {
           >
             <button
               type="button"
+              onClick={() => {
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
+        title: 'C-Smart — Industry Smart Helmet',                 // optional
+      },
+    })
+  );
+}}
               className="group inline-flex items-center gap-2 rounded-full bg-[#ECE105] px-7 py-3 text-sm font-medium text-black shadow-[0_0_45px_rgba(236,225,5,0.65)] transition-transform duration-200 hover:-translate-y-0.5"
             >
               Watch demo
