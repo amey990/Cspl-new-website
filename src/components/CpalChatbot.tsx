@@ -51,70 +51,65 @@ export default function CpalChatbot() {
           className="w-full space-y-6"
         >
           {/* breadcrumb chip */}
-          <div className="mb-2 flex items-center gap-3 text-sm text-slate-200">
+          {/* Original: <div className="mb-2 flex items-center gap-3 text-sm text-slate-200"> */}
+          <div className="mb-2 flex items-center gap-3 text-[14px] text-slate-200">
             <span className="h-2.5 w-5 rounded-full bg-[#19E28F] shadow-[0_0_12px_rgba(25,226,143,0.85)]" />
-            <span className="text-[15px] text-slate-100">C-pal Chatbot</span>
-            <span className="text-lg leading-none text-slate-500">›</span>
+            <span className="text-[17px] text-slate-100">C-pal Chatbot</span>
+            <span className="text-[18px] leading-none text-slate-500">›</span>
           </div>
 
           {/* section label */}
-          <p className="inline-flex items-center rounded-full border border-[#19E28F]/40 bg-[#19E28F]/8 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[#BBF7D0]">
+          {/* Original: <p className="inline-flex items-center rounded-full border border-[#19E28F]/40 bg-[#19E28F]/8 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[#BBF7D0]"> */}
+          <p className="inline-flex items-center rounded-full border border-[#19E28F]/40 bg-[#19E28F]/8 px-4 py-1 text-[12px] font-medium uppercase tracking-[0.18em] text-[#BBF7D0]">
             CPAL · AI ASSISTANT
           </p>
 
           {/* heading */}
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">
+          {/* Original: <h2 className="text-4xl font-semibold text-white md:text-5xl"> */}
+          <h2 className="text-[32px] font-semibold text-white md:text-[48px] leading-tight">
             Put an always-on AI assistant at the heart of your operations.
           </h2>
 
           {/* subheading */}
-          <p className="max-w-xl text-sm text-slate-300/85 md:text-base">
+          {/* Original: <p className="max-w-xl text-lg text-slate-300/85 md:text-lg"> */}
+          <p className="max-w-xl text-[18px] text-slate-300/85 md:text-[20px]">
             C-pal connects to your tools and channels to answer questions, triage issues
             and keep every stakeholder in sync — without adding more tabs to your day.
           </p>
 
           {/* bullets */}
-          <div className="mt-2 grid gap-3 text-sm text-slate-100/90 md:grid-cols-2 md:gap-4">
+          {/* Original: <div className="mt-4 grid gap-3 text-sm text-slate-100/90 md:grid-cols-2 md:gap-4"> */}
+          <div className="mt-4 grid gap-3 text-[16px] text-slate-100/90 md:grid-cols-2 md:gap-4 md:text-[18px]">
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
               <span>Natural language queries over tickets, tasks and documentation.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
               <span>Smart summaries for stand-ups, incident reviews and hand-offs.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
               <span>Works where your teams already are — Slack, email and more.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
               <span>Guardrails and permissions aligned with your existing systems.</span>
             </div>
           </div>
 
           {/* button */}
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <button
               type="button"
-              onClick={() => {
-  window.dispatchEvent(
-    new CustomEvent('commedia:open-demo', {
-      detail: {
-        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
-        title: 'CPAL — Enterprise Chatbot',                 // optional
-      },
-    })
-  );
-}}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#19E28F] px-7 py-3 text-sm font-medium text-black shadow-[0_0_40px_rgba(25,226,143,0.6)] transition-transform duration-200 hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#19E28F] px-7 py-3 text-[14px] font-medium text-black shadow-[0_0_40px_rgba(25,226,143,0.6)] transition-transform duration-200 hover:-translate-y-0.5"
             >
               Watch demo
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-xs transition-transform group-hover:translate-x-0.5">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-[12px] transition-transform group-hover:translate-x-0.5">
                 ↗
               </span>
             </button>
-          </div>
+          </div> */}
         </motion.div>
       </div>
     </section>

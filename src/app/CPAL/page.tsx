@@ -840,15 +840,18 @@ const fadeIn = {
 export default function CpalChatbotPage() {
   // ✅ Same demo modal event pattern as CNMS
   const openDemo = () => {
-    window.dispatchEvent(
-      new CustomEvent('commedia:open-demo', {
-        detail: {
-          url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder for now
-          title: 'C-pal — AI Assistant',
-        },
-      })
-    );
-  };
+  // Temporarily disabled video popup
+  /*
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder for now
+        title: 'C-pal — AI Assistant',
+      },
+    })
+  );
+  */
+};
 
   return (
     <main className="relative w-full overflow-hidden bg-[#010101]">
@@ -960,7 +963,8 @@ export default function CpalChatbotPage() {
             </div>
 
             {/* button */}
-            <div className="pt-4">
+           {/* button */}
+            {/* <div className="pt-4">
               <button
                 type="button"
                 onClick={openDemo}
@@ -973,7 +977,7 @@ export default function CpalChatbotPage() {
                   ↗
                 </span>
               </button>
-            </div>
+            </div> */}
           </motion.div>
         </section>
 
@@ -1430,14 +1434,14 @@ export default function CpalChatbotPage() {
                   </span>
                 </Link>
 
-                <button
+               {/* <button
                   type="button"
                   onClick={openDemo}
                   aria-label="Watch C-pal demo"
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
                 >
                   Watch demo
-                </button>
+                </button> */}
               </div>
             </div>
 

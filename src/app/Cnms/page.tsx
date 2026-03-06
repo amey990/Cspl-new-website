@@ -904,16 +904,19 @@ const fadeIn = {
 
 export default function CNMSPage() {
   // ✅ Reuse one function everywhere (hero + CTA)
-  const openDemo = () => {
-    window.dispatchEvent(
-      new CustomEvent('commedia:open-demo', {
-        detail: {
-          url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder for now
-          title: 'CNMS — Network Management',
-        },
-      })
-    );
-  };
+ const openDemo = () => {
+  // Temporarily disabled video popup
+  /*
+  window.dispatchEvent(
+    new CustomEvent('commedia:open-demo', {
+      detail: {
+        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder for now
+        title: 'CNMS — Network Management',
+      },
+    })
+  );
+  */
+};
 
   return (
     <main className="relative w-full overflow-hidden bg-[#010101]">
@@ -1003,7 +1006,7 @@ export default function CNMSPage() {
               </div>
             </div>
 
-            <div className="pt-4">
+          {/* <div className="pt-4">
               <button
                 type="button"
                 onClick={openDemo}
@@ -1015,7 +1018,7 @@ export default function CNMSPage() {
                   ↗
                 </span>
               </button>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* RIGHT: Hero image with slight 3D tilt */}
@@ -1504,13 +1507,13 @@ export default function CNMSPage() {
                   </span>
                 </Link>
 
-                <button
+                {/* <button
                   type="button"
                   onClick={openDemo}
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
                 >
                   Watch demo
-                </button>
+                </button> */}
               </div>
             </div>
 

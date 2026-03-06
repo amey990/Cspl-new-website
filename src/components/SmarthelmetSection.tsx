@@ -32,11 +32,12 @@ export default function SmartHelmetGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.6, ease: easeOutExpo }}
-            className="mb-4 flex items-center gap-3 text-sm text-slate-200"
+            // Original: className="mb-4 flex items-center gap-3 text-sm text-slate-200"
+            className="mb-4 flex items-center gap-3 text-[14px] text-slate-200"
           >
             <span className="h-2.5 w-5 rounded-full bg-[#ECE105] shadow-[0_0_12px_rgba(236,225,5,0.9)]" />
-            <span className="text-[15px] text-slate-100">Smart Helmet</span>
-            <span className="text-lg leading-none text-slate-500">›</span>
+            <span className="text-slate-100">Smart Helmet</span>
+            <span className="text-[18px] leading-none text-slate-500">›</span>
           </motion.div>
 
           {/* body copy */}
@@ -45,7 +46,8 @@ export default function SmartHelmetGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.7, ease: easeOutExpo, delay: 0.05 }}
-            className="mb-8 max-w-md text-sm text-slate-300/85 md:text-[15px]"
+            // Original: className="mb-8 max-w-md text-xl text-slate-300/85 md:text-[18px]"
+            className="mb-8 max-w-md text-[18px] text-slate-300/85 md:text-[20px]"
           >
             Streamline product operations with AI-assisted labeling, root-cause hints, and
             suggested actions across your backlog — while keeping workers safer on site.
@@ -57,7 +59,8 @@ export default function SmartHelmetGrid() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
             transition={{ duration: 0.7, ease: easeOutExpo, delay: 0.1 }}
-            className="space-y-4 text-sm text-slate-100/90 md:text-[15px]"
+            // Original: className="space-y-4 text-sm text-slate-100/90 md:text-[17px]"
+            className="space-y-4 text-[16px] text-slate-100/90 md:text-[18px]"
           >
             <li className="flex items-center gap-4">
               <span className="h-8 w-[2px] bg-[#ECE105]" />
@@ -78,7 +81,7 @@ export default function SmartHelmetGrid() {
           </motion.ul>
 
           {/* watch demo button */}
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.6 }}
@@ -87,24 +90,15 @@ export default function SmartHelmetGrid() {
           >
             <button
               type="button"
-              onClick={() => {
-  window.dispatchEvent(
-    new CustomEvent('commedia:open-demo', {
-      detail: {
-        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
-        title: 'C-Smart — Industry Smart Helmet',                 // optional
-      },
-    })
-  );
-}}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#ECE105] px-7 py-3 text-sm font-medium text-black shadow-[0_0_45px_rgba(236,225,5,0.65)] transition-transform duration-200 hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#ECE105] px-7 py-3 text-[14px] font-medium text-black shadow-[0_0_45px_rgba(236,225,5,0.65)] transition-transform duration-200 hover:-translate-y-0.5"
             >
               Watch demo
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-xs transition-transform group-hover:translate-x-0.5">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-[12px] transition-transform group-hover:translate-x-0.5">
                 ↗
               </span>
             </button>
-          </motion.div>
+          </motion.div> 
+          */}
         </div>
 
         {/* RIGHT: HELMET + FLOOR GRID */}

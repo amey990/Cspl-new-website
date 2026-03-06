@@ -24,6 +24,8 @@ const fadeIn = {
 };
 
 const openDemo = () => {
+  {/* Temporarily disabled video popup */}
+  /*
   window.dispatchEvent(
     new CustomEvent('commedia:open-demo', {
       detail: {
@@ -32,9 +34,12 @@ const openDemo = () => {
       },
     })
   );
+  */
 };
 
 const openPlaybooks = () => {
+  {/* Temporarily disabled video popup */}
+  /*
   window.dispatchEvent(
     new CustomEvent('commedia:open-demo', {
       detail: {
@@ -43,6 +48,7 @@ const openPlaybooks = () => {
       },
     })
   );
+  */
 };
 
 
@@ -159,11 +165,12 @@ export default function OperationsAdvisorPage() {
             </div>
 
             {/* CTA */}
+            {/* CTA */}
             <div className="pt-4 flex flex-wrap items-center gap-4">
-              <button
+              {/* <button
                 type="button"
-                 onClick={openDemo}
-                  aria-label="Watch Operations Advisor demo"
+                onClick={openDemo}
+                aria-label="Watch Operations Advisor demo"
                 className="group inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-medium text-black shadow-[0_0_40px_rgba(255,89,6,0.7)] transition-transform duration-200 hover:-translate-y-0.5"
                 style={{ backgroundColor: ACCENT }}
               >
@@ -171,9 +178,7 @@ export default function OperationsAdvisorPage() {
                 <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-xs transition-transform group-hover:translate-x-0.5">
                   ↗
                 </span>
-              </button>
-
-            
+              </button> */}
             </div>
           </motion.div>
 
@@ -654,15 +659,14 @@ export default function OperationsAdvisorPage() {
                   </span>
                 </Link>
 
-                <button
+               {/* <button
                   type="button"
-                    onClick={openDemo}
-  aria-label="Watch Operations Advisor demo"
-
+                  onClick={openDemo}
+                  aria-label="Watch Operations Advisor demo"
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
                 >
                   Watch demo
-                </button>
+                </button> */}
               </div>
             </div>
 

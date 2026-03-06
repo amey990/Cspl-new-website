@@ -33,70 +33,71 @@ export default function OperationsAdvisor() {
           className="w-full space-y-6"
         >
           {/* breadcrumb chip */}
-          <div className="mb-2 flex items-center gap-3 text-sm text-slate-200">
+          {/* Original: <div className="mb-2 flex items-center gap-3 text-sm text-slate-200"> */}
+          <div className="mb-2 flex items-center gap-3 text-[14px] text-slate-200">
             <span className="h-2.5 w-5 rounded-full bg-[#FF5906] shadow-[0_0_12px_rgba(255,89,6,0.9)]" />
-            <span className="text-[15px] text-slate-100">Operations Advisor</span>
-            <span className="text-lg leading-none text-slate-500">›</span>
+            {/* Original: <span className="text-[15px] text-slate-100">Operations Advisor</span> */}
+            <span className="text-[17px] text-slate-100">Operations Advisor</span>
+            {/* Original: <span className="text-lg leading-none text-slate-500">›</span> */}
+            <span className="text-[18px] leading-none text-slate-500">›</span>
           </div>
 
           {/* label chip */}
-          <p className="inline-flex items-center rounded-full border border-[#FF5906]/40 bg-[#FF5906]/8 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[#FD935E]">
+          {/* Original: <p className="inline-flex items-center rounded-full border border-[#FF5906]/40 bg-[#FF5906]/8 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-[#FD935E]"> */}
+          <p className="inline-flex items-center rounded-full border border-[#FF5906]/40 bg-[#FF5906]/8 px-4 py-1 text-[12px] font-medium uppercase tracking-[0.18em] text-[#FD935E]">
             OPERATIONS ADVISOR · AGENTIC SOLUTION
           </p>
 
           {/* heading */}
-          <h2 className="text-3xl font-semibold text-white md:text-4xl">
+          {/* Original: <h2 className="text-5xl font-semibold text-white md:text-7xl"> */}
+          <h2 className="text-[32px] font-semibold text-white md:text-[48px] leading-tight">
             Give every operator an AI partner for real-time decisions.
           </h2>
 
           {/* subheading */}
-          <p className="max-w-xl text-sm text-slate-300/85 md:text-base">
+          {/* Original: <p className="max-w-xl text-lg text-slate-300/85 md:text-base"> */}
+          <p className="max-w-xl text-[18px] text-slate-300/85 md:text-[20px]">
             Ops Advisor watches your live operations, surfaces the right signals, and recommends
             next best actions — so teams can respond faster and with more confidence.
           </p>
 
           {/* bullets */}
-          <div className="mt-2 grid gap-3 text-sm text-slate-100/90 md:grid-cols-2 md:gap-4">
+          {/* Original: <div className="mt-2 grid gap-3 text-base text-slate-100/90 md:grid-cols-2 md:gap-4"> */}
+          <div className="mt-2 grid gap-3 text-[16px] text-slate-100/90 md:grid-cols-2 md:gap-4 md:text-[18px]">
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
+              {/* Original: <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" /> */}
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
               <span>Agentic workflows that triage, route and recommend actions automatically.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
+              {/* Original: <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" /> */}
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
               <span>Live health scores across sites, assets and customer-facing services.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
+              {/* Original: <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" /> */}
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
               <span>Root-cause hints pulled from tickets, logs and historical incidents.</span>
             </div>
             <div className="flex items-start gap-3">
-              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
+              {/* Original: <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" /> */}
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
               <span>Playbooks that adapt as conditions change — not static runbooks.</span>
             </div>
           </div>
 
           {/* button */}
-          <div className="mt-6">
+         {/* <div className="mt-6">
             <button
               type="button"
-              onClick={() => {
-  window.dispatchEvent(
-    new CustomEvent('commedia:open-demo', {
-      detail: {
-        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
-        title: 'Ops-advisor — AI Agent',                 // optional
-      },
-    })
-  );
-}}
-              className="group inline-flex items-center gap-2 rounded-full bg-[#FF5906] px-7 py-3 text-sm font-medium text-black shadow-[0_0_40px_rgba(255,89,6,0.6)] transition-transform duration-200 hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#FF5906] px-7 py-3 text-[14px] font-medium text-black shadow-[0_0_40px_rgba(255,89,6,0.6)] transition-transform duration-200 hover:-translate-y-0.5"
             >
               Watch demo
-              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-xs transition-transform group-hover:translate-x-0.5">
+              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-[12px] transition-transform group-hover:translate-x-0.5">
                 ↗
               </span>
             </button>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* RIGHT: IMAGE */}

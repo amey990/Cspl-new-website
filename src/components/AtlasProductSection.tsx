@@ -31,11 +31,12 @@ export default function AtlasGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.6, ease: easeOutExpo }}
-          className="mb-5 flex items-center gap-2 self-start pl-12 text-sm text-slate-200"
+          // Original: className="mb-5 flex items-center gap-2 self-start pl-12 text-sm text-slate-200"
+          className="mb-5 flex items-center gap-2 self-start pl-12 text-[14px] text-slate-200"
         >
           <span className="h-2.5 w-4 rounded-full bg-lime-400 shadow-[0_0_10px_rgba(190,242,100,0.9)]" />
-          <span className="text-[15px] text-slate-100">Project management</span>
-          <span className="text-lg leading-none text-slate-500">›</span>
+          <span className="text-slate-100">Project management</span>
+          <span className="text-[18px] leading-none text-slate-500">›</span>
         </motion.div>
 
         {/* Big hero image – Effect 1 (fade / slide / scale / blur) */}
@@ -60,12 +61,11 @@ export default function AtlasGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
           transition={{ duration: 0.7, ease: easeOutExpo, delay: 0.05 }}
-          // className="-mt-19 text-center"
           className="-mt-19 text-center relative z-10 pointer-events-none"
-
         >
           <h2
-            className="text-[152px] leading-none font-semibold tracking-tight text-transparent md:text-[150px]"
+            // Original: className="text-[152px] leading-none font-semibold tracking-tight text-transparent md:text-[150px]"
+            className="text-[120px] leading-none font-semibold tracking-tight text-transparent md:text-[150px]"
             style={{
               backgroundImage:
                 'linear-gradient(to bottom, #f9fafb 0%, #d1d5db 35%, #9ca3af 55%, #020617 100%)',
@@ -108,64 +108,58 @@ export default function AtlasGrid() {
             transition={{ duration: 0.7, ease: easeOutExpo }}
             className="space-y-6 text-left md:pl-4"
           >
-            <p className="inline-flex items-center rounded-full border border-lime-400/40 bg-lime-400/5 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-lime-300">
+            <p className="inline-flex items-center rounded-full border border-lime-400/40 bg-lime-400/5 px-4 py-1 text-[12px] font-medium uppercase tracking-[0.18em] text-lime-300">
               Atlas · Project Management
             </p>
 
-            <h3 className="text-3xl font-semibold text-white md:text-4xl">
+            {/* Original: <h3 className="text-4xl font-semibold text-white md:text-5xl"> */}
+            <h3 className="text-[32px] font-semibold text-white md:text-[48px] leading-tight">
               Keep every media project on the same timeline.
             </h3>
 
-            <p className="max-w-xl text-sm text-slate-300/80 md:text-base">
+            {/* Original: <p className="max-w-xl text-lg text-slate-300/80 md:text-xl"> */}
+            <p className="max-w-xl text-[18px] text-slate-300/80 md:text-[20px]">
               Atlas gives broadcast and streaming teams a single live grid to
               plan, assign and track every activity across shows, channels and
               locations.
             </p>
 
-            <div className="mt-4 grid gap-3 text-sm text-slate-100/90 md:grid-cols-2 md:gap-4">
+            {/* Original: <div className="mt-4 grid gap-3 text-xl text-slate-100/90 md:grid-cols-2 md:gap-4"> */}
+            <div className="mt-4 grid gap-3 text-[16px] text-slate-100/90 md:grid-cols-2 md:gap-4 md:text-[18px]">
               <div className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lime-400" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-lime-400" />
                 <span>Grid-level visibility across all productions and venues.</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lime-400" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-lime-400" />
                 <span>
                   Real-time status for every role, from studio ops to field teams.
                 </span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lime-400" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-lime-400" />
                 <span>Templates for recurring shows, events and channel grids.</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-lime-400" />
+                <span className="mt-2 h-1.5 w-1.5 rounded-full bg-lime-400" />
                 <span>
                   Built for high-volume media operations that can’t miss a go-live.
                 </span>
               </div>
             </div>
 
-            <div className="mt-8 flex justify-start md:justify-end">
+           {/* <div className="mt-8 flex justify-start md:justify-end">
               <button
                 type="button"
-                onClick={() => {
-  window.dispatchEvent(
-    new CustomEvent('commedia:open-demo', {
-      detail: {
-        url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder now
-        title: 'Atlas — Project Management',                 // optional
-      },
-    })
-  );
-}}
-                className="group inline-flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-sm font-medium text-black shadow-[0_0_45px_rgba(190,242,100,0.65)] transition-transform duration-200 hover:-translate-y-0.5"
+                className="group inline-flex items-center gap-2 rounded-full bg-lime-400 px-7 py-3 text-[14px] font-medium text-black shadow-[0_0_45px_rgba(190,242,100,0.65)] transition-transform duration-200 hover:-translate-y-0.5"
               >
                 Watch demo
-                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-xs transition-transform group-hover:translate-x-0.5">
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black/10 text-[12px] transition-transform group-hover:translate-x-0.5">
                   ↗
                 </span>
               </button>
-            </div>
+            </div> 
+            */}
           </motion.div>
         </div>
       </div>

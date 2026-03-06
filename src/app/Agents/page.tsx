@@ -1,5 +1,6 @@
 'use client';
 
+
 import Link from 'next/link';
 import { motion, cubicBezier } from 'framer-motion';
 
@@ -22,6 +23,8 @@ const fadeIn = {
 
 
 const openOverview = () => {
+  // Temporarily disabled video popup
+  /*
   window.dispatchEvent(
     new CustomEvent('commedia:open-demo', {
       detail: {
@@ -30,6 +33,7 @@ const openOverview = () => {
       },
     })
   );
+  */
 };
 
 export default function AgenticSolutionsPage() {
@@ -150,14 +154,14 @@ export default function AgenticSolutionsPage() {
                 </span>
               </Link>
 
-              <button
+             {/* <button
                 type="button"
                 onClick={openOverview}
-  aria-label="Watch Agentic Solutions overview"
+                aria-label="Watch Agentic Solutions overview"
                 className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
               >
                 Watch demo
-              </button>
+              </button> */}
             </div>
           </motion.div>
 
@@ -520,14 +524,14 @@ export default function AgenticSolutionsPage() {
                   </span>
                 </Link>
 
-                <button
+               {/* <button
                   type="button"
                   onClick={openOverview}
-  aria-label="Watch Agentic Solutions overview"
+                  aria-label="Watch Agentic Solutions overview"
                   className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-transparent px-6 py-3 text-sm font-medium text-slate-100 transition-colors duration-200 hover:border-white/60"
                 >
                   watch demo 
-                </button>
+                </button> */}
               </div>
             </div>
 
