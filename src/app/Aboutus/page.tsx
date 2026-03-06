@@ -23,6 +23,14 @@ import ImpactImg from '../../../assets/Impact.png';
 import IndiaUp from '../../../assets/Aboutus/Indiamap.png';
 import GlobalUp from '../../../assets/Aboutus/Global.png';
 
+// Achievement Images (Corrected spelling and folder paths)
+import Achievement1 from '../../../assets/Achivement1Groundstation.png';
+import Achievement2 from '../../../assets/Achivement2Panindiasdwan.png';
+import Achievement3 from '../../../assets/Achivement3Wifiandlan.png';
+import Achievement4 from '../../../assets/Achievement4train.png';
+import Achievement5 from '../../../assets/Achievement5datacentre.png';
+import Achievement6 from '../../../assets/Achievement6Airport.png';
+
 // ---------------------------------------------
 // INTERSECTION OBSERVER HOOK
 // ---------------------------------------------
@@ -166,130 +174,128 @@ export default function AboutUs() {
             </p>
           </div>
 
-          {/* Right – three cards with simple grayscale visuals */}
-               {/* Right – three cards with simple outline visuals + images */}
-      <div
-        ref={rightTextRef}
-        className={`space-y-4 transition-all duration-1000 ${
-          rightTextInView
-            ? 'translate-x-0 opacity-100'
-            : 'translate-x-6 opacity-0'
-        }`}
-      >
-        {[
-          {
-            label: 'Vision',
-            color: 'text-emerald-300',
-            text: 'A world where industrial operations are as observable and collaborative as modern software teams – with every worker supported by intelligent tools.',
-            image: VisionImg,
-          },
-          {
-            label: 'Mission',
-            color: 'text-sky-300',
-            text: 'Build AI-first products that connect control rooms, field workers and assets into a single operational loop, so teams can move from reacting to anticipating.',
-            image: MissionImg,
-          },
-          {
-            label: 'Impact',
-            color: 'text-fuchsia-300',
-            text: 'Higher uptime, safer shifts and faster incident response for enterprises across energy, utilities, manufacturing and infrastructure – with measurable gains in reliability and trust.',
-            image: ImpactImg,
-          },
-        ].map((item) => (
+          {/* Right – three cards with simple outline visuals + images */}
           <div
-            key={item.label}
-            className="flex gap-4 rounded-2xl border border-white/8 bg-zinc-950/60 p-4 shadow-[0_18px_70px_rgba(0,0,0,0.85)]"
+            ref={rightTextRef}
+            className={`space-y-4 transition-all duration-1000 ${
+              rightTextInView
+                ? 'translate-x-0 opacity-100'
+                : 'translate-x-6 opacity-0'
+            }`}
           >
-            {/* outline image block */}
-            <div className="mt-1 h-14 w-14 flex-shrink-0 rounded-xl border border-white/18 bg-transparent overflow-hidden">
-              <Image
-                src={item.image}
-                alt={`${item.label} illustration`}
-                className="h-full w-full object-cover"
-              />
-            </div>
-
-            <div className="space-y-1">
-              <p
-                className={`text-[11px] font-semibold uppercase tracking-[0.22em] ${item.color}`}
-              >
-                {item.label}
-              </p>
-              <p className="text-sm leading-relaxed text-zinc-200">
-                {item.text}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-        </div>
-      </div>
-
-       {/* --------------------------------------------- */}
-        {/* LEADERS SECTION */}
-        {/* --------------------------------------------- */}
-        <div
-          ref={leadersRef}
-          className={`mx-auto mt-30 max-w-6xl transition-all duration-1000 ${
-            leadersInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-          }`}
-        >
-          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-white">
-                We care deeply about the quality of our work.
-              </h2>
-              <p className="mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-zinc-300">
-                A compact team of builders, operators and domain experts – united by a
-                bias for shipping and a respect for real-world complexity.
-              </p>
-            </div>
-
-            <Link
-              href="/Careers"
-              className="inline-flex items-center gap-2 rounded-full border border-emerald-400/50 bg-emerald-400/10 px-5 py-2 text-xs font-medium uppercase tracking-[0.18em] text-emerald-100 shadow-[0_0_28px_rgba(16,185,129,0.55)] transition hover:bg-emerald-400/20"
-            >
-              We&apos;re hiring
-              <span className="text-base">↗</span>
-            </Link>
-          </div>
-
-          {/* Leaders grid */}
-          <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {[
-              { img: Leader1, name: 'C S Raghava Rao', role: 'Founder & MD' },
-              { img: Leader2, name: 'Shri C Subba Rao', role: 'Director' },
-              { img: Leader3, name: 'C V Ramani', role: 'Advisor' },
-              { img: Leader4, name: 'G Padmavati', role: 'Advisor – Finance' },
-              { img: Leader5, name: 'Harshad Awasare', role: 'COO' },
-              { img: Leader6, name: 'Subeeth Kotian', role: 'VP – Commercial' },
-              { img: Leader8, name: 'Deepak Trisal', role: 'VP – Service Delivery' },
-            ].map((leader, i) => (
+              {
+                label: 'Vision',
+                color: 'text-emerald-300',
+                text: 'A world where industrial operations are as observable and collaborative as modern software teams – with every worker supported by intelligent tools.',
+                image: VisionImg,
+              },
+              {
+                label: 'Mission',
+                color: 'text-sky-300',
+                text: 'Build AI-first products that connect control rooms, field workers and assets into a single operational loop, so teams can move from reacting to anticipating.',
+                image: MissionImg,
+              },
+              {
+                label: 'Impact',
+                color: 'text-fuchsia-300',
+                text: 'Higher uptime, safer shifts and faster incident response for enterprises across energy, utilities, manufacturing and infrastructure – with measurable gains in reliability and trust.',
+                image: ImpactImg,
+              },
+            ].map((item) => (
               <div
-                key={leader.name}
-                className={`group rounded-2xl border border-white/8 bg-white/[0.02] p-3 shadow-[0_20px_70px_rgba(0,0,0,0.9)] backdrop-blur-sm transition-all duration-700 ${
-                  leadersInView ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
-                }`}
-                style={{ transitionDelay: `${i * 90}ms` }}
+                key={item.label}
+                className="flex gap-4 rounded-2xl border border-white/8 bg-zinc-950/60 p-4 shadow-[0_18px_70px_rgba(0,0,0,0.85)]"
               >
-                <div className="aspect-square w-full overflow-hidden rounded-xl">
+                {/* outline image block */}
+                <div className="mt-1 h-14 w-14 flex-shrink-0 rounded-xl border border-white/18 bg-transparent overflow-hidden">
                   <Image
-                    src={leader.img}
-                    alt={leader.name}
-                    className="h-full w-full object-cover grayscale transition duration-300 group-hover:scale-[1.03] group-hover:grayscale-0"
+                    src={item.image}
+                    alt={`${item.label} illustration`}
+                    className="h-full w-full object-cover"
                   />
                 </div>
-                <h3 className="mt-3 text-sm font-medium text-white">
-                  {leader.name}
-                </h3>
-                <p className="text-[11px] uppercase tracking-[0.16em] text-zinc-400">
-                  {leader.role}
-                </p>
+
+                <div className="space-y-1">
+                  <p
+                    className={`text-[11px] font-semibold uppercase tracking-[0.22em] ${item.color}`}
+                  >
+                    {item.label}
+                  </p>
+                  <p className="text-sm leading-relaxed text-zinc-200">
+                    {item.text}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
+      </div>
+
+      {/* --------------------------------------------- */}
+      {/* LEADERS SECTION */}
+      {/* --------------------------------------------- */}
+      <div
+        ref={leadersRef}
+        className={`mx-auto mt-30 max-w-6xl transition-all duration-1000 ${
+          leadersInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+        }`}
+      >
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-semibold leading-tight text-white">
+              We care deeply about the quality of our work.
+            </h2>
+            <p className="mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-zinc-300">
+              A compact team of builders, operators and domain experts – united by a
+              bias for shipping and a respect for real-world complexity.
+            </p>
+          </div>
+
+          <Link
+            href="/Careers"
+            className="inline-flex items-center gap-2 rounded-full border border-emerald-400/50 bg-emerald-400/10 px-5 py-2 text-xs font-medium uppercase tracking-[0.18em] text-emerald-100 shadow-[0_0_28px_rgba(16,185,129,0.55)] transition hover:bg-emerald-400/20"
+          >
+            We&apos;re hiring
+            <span className="text-base">↗</span>
+          </Link>
+        </div>
+
+        {/* Leaders grid */}
+        <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          {[
+            { img: Leader1, name: 'C S Raghava Rao', role: 'Founder & MD' },
+            { img: Leader2, name: 'Shri C Subba Rao', role: 'Director' },
+            { img: Leader3, name: 'C V Ramani', role: 'Advisor' },
+            { img: Leader4, name: 'G Padmavati', role: 'Advisor – Finance' },
+            { img: Leader5, name: 'Harshad Awasare', role: 'COO' },
+            { img: Leader6, name: 'Subeeth Kotian', role: 'VP – Commercial' },
+            { img: Leader8, name: 'Deepak Trisal', role: 'VP – Service Delivery' },
+          ].map((leader, i) => (
+            <div
+              key={leader.name}
+              className={`group rounded-2xl border border-white/8 bg-white/[0.02] p-3 shadow-[0_20px_70px_rgba(0,0,0,0.9)] backdrop-blur-sm transition-all duration-700 ${
+                leadersInView ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'
+              }`}
+              style={{ transitionDelay: `${i * 90}ms` }}
+            >
+              <div className="aspect-square w-full overflow-hidden rounded-xl">
+                <Image
+                  src={leader.img}
+                  alt={leader.name}
+                  className="h-full w-full object-cover grayscale transition duration-300 group-hover:scale-[1.03] group-hover:grayscale-0"
+                />
+              </div>
+              <h3 className="mt-3 text-sm font-medium text-white">
+                {leader.name}
+              </h3>
+              <p className="text-[11px] uppercase tracking-[0.16em] text-zinc-400">
+                {leader.role}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
 
       {/* ----------------------------------------- */}
       {/* GLOBAL & INDIA PRESENCE SECTION          */}
@@ -363,187 +369,86 @@ export default function AboutUs() {
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {[
             {
-              title: '500+ Projects Delivered',
-              subtitle: 'Across multiple industries worldwide.',
-              date: 'Milestone · 2024',
+              title: 'Supporting Leo satellite with AWS Ground Station',
+              subtitle: "We're proud to support a prestigious government space mission with 24/7 ground station services via AWS Ground Station, enabling real-time satellite communication for complex orbital maneuvers",
+              
               visual: (
                 <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
-                  <div
-                    className="absolute inset-0 opacity-[0.22]"
-                    style={{
-                      backgroundImage: `
-                        linear-gradient(to right, rgba(148,163,184,0.10) 1px, transparent 1px),
-                        linear-gradient(to bottom, rgba(148,163,184,0.10) 1px, transparent 1px)
-                      `,
-                      backgroundSize: '40px 40px',
-                    }}
+                  <Image 
+                    src={Achievement1} 
+                    alt="Achievement 1" 
+                    className="h-full w-full object-cover" 
                   />
-                  <div className="relative flex h-full items-center justify-center">
-                    <span className="text-[96px] font-semibold tracking-tight text-zinc-500">
-                      500+
-                    </span>
-                  </div>
                 </div>
               ),
             },
             {
-              title: '20+ Years of Excellence',
-              subtitle: 'A legacy of innovation & engineering.',
-              date: 'Founded · 2004',
+              title: 'PAN-India SD-WAN Rollout',
+              subtitle: 'We successfully executed a PAN-India SD-WAN rollout using FortiGate, delivering secure, optimized, and centrally managed network connectivity across all locations',
+              
               visual: (
                 <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] via-transparent to-black" />
-                  <div className="relative flex h-full items-center justify-center">
-                    <div className="grid grid-cols-5 gap-3 px-10">
-                      {Array.from({ length: 20 }).map((_, i) => (
-                        <div
-                          key={i}
-                          className="h-4 w-4 rounded-sm bg-zinc-600/40"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ),
-            },
-            {
-              title: 'Global Client Portfolio',
-              subtitle: 'Trusted by enterprises in 14+ countries.',
-              date: 'Worldwide · 2024',
-              visual: (
-                <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
-                  <div className="absolute inset-0 bg-radial from-white/[0.06] via-transparent to-black" />
-                  <div className="relative flex h-full items-center justify-center">
-                    <svg
-                      className="h-40 w-40 text-zinc-500/60"
-                      viewBox="0 0 100 100"
-                      fill="none"
-                    >
-                      <circle cx="50" cy="50" r="34" stroke="currentColor" strokeWidth="1" />
-                      <circle cx="50" cy="50" r="24" stroke="currentColor" strokeWidth="0.8" />
-                      <circle cx="50" cy="50" r="14" stroke="currentColor" strokeWidth="0.8" />
-                      <line
-                        x1="50"
-                        y1="16"
-                        x2="50"
-                        y2="84"
-                        stroke="currentColor"
-                        strokeWidth="0.8"
-                      />
-                      <line
-                        x1="16"
-                        y1="50"
-                        x2="84"
-                        y2="50"
-                        stroke="currentColor"
-                        strokeWidth="0.8"
-                      />
-                      <ellipse
-                        cx="50"
-                        cy="50"
-                        rx="34"
-                        ry="12"
-                        stroke="currentColor"
-                        strokeWidth="0.6"
-                      />
-                      <ellipse
-                        cx="50"
-                        cy="50"
-                        rx="12"
-                        ry="34"
-                        stroke="currentColor"
-                        strokeWidth="0.6"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              ),
-            },
-            {
-              title: 'Cutting-Edge AI Solutions',
-              subtitle: 'Transforming businesses with automation.',
-              date: 'Innovation · 2024',
-              visual: (
-                <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.04] via-transparent to-black" />
-                  <div className="relative flex h-full items-center justify-center px-10">
-                    <div className="flex h-32 w-full items-end justify-between gap-2">
-                      {Array.from({ length: 12 }).map((_, i) => (
-                        <div
-                          key={i}
-                          className="flex-1 rounded-t bg-zinc-500/45"
-                          style={{ height: `${30 + i * 4}%` }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ),
-            },
-            {
-              title: 'Award-Winning Service',
-              subtitle: 'Recognized for quality & customer success.',
-              date: 'Recognition · 2024',
-              visual: (
-                <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] via-transparent to-black" />
-                  <div className="relative flex h-full items-center justify-center">
-                    <svg
-                      className="h-40 w-40 text-zinc-500/65"
-                      viewBox="0 0 100 100"
-                      fill="none"
-                    >
-                      <path
-                        d="M50 14L36 64L80 40H20L64 64L50 14Z"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        fill="currentColor"
-                        fillOpacity="0.18"
-                      />
-                      <circle
-                        cx="50"
-                        cy="50"
-                        r="12"
-                        fill="currentColor"
-                        fillOpacity="0.28"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              ),
-            },
-            {
-              title: 'Expanding Global Footprint',
-              subtitle: 'Growing presence in APAC, EMEA & USA.',
-              date: 'Expansion · 2024',
-              visual: (
-                <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
-                  <div
-                    className="absolute inset-0 opacity-[0.5]"
-                    style={{
-                      backgroundImage: `
-                        radial-gradient(circle at 20% 20%, rgba(148,163,184,0.25) 0, transparent 55%),
-                        radial-gradient(circle at 80% 30%, rgba(148,163,184,0.18) 0, transparent 60%),
-                        radial-gradient(circle at 40% 80%, rgba(148,163,184,0.16) 0, transparent 55%)
-                      `,
-                    }}
+                  <Image 
+                    src={Achievement2} 
+                    alt="Achievement 2" 
+                    className="h-full w-full object-cover" 
                   />
-                  <div className="relative flex h-full items-center justify-center">
-                    <div className="relative flex h-32 w-32 items-center justify-center">
-                      <div className="absolute inset-0 rounded-full border border-zinc-600/40" />
-                      <div className="absolute inset-4 rounded-full border border-zinc-600/30" />
-                      <div className="absolute inset-8 rounded-full border border-zinc-600/20" />
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        {Array.from({ length: 6 }).map((_, i) => (
-                          <div
-                            key={i}
-                            className="absolute h-full w-px bg-zinc-600/25"
-                            style={{ transform: `rotate(${i * 30}deg)` }}
-                          />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+                </div>
+              ),
+            },
+            {
+              title: 'Managed Wi-Fi & LAN Deployment',
+              subtitle: 'We deliver end-to-end managed Wi-Fi and LAN deployment services, ensuring secure, high-performance connectivity across enterprise environments.',
+              
+              visual: (
+                <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
+                  <Image 
+                    src={Achievement3} 
+                    alt="Achievement 3" 
+                    className="h-full w-full object-cover" 
+                  />
+                </div>
+              ),
+            },
+            {
+              title: 'Pan-India Wi-Fi Rollout for Indian Railways',
+              subtitle: 'Managed the Wi-Fi network rollout across 4,791 railway stations nationwide within stringent timelines, showcasing superior project management and technical expertise.',
+              
+              visual: (
+                <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
+                  <Image 
+                    src={Achievement4} 
+                    alt="Achievement 4" 
+                    className="h-full w-full object-cover" 
+                  />
+                </div>
+              ),
+            },
+            {
+              title: 'Datacenter & Network Ops for Indian Bank',
+              subtitle: 'Provided 24/7 network monitoring and management for 1,900+ branches, improving uptime and operational efficiency.',
+              
+              visual: (
+                <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
+                  <Image 
+                    src={Achievement5} 
+                    alt="Achievement 5" 
+                    className="h-full w-full object-cover" 
+                  />
+                </div>
+              ),
+            },
+            {
+              title: 'Enterprise Network Upgrade for Hyderabad Airport',
+              subtitle: 'Upgraded wireless and data center infra at Hyderabad International Airport using Cisco Catalyst, enabling scalability and security.',
+              
+              visual: (
+                <div className="relative h-[260px] w-full overflow-hidden rounded-3xl bg-gradient-to-br from-zinc-950 to-zinc-900">
+                  <Image 
+                    src={Achievement6} 
+                    alt="Achievement 6" 
+                    className="h-full w-full object-cover" 
+                  />
                 </div>
               ),
             },
@@ -559,7 +464,7 @@ export default function AboutUs() {
             >
               {item.visual}
               <div className="pt-5">
-                <p className="mb-2 text-xs text-zinc-500">{item.date}</p>
+                
                 <h3 className="mb-1 text-xl font-medium text-white md:text-2xl">
                   {item.title}
                 </h3>

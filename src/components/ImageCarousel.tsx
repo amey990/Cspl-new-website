@@ -1,6 +1,5 @@
 "use client";
 
-// import React, { useState, useCallback, useEffect } from "react";
 import React, { useState, useCallback, useEffect, useRef } from "react";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -62,9 +61,37 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0); // 0: idle, 1: next, -1: prev
 
+  // Responsive dimensions state
+  const [responsiveWidth, setResponsiveWidth] = useState(cardWidth);
+  const [responsiveHeight, setResponsiveHeight] = useState(cardHeight);
+
+  // Update dimensions on window resize to ensure mobile responsiveness
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 768) {
+        // Calculate max allowed width so the track + side offsets fit within ~90% of screen width
+        const maxAllowedWidth = (screenWidth * 0.9) / (1 + SIDE_OFFSET_FACTOR * 2);
+        const newWidth = Math.min(cardWidth, maxAllowedWidth);
+        
+        setResponsiveWidth(newWidth);
+        // Maintain aspect ratio
+        setResponsiveHeight((newWidth / cardWidth) * cardHeight);
+      } else {
+        setResponsiveWidth(cardWidth);
+        setResponsiveHeight(cardHeight);
+      }
+    };
+
+    handleResize(); // Fire immediately on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [cardWidth, cardHeight]);
+
   const totalSlides = slides.length;
-  const sideOffset = cardWidth * SIDE_OFFSET_FACTOR;
-  const trackWidth = cardWidth + sideOffset * 2; // exactly fits main + side peeks
+  // Use the new responsive width to calculate offsets
+  const sideOffset = responsiveWidth * SIDE_OFFSET_FACTOR;
+  const trackWidth = responsiveWidth + sideOffset * 2; // exactly fits main + side peeks
 
   const paginate = useCallback(
     (newDirection: 1 | -1) => {
@@ -166,32 +193,30 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
     }
   };
 
-  // --- autoplay ---
- // --- autoplay (robust + React-controlled hover pause) ---
-// const intervalRef = React.useRef<ReturnType<typeof setInterval> | null>(null);
-const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // --- autoplay (robust + React-controlled hover pause) ---
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-const [isPaused, setIsPaused] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
-const stopAutoPlay = useCallback(() => {
-  if (intervalRef.current) {
-    clearInterval(intervalRef.current);
-    intervalRef.current = null;
-  }
-}, []);
+  const stopAutoPlay = useCallback(() => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  }, []);
 
-const startAutoPlay = useCallback(() => {
-  stopAutoPlay();
-  if (autoPlay <= 0 || totalSlides <= 1) return;
-  intervalRef.current = setInterval(() => paginate(1), autoPlay);
-}, [autoPlay, paginate, stopAutoPlay, totalSlides]);
+  const startAutoPlay = useCallback(() => {
+    stopAutoPlay();
+    if (autoPlay <= 0 || totalSlides <= 1) return;
+    intervalRef.current = setInterval(() => paginate(1), autoPlay);
+  }, [autoPlay, paginate, stopAutoPlay, totalSlides]);
 
-useEffect(() => {
-  if (isPaused) stopAutoPlay();
-  else startAutoPlay();
+  useEffect(() => {
+    if (isPaused) stopAutoPlay();
+    else startAutoPlay();
 
-  return () => stopAutoPlay();
-}, [isPaused, startAutoPlay, stopAutoPlay]);
+    return () => stopAutoPlay();
+  }, [isPaused, startAutoPlay, stopAutoPlay]);
 
 
   // --- keyboard nav ---
@@ -234,26 +259,25 @@ useEffect(() => {
   };
 
   return (
-      <div
-  id="image-carousel-container"
-  className={cn(
-    "flex flex-col items-center justify-center relative pb-6",
-    className
-  )}
-  style={{ background }}
-  onMouseEnter={() => pauseOnHover && setIsPaused(true)}
-  onMouseLeave={() => pauseOnHover && setIsPaused(false)}
-  onTouchStart={handleTouchStart}
-  onTouchMove={handleTouchMove}
-  onTouchEnd={handleTouchEnd}
->
-
-      {/* Track container – fixed width & overflow-hidden so nothing leaks into week card */}
+    <div
+      id="image-carousel-container"
+      className={cn(
+        "flex flex-col items-center justify-center relative pb-6",
+        className
+      )}
+      style={{ background }}
+      onMouseEnter={() => pauseOnHover && setIsPaused(true)}
+      onMouseLeave={() => pauseOnHover && setIsPaused(false)}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      {/* Track container – dynamically sized */}
       <div
         className="relative mx-auto overflow-hidden"
         style={{
           width: trackWidth,
-          height: cardHeight + 60,
+          height: responsiveHeight + 60,
         }}
       >
         {/* Arrows */}
@@ -261,14 +285,14 @@ useEffect(() => {
           <>
             <motion.button
               onClick={() => paginate(-1)}
-              className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white shadow-md transition hover:bg-black/80"
+              className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white shadow-md transition hover:bg-black/80 z-20"
               whileTap={{ scale: 0.9 }}
             >
               <ChevronLeft className="h-5 w-5" />
             </motion.button>
             <motion.button
               onClick={() => paginate(1)}
-              className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white shadow-md transition hover:bg-black/80"
+              className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/60 text-white shadow-md transition hover:bg-black/80 z-20"
               whileTap={{ scale: 0.9 }}
             >
               <ChevronRight className="h-5 w-5" />
@@ -296,13 +320,13 @@ useEffect(() => {
                     cardClassName
                   )}
                   style={{
-                    width: cardWidth,
-                    height: cardHeight,
+                    width: responsiveWidth,
+                    height: responsiveHeight,
                     borderRadius: cardRadius,
                     top: "50%",
                     left: "50%",
-                    marginLeft: -cardWidth / 2,
-                    marginTop: -cardHeight / 2,
+                    marginLeft: -responsiveWidth / 2,
+                    marginTop: -responsiveHeight / 2,
                   }}
                   initial={getVariantStyles("hidden")}
                   animate={getVariantStyles(position)}
@@ -333,12 +357,10 @@ useEffect(() => {
           {slides.map((_, index) => (
             <motion.button
               key={index}
-              // onClick={() => setCurrentIndex(index)}
               onClick={() => {
-  setDirection(index > currentIndex ? 1 : -1);
-  setCurrentIndex(index);
-}}
-
+                setDirection(index > currentIndex ? 1 : -1);
+                setCurrentIndex(index);
+              }}
               className={cn(
                 "h-2.5 w-2.5 rounded-full transition-transform duration-200",
                 index === currentIndex ? "scale-125" : "hover:scale-110"

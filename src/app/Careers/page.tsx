@@ -1,12 +1,8 @@
-
-
-// pp
 'use client';
 
 import Link from 'next/link';
 import { motion, cubicBezier } from 'framer-motion';
 import { Rocket, Target, HeartHandshake } from 'lucide-react';
-
 
 import ImageCarousel from '@/components/ImageCarousel';
 
@@ -90,7 +86,7 @@ export default function CareersPage() {
 
       <div className="relative z-10 pt-24 pb-28">
         {/* ------------------------------------------------------------------ */}
-        {/* HERO                                                              */}
+        {/* HERO                                                               */}
         {/* ------------------------------------------------------------------ */}
         <section className="mx-auto flex max-w-6xl flex-col gap-12 px-6 md:flex-row md:items-center md:px-10 lg:px-16">
           {/* LEFT: TEXT */}
@@ -194,7 +190,7 @@ export default function CareersPage() {
         </section>
 
         {/* ------------------------------------------------------------------ */}
-        {/* VALUES / WHAT WE'RE LIKE                                          */}
+        {/* VALUES / WHAT WE'RE LIKE                                           */}
         {/* ------------------------------------------------------------------ */}
         <section className="mt-28 mx-auto max-w-6xl px-6 md:px-10 lg:px-16">
           <motion.div
@@ -214,170 +210,169 @@ export default function CareersPage() {
           </motion.div>
 
           <motion.div
-  {...fadeIn}
-  className="mt-10 grid gap-6 md:grid-cols-3"
->
-  {[
-    {
-      title: 'Ship to learn',
-      body: 'We bias towards small, end-to-end releases that reach real customers fast.',
-      Icon: Rocket,
-    },
-    {
-      title: 'Own the problem',
-      body: 'You’ll sit close to users, data and the roadmap – not just tickets.',
-      Icon: Target,
-    },
-    {
-      title: 'Stay kind, stay sharp',
-      body: 'Direct feedback, low ego, and space to grow your craft.',
-      Icon: HeartHandshake,
-    },
-  ].map(({ title, body, Icon }) => (
-    <div
-      key={title}
-      className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 via-black/40 to-black/90 p-5 shadow-[0_26px_90px_rgba(0,0,0,0.9)]"
-    >
-      {/* Smooth, premium icon badge (no blue) */}
-      {/* Icon directly inside the grey cube (no inner black tile) */}
-<div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-b from-white/12 via-white/6 to-black/55 shadow-[0_18px_55px_rgba(0,0,0,0.8)]">
-  <Icon className="h-5 w-5 text-emerald-200/90 drop-shadow-[0_0_12px_rgba(52,211,153,0.16)]" />
-</div>
+            {...fadeIn}
+            className="mt-10 grid gap-6 md:grid-cols-3"
+          >
+            {[
+              {
+                title: 'Ship to learn',
+                body: 'We bias towards small, end-to-end releases that reach real customers fast.',
+                Icon: Rocket,
+              },
+              {
+                title: 'Own the problem',
+                body: 'You’ll sit close to users, data and the roadmap – not just tickets.',
+                Icon: Target,
+              },
+              {
+                title: 'Stay kind, stay sharp',
+                body: 'Direct feedback, low ego, and space to grow your craft.',
+                Icon: HeartHandshake,
+              },
+            ].map(({ title, body, Icon }) => (
+              <div
+                key={title}
+                className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 via-black/40 to-black/90 p-5 shadow-[0_26px_90px_rgba(0,0,0,0.9)]"
+              >
+                {/* Smooth, premium icon badge (no blue) */}
+                {/* Icon directly inside the grey cube (no inner black tile) */}
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-gradient-to-b from-white/12 via-white/6 to-black/55 shadow-[0_18px_55px_rgba(0,0,0,0.8)]">
+                  <Icon className="h-5 w-5 text-emerald-200/90 drop-shadow-[0_0_12px_rgba(52,211,153,0.16)]" />
+                </div>
 
-
-      <h3 className="text-base font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-sm text-slate-300/85">{body}</p>
-    </div>
-  ))}
-</motion.div>
+                <h3 className="text-base font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm text-slate-300/85">{body}</p>
+              </div>
+            ))}
+          </motion.div>
 
         </section>
 
-       {/* ------------------------------------------------------------------ */}
-{/* LIFE AT COMMEDIA                                                  */}
-{/* ------------------------------------------------------------------ */}
-<section className="mt-28 mx-auto max-w-6xl px-6 md:px-10 lg:px-12">
-  <motion.div
-    {...fadeUp}
-    className="flex flex-col gap-10"
-  >
-    {/* TEXT BLOCK */}
-    <div className="max-w-3xl">
-      <p className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-200">
-        Life at Commedia
-      </p>
-      <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
-        The work is intense. The environment doesn’t have to be.
-      </h2>
-      <p className="mt-3 text-sm text-slate-300/85 md:text-base">
-        We’re building serious products, but we try not to take ourselves too
-        seriously. Expect focused work blocks, plenty of whiteboarding, and
-        healthy respect for life outside Slack.
-      </p>
+        {/* ------------------------------------------------------------------ */}
+        {/* LIFE AT COMMEDIA                                                   */}
+        {/* ------------------------------------------------------------------ */}
+        <section className="mt-28 mx-auto max-w-6xl px-6 md:px-10 lg:px-12">
+          <motion.div
+            {...fadeUp}
+            className="flex flex-col gap-10"
+          >
+            {/* TEXT BLOCK */}
+            <div className="max-w-3xl">
+              <p className="inline-flex items-center rounded-full border border-sky-400/40 bg-sky-400/10 px-4 py-1 text-xs font-medium uppercase tracking-[0.18em] text-sky-200">
+                Life at Commedia
+              </p>
+              <h2 className="mt-5 text-3xl font-semibold text-white md:text-4xl">
+                The work is intense. The environment doesn’t have to be.
+              </h2>
+              <p className="mt-3 text-sm text-slate-300/85 md:text-base">
+                We’re building serious products, but we try not to take ourselves too
+                seriously. Expect focused work blocks, plenty of whiteboarding, and
+                healthy respect for life outside Slack.
+              </p>
 
-      <ul className="mt-6 space-y-3 text-sm text-slate-100/90">
-        <li className="flex gap-2">
-          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          <span>
-            Hybrid-first: a few anchor days in office for deep collaboration,
-            remote-friendly for focused work.
-          </span>
-        </li>
-        <li className="flex gap-2">
-          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          <span>
-            Makers’ schedule: long, protected blocks for building instead of
-            back-to-back meetings.
-          </span>
-        </li>
-        <li className="flex gap-2">
-          <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-          <span>
-            Real ownership over product areas, with visibility to customers and
-            leadership.
-          </span>
-        </li>
-      </ul>
-    </div>
-
-    {/* ROW: CAROUSEL LEFT, WEEK CARD RIGHT */}
-    <div className="grid items-stretch gap-8 md:grid-cols-2">
-      {/* LEFT: PHOTO CAROUSEL */}
-      <div className="flex items-center justify-center md:justify-start">
-        <ImageCarousel
-          className="w-full"
-          background="transparent"
-          cardWidth={380}
-          cardHeight={250}
-          cardRadius={28}
-          autoPlay={4500}
-          pauseOnHover
-          dotColor="#38bdf8"
-          slides={[
-            { id: '1', image: life1.src, alt: 'Life at Commedia 1' },
-            { id: '2', image: life2.src, alt: 'Life at Commedia 2' },
-            { id: '3', image: life3.src, alt: 'Life at Commedia 3' },
-            { id: '4', image: life4.src, alt: 'Life at Commedia 4' },
-            { id: '5', image: life5.src, alt: 'Life at Commedia 5' },
-          ]}
-        />
-      </div>
-
-      {/* RIGHT: A WEEK IN THE TEAM CARD */}
-      <motion.div
-        {...fadeIn}
-        className="flex justify-center md:justify-end"
-      >
-        <div className="w-full max-w-sm rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_28px_100px_rgba(0,0,0,1)]">
-          <div className="mb-3 flex items-center justify-between text-xs text-slate-300">
-            <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.16em]">
-              A week in the team
-            </span>
-            
-          </div>
-
-          <div className="space-y-3 text-[11px] text-slate-200">
-            <div className="flex items-start gap-3 rounded-lg bg-black/60 p-3">
-              <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-400" />
-              <div>
-                <div className="font-semibold text-white">Monday</div>
-                <div className="text-slate-300">
-                  Product review &amp; planning. Align on goals, unblock work.
-                </div>
-              </div>
+              <ul className="mt-6 space-y-3 text-sm text-slate-100/90">
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    Hybrid-first: a few anchor days in office for deep collaboration,
+                    remote-friendly for focused work.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    Makers’ schedule: long, protected blocks for building instead of
+                    back-to-back meetings.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>
+                    Real ownership over product areas, with visibility to customers and
+                    leadership.
+                  </span>
+                </li>
+              </ul>
             </div>
 
-            <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
-              <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-sky-400" />
-              <div>
-                <div className="font-semibold text-white">Tue–Thu</div>
-                <div className="text-slate-300">
-                  Deep build time. Pairing, async updates, customer calls when
-                  needed.
-                </div>
+            {/* ROW: CAROUSEL LEFT, WEEK CARD RIGHT */}
+            <div className="mt-8 flex w-full flex-col gap-10 overflow-hidden md:flex-row md:items-center md:gap-8">
+              {/* LEFT: PHOTO CAROUSEL */}
+              <div className="flex w-full flex-1 items-center justify-center overflow-hidden md:justify-start">
+                <ImageCarousel
+                  className="w-full max-w-full"
+                  background="transparent"
+                  cardWidth={380}
+                  cardHeight={250}
+                  cardRadius={28}
+                  autoPlay={4500}
+                  pauseOnHover
+                  dotColor="#38bdf8"
+                  slides={[
+                    { id: '1', image: life1.src, alt: 'Life at Commedia 1' },
+                    { id: '2', image: life2.src, alt: 'Life at Commedia 2' },
+                    { id: '3', image: life3.src, alt: 'Life at Commedia 3' },
+                    { id: '4', image: life4.src, alt: 'Life at Commedia 4' },
+                    { id: '5', image: life5.src, alt: 'Life at Commedia 5' },
+                  ]}
+                />
               </div>
-            </div>
 
-            <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
-              <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
-              <div>
-                <div className="font-semibold text-white">Friday</div>
-                <div className="text-slate-300">
-                  Demo hour, tech talks and retros. Close the loop and celebrate
-                  wins.
+              {/* RIGHT: A WEEK IN THE TEAM CARD */}
+              <motion.div
+                {...fadeIn}
+                className="flex w-full flex-1 justify-center md:justify-end"
+              >
+                <div className="w-full max-w-full sm:max-w-sm rounded-2xl border border-white/10 bg-gradient-to-b from-[#18181b] via-[#020617] to-black p-4 shadow-[0_28px_100px_rgba(0,0,0,1)]">
+                  <div className="mb-3 flex items-center justify-between text-xs text-slate-300">
+                    <span className="rounded-full bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.16em]">
+                      A week in the team
+                    </span>
+                    
+                  </div>
+
+                  <div className="space-y-3 text-[11px] text-slate-200">
+                    <div className="flex items-start gap-3 rounded-lg bg-black/60 p-3">
+                      <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                      <div>
+                        <div className="font-semibold text-white">Monday</div>
+                        <div className="text-slate-300">
+                          Product review &amp; planning. Align on goals, unblock work.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
+                      <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-sky-400" />
+                      <div>
+                        <div className="font-semibold text-white">Tue–Thu</div>
+                        <div className="text-slate-300">
+                          Deep build time. Pairing, async updates, customer calls when
+                          needed.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 rounded-lg bg-black/40 p-3">
+                      <span className="mt-0.5 h-1.5 w-1.5 rounded-full bg-fuchsia-400" />
+                      <div>
+                        <div className="font-semibold text-white">Friday</div>
+                        <div className="text-slate-300">
+                          Demo hour, tech talks and retros. Close the loop and celebrate
+                          wins.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
+                    <span>Minimal bureaucracy. Maximum context.</span>
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
-
-          <div className="mt-4 flex items-center justify-between text-[11px] text-slate-500">
-            <span>Minimal bureaucracy. Maximum context.</span>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  </motion.div>
-</section>
+          </motion.div>
+        </section>
 
 
         {/* ------------------------------------------------------------------ */}
