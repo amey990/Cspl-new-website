@@ -82,7 +82,7 @@ export default function Products() {
 
           <div className="mt-6">
             <Link
-              href="/products"
+              href="/Atlas"
               className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80 hover:border-white/20 hover:bg-white/[0.05]"
             >
               Learn more
@@ -182,6 +182,12 @@ export default function Products() {
               transition={{ duration: 0.7, ease: easeOutExpo }}
               className="flex flex-col items-center text-center"
             >
+              <div className="mb-4 self-start">
+  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[13px] text-white/70">
+    <span className="h-2 w-2 rounded-full bg-orange-400/80 shadow-[0_0_14px_rgba(251,146,60,.6)]" />
+    AI Operations
+  </span>
+</div>
               <h3
                 className="mb-3 text-[32px] font-medium leading-[38px] text-white"
                 style={{
@@ -195,6 +201,14 @@ export default function Products() {
                 Streamline product operations with AI-assisted labeling, root-cause hints, and
                 suggested actions across your backlog.
               </p>
+              <div className="mb-8">
+  <Link href="/Ops_advisor" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80 hover:border-white/20 hover:bg-white/[0.05]">
+    Learn more
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </Link>
+</div>
 
               <div className="relative">
                 <Image
@@ -217,6 +231,14 @@ export default function Products() {
               transition={{ duration: 0.7, ease: easeOutExpo, delay: 0.05 }}
               className="flex flex-col items-center text-center"
             >
+
+              <div className="mb-4 self-start">
+  <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-[13px] text-white/70">
+    <span className="h-2 w-2 rounded-full bg-yellow-400/80 shadow-[0_0_14px_rgba(167,139,250,.6)]" />
+    AI Assistant
+  </span>
+</div>
+
               <h3
                 className="mb-3 text-[32px] font-medium leading-[38px] text-white"
                 style={{
@@ -226,10 +248,19 @@ export default function Products() {
               >
                 CPAL Chatbot
               </h3>
-              <p className="mb-8 max-w-[480px] text-[17px] leading-[26px] text-[#9ca3af]">
+              <p className="mb-5 max-w-[480px] text-[17px] leading-[26px] text-[#9ca3af]">
                 Connect an assistant to your tools to answer questions, triage issues, and generate
                 updates. Works with Slack, email, and your data sources.
               </p>
+
+              <div className="mb-8">
+  <Link href="/CPAL" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80 hover:border-white/20 hover:bg-white/[0.05]">
+    Learn more
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+      <path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </Link>
+</div>
 
               <div className="relative">
                 <Image
@@ -309,7 +340,7 @@ export default function Products() {
               {/* Learn More Button */}
               <div>
                 <Link
-                  href="#"
+                  href="/Smart_Helmet"
                   className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 text-sm text-white/80 hover:border-white/20 hover:bg-white/[0.05]"
                 >
                   Learn more
