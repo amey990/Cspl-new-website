@@ -170,8 +170,8 @@ export default function TechnologiesStats() {
               <br />the technologies you trust.
             </h2>
 
-            {/* Adjusted max-w and gaps for a clean 3x3 professional look */}
-            <div className="mx-auto grid max-w-[420px] grid-cols-3 gap-4 md:gap-6">
+            {/* Added translate-x to nudge the grid right visually */}
+            <div className="mx-auto grid max-w-[420px] grid-cols-3 gap-4 md:gap-6 translate-x-2 md:translate-x-4 lg:translate-x-3">
               {technologies.map((tech, idx) => (
                 <motion.div
                   key={idx}
