@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { WebGLShader } from '@/components/WebGLShader';
 import BlurText from '@/components/BlurText';
@@ -57,7 +57,7 @@ export default function Hero() {
             />
           </div>
 
-          {/* Buttons – animated with blur effect */}
+          {/* Buttons  animated with blur effect */}
           <motion.div
             initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}

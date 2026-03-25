@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import { motion, cubicBezier } from 'framer-motion';
 // import Image from 'next/image';
@@ -41,14 +41,14 @@
 //           <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
 //             With the convergence of technologies, Commedia understands the evolving
 //             needs of growing enterprise companies. Diverse businesses now recognise the
-//             efficiency that modern IT and networking bring across functions – from
+//             efficiency that modern IT and networking bring across functions  from
 //             collaboration and security to customer experience.
 //           </p>
 
 //           <p className="mt-3 text-sm leading-relaxed text-zinc-300 md:text-base">
 //             Commedia has been delivering round-the-clock projects where customers&apos; IT
 //             and enterprise infrastructure are mission-critical. We work with leading
-//             technology stacks to provide seamless, high-end platforms – partnering with
+//             technology stacks to provide seamless, high-end platforms  partnering with
 //             vendors such as Dell, Cisco, AWS, HPE, Juniper, Avaya, Ruckus and SonicWall.
 //             Our engineers are trained and hands-on with the latest enterprise
 //             technologies as they emerge.
@@ -200,14 +200,14 @@ export default function EnterpriseSection() {
           <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
             With the convergence of technologies, Commedia understands the evolving
             needs of growing enterprise companies. Diverse businesses now recognise the
-            efficiency that modern IT and networking bring across functions – from
+            efficiency that modern IT and networking bring across functions from
             collaboration and security to customer experience.
           </p>
 
           <p className="mt-3 text-sm leading-relaxed text-zinc-300 md:text-base">
             Commedia has been delivering round-the-clock projects where customers&apos; IT
             and enterprise infrastructure are mission-critical. We work with leading
-            technology stacks to provide seamless, high-end platforms – partnering with
+            technology stacks to provide seamless, high-end platforms partnering with
             vendors such as Dell, Cisco, AWS, HPE, Juniper, Avaya, Ruckus and SonicWall.
             Our engineers are trained and hands-on with the latest enterprise
             technologies as they emerge.

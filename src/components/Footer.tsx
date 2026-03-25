@@ -36,7 +36,7 @@ const columns = {
     { label: 'Satcom', href: ROUTES.satcom },
   ],
   resources: [
-    { label: 'Documentation', href: '#' },
+    // { label: 'Documentation', href: '#' },
     { label: 'Case Studies', href: ROUTES.caseStudies },
     // { label: 'Blog', href: '#' },
   ],

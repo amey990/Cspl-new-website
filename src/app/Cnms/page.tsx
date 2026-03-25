@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -41,7 +41,7 @@ export default function CNMSPage() {
     new CustomEvent('commedia:open-demo', {
       detail: {
         url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder for now
-        title: 'CNMS — Network Management',
+        title: 'CNMS  Network Management',
       },
     })
   );
@@ -385,7 +385,7 @@ export default function CNMSPage() {
 
               <p className="mt-4 max-w-xl text-sm md:text-base leading-relaxed text-slate-300/85">
                 CNMS builds a topology-aware view of your network so operators can understand
-                where an issue started, what it touches, and who is affected — without hopping
+                where an issue started, what it touches, and who is affected  without hopping
                 across tools.
               </p>
 
@@ -429,7 +429,7 @@ export default function CNMSPage() {
 
               <p className="mt-4 max-w-xl text-sm md:text-base leading-relaxed text-slate-300/85">
                 CNMS groups related events, scores their severity, and attaches the runbooks your
-                teams already use — so level 1 engineers can resolve more incidents without
+                teams already use  so level 1 engineers can resolve more incidents without
                 escalation.
               </p>
 

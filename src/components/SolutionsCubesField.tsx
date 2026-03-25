@@ -1,4 +1,4 @@
-// // src/app/components/SolutionsCubesField.tsx
+﻿// // src/app/components/SolutionsCubesField.tsx
 // 'use client';
 
 // import Image from 'next/image';
@@ -97,7 +97,7 @@
 //   useEffect(() => {
 //     const ids = Array.from({ length: totalCubes }, (_, i) => i);
 
-//     // Fisher–Yates shuffle for staggered reveal
+//     // FisherYates shuffle for staggered reveal
 //     for (let i = ids.length - 1; i > 0; i--) {
 //       const j = Math.floor(Math.random() * (i + 1));
 //       [ids[i], ids[j]] = [ids[j], ids[i]];
@@ -249,7 +249,7 @@
 //               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
 //           }}
 //         >
-//           Every solution here is built to run 24×7 — designed around real-world
+//           Every solution here is built to run 24×7  designed around real-world
 //           rollout constraints, operations, safety and long-term support. Explore
 //           how we combine infrastructure, software and managed services for each
 //           area.
@@ -531,7 +531,7 @@
 //               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
 //           }}
 //         >
-//           Every solution here is built to run 24×7 — designed around real-world
+//           Every solution here is built to run 24×7  designed around real-world
 //           rollout constraints, operations, safety and long-term support.
 //         </p>
 
@@ -754,7 +754,7 @@ export default function SolutionsCubesField() {
           </div>
         </div>
 
-        {/* Foreground icon cube — absolutely centered over the grid */}
+        {/* Foreground icon cube  absolutely centered over the grid */}
         <motion.div
           className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.7, y: 20 }}
@@ -810,7 +810,7 @@ export default function SolutionsCubesField() {
               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
           }}
         >
-          Every solution here is built to run 24×7 — designed around real-world
+          Every solution here is built to run 24×7  designed around real-world
           rollout constraints, operations, safety and long-term support.
         </p>
 

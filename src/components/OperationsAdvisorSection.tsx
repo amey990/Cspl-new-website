@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import Image from 'next/image';
 // import { motion, cubicBezier } from 'framer-motion';
@@ -58,7 +58,7 @@
 //           {/* Original: <p className="max-w-xl text-lg text-slate-300/85 md:text-base"> */}
 //           <p className="max-w-xl text-[18px] text-slate-300/85 md:text-[20px]">
 //             Ops Advisor watches your live operations, surfaces the right signals, and recommends
-//             next best actions — so teams can respond faster and with more confidence.
+//             next best actions  so teams can respond faster and with more confidence.
 //           </p>
 
 //           {/* bullets */}
@@ -82,7 +82,7 @@
 //             <div className="flex items-start gap-3">
 //               {/* Original: <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#FF5906]" /> */}
 //               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#FF5906]" />
-//               <span>Playbooks that adapt as conditions change — not static runbooks.</span>
+//               <span>Playbooks that adapt as conditions change  not static runbooks.</span>
 //             </div>
 //           </div>
 
@@ -181,7 +181,7 @@
 //           {/* Subheading */}
 //           <p className="max-w-xl text-[15px] sm:text-[17px] md:text-[18px] text-slate-300/85 leading-relaxed">
 //             Ops Advisor watches your live operations, surfaces the right signals, and recommends
-//             next best actions — so teams can respond faster and with more confidence.
+//             next best actions  so teams can respond faster and with more confidence.
 //           </p>
 
 //           {/* Bullets */}
@@ -190,7 +190,7 @@
 //               'Agentic workflows that triage, route and recommend actions automatically.',
 //               'Live health scores across sites, assets and customer-facing services.',
 //               'Root-cause hints pulled from tickets, logs and historical incidents.',
-//               'Playbooks that adapt as conditions change — not static runbooks.',
+//               'Playbooks that adapt as conditions change  not static runbooks.',
 //             ].map((point) => (
 //               <div key={point} className="flex items-start gap-2 sm:gap-3">
 //                 <span className="mt-[5px] sm:mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#FF5906]" />
@@ -280,7 +280,7 @@ export default function OperationsAdvisor() {
           {/* Subheading */}
           <p className="max-w-xl text-[15px] sm:text-[17px] md:text-[18px] text-slate-300/85 leading-relaxed">
             Ops Advisor watches your live operations, surfaces the right signals, and recommends
-            next best actions — so teams can respond faster and with more confidence.
+            next best actions  so teams can respond faster and with more confidence.
           </p>
 
           {/* Bullets */}
@@ -289,7 +289,7 @@ export default function OperationsAdvisor() {
               'Agentic workflows that triage, route and recommend actions automatically.',
               'Live health scores across sites, assets and customer-facing services.',
               'Root-cause hints pulled from tickets, logs and historical incidents.',
-              'Playbooks that adapt as conditions change — not static runbooks.',
+              'Playbooks that adapt as conditions change  not static runbooks.',
             ].map((point) => (
               <div key={point} className="flex items-start gap-2 sm:gap-3">
                 <span className="mt-[5px] sm:mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#FF5906]" />

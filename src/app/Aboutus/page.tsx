@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import Image from 'next/image';
 // import Link from 'next/link';
@@ -122,7 +122,7 @@
 
 //         <p className="mt-4 max-w-3xl text-left text-sm leading-relaxed text-zinc-300 md:text-base">
 //           We help operations, safety and infrastructure teams plan, monitor and act
-//           in real time – connecting AI-first products with the messy reality of the
+//           in real time  connecting AI-first products with the messy reality of the
 //           physical world.
 //         </p>
 //       </div>
@@ -149,7 +149,7 @@
 //       {/* ----------------------------------------- */}
 //       <div className="mx-auto mt-30 max-w-6xl">
 //         <div className="grid grid-cols-1 gap-12 lg:gap-16 md:grid-cols-2">
-//           {/* Left – main narrative */}
+//           {/* Left  main narrative */}
 //           <div
 //             ref={leftHeadingRef}
 //             className={`transition-all duration-1000 ${
@@ -163,18 +163,18 @@
 //               about quality, uptime and safety.
 //             </h2>
 //             <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
-//               Commedia sits where AI, safety and real-world infrastructure meet –
+//               Commedia sits where AI, safety and real-world infrastructure meet 
 //               helping teams orchestrate critical operations without losing sight of
 //               people on the ground.
 //             </p>
 //             <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
 //               From control rooms to field devices, we design products that feel
-//               opinionated, reliable and calm – even when the environments they run
+//               opinionated, reliable and calm  even when the environments they run
 //               in are anything but.
 //             </p>
 //           </div>
 
-//           {/* Right – three cards with simple outline visuals + images */}
+//           {/* Right  three cards with simple outline visuals + images */}
 //           <div
 //             ref={rightTextRef}
 //             className={`space-y-4 transition-all duration-1000 ${
@@ -187,7 +187,7 @@
 //               {
 //                 label: 'Vision',
 //                 color: 'text-emerald-300',
-//                 text: 'A world where industrial operations are as observable and collaborative as modern software teams – with every worker supported by intelligent tools.',
+//                 text: 'A world where industrial operations are as observable and collaborative as modern software teams  with every worker supported by intelligent tools.',
 //                 image: VisionImg,
 //               },
 //               {
@@ -199,7 +199,7 @@
 //               {
 //                 label: 'Impact',
 //                 color: 'text-fuchsia-300',
-//                 text: 'Higher uptime, safer shifts and faster incident response for enterprises across energy, utilities, manufacturing and infrastructure – with measurable gains in reliability and trust.',
+//                 text: 'Higher uptime, safer shifts and faster incident response for enterprises across energy, utilities, manufacturing and infrastructure  with measurable gains in reliability and trust.',
 //                 image: ImpactImg,
 //               },
 //             ].map((item) => (
@@ -247,7 +247,7 @@
 //               We care deeply about the quality of our work.
 //             </h2>
 //             <p className="mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-zinc-300">
-//               A compact team of builders, operators and domain experts – united by a
+//               A compact team of builders, operators and domain experts  united by a
 //               bias for shipping and a respect for real-world complexity.
 //             </p>
 //           </div>
@@ -267,10 +267,10 @@
 //             { img: Leader1, name: 'C S Raghava Rao', role: 'Founder & MD' },
 //             { img: Leader2, name: 'Shri C Subba Rao', role: 'Director' },
 //             { img: Leader3, name: 'C V Ramani', role: 'Advisor' },
-//             { img: Leader4, name: 'G Padmavati', role: 'Advisor – Finance' },
+//             { img: Leader4, name: 'G Padmavati', role: 'Advisor  Finance' },
 //             { img: Leader5, name: 'Harshad Awasare', role: 'COO' },
-//             { img: Leader6, name: 'Subeeth Kotian', role: 'VP – Commercial' },
-//             { img: Leader8, name: 'Deepak Trisal', role: 'VP – Service Delivery' },
+//             { img: Leader6, name: 'Subeeth Kotian', role: 'VP  Commercial' },
+//             { img: Leader8, name: 'Deepak Trisal', role: 'VP  Service Delivery' },
 //           ].map((leader, i) => (
 //             <div
 //               key={leader.name}
@@ -640,7 +640,7 @@ export default function AboutUs() {
 
           <p className="mt-3 max-w-3xl text-left text-sm leading-relaxed text-zinc-300 sm:mt-4 md:text-base">
             We help operations, safety and infrastructure teams plan, monitor and act
-            in real time – connecting AI-first products with the messy reality of the
+            in real time  connecting AI-first products with the messy reality of the
             physical world.
           </p>
         </div>
@@ -669,7 +669,7 @@ export default function AboutUs() {
         <div className="mx-auto mt-16 max-w-6xl sm:mt-20 md:mt-24 lg:mt-28">
           <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
 
-            {/* Left – main narrative */}
+            {/* Left  main narrative */}
             <div
               ref={leftHeadingRef}
               className={`transition-all duration-1000 ${
@@ -683,18 +683,18 @@ export default function AboutUs() {
                 about quality, uptime and safety.
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
-                Commedia sits where AI, safety and real-world infrastructure meet –
+                Commedia sits where AI, safety and real-world infrastructure meet 
                 helping teams orchestrate critical operations without losing sight of
                 people on the ground.
               </p>
               <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
                 From control rooms to field devices, we design products that feel
-                opinionated, reliable and calm – even when the environments they run
+                opinionated, reliable and calm  even when the environments they run
                 in are anything but.
               </p>
             </div>
 
-            {/* Right – three cards */}
+            {/* Right  three cards */}
             <div
               ref={rightTextRef}
               className={`space-y-3 transition-all duration-1000 sm:space-y-4 ${
@@ -707,7 +707,7 @@ export default function AboutUs() {
                 {
                   label: 'Vision',
                   color: 'text-emerald-300',
-                  text: 'A world where industrial operations are as observable and collaborative as modern software teams – with every worker supported by intelligent tools.',
+                  text: 'A world where industrial operations are as observable and collaborative as modern software teams  with every worker supported by intelligent tools.',
                   image: VisionImg,
                 },
                 {
@@ -719,7 +719,7 @@ export default function AboutUs() {
                 {
                   label: 'Impact',
                   color: 'text-fuchsia-300',
-                  text: 'Higher uptime, safer shifts and faster incident response for enterprises across energy, utilities, manufacturing and infrastructure – with measurable gains in reliability and trust.',
+                  text: 'Higher uptime, safer shifts and faster incident response for enterprises across energy, utilities, manufacturing and infrastructure  with measurable gains in reliability and trust.',
                   image: ImpactImg,
                 },
               ].map((item) => (
@@ -763,7 +763,7 @@ export default function AboutUs() {
                 We care deeply about the quality of our work.
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-zinc-300 sm:mt-4 md:text-base">
-                A compact team of builders, operators and domain experts – united by a
+                A compact team of builders, operators and domain experts  united by a
                 bias for shipping and a respect for real-world complexity.
               </p>
             </div>
@@ -777,16 +777,16 @@ export default function AboutUs() {
             </Link>
           </div>
 
-          {/* Leaders grid — 2 cols mobile, 3 tablet, 4 md, 5 lg */}
+          {/* Leaders grid  2 cols mobile, 3 tablet, 4 md, 5 lg */}
           <div className="mt-10 grid grid-cols-2 gap-4 sm:mt-12 sm:grid-cols-3 sm:gap-6 md:grid-cols-4 md:gap-7 lg:grid-cols-5 lg:mt-14 lg:gap-8">
             {[
               { img: Leader1, name: 'C S Raghava Rao', role: 'Founder & MD' },
               { img: Leader2, name: 'Shri C Subba Rao', role: 'Director' },
               { img: Leader3, name: 'C V Ramani', role: 'Advisor' },
-              { img: Leader4, name: 'G Padmavati', role: 'Advisor – Finance' },
+              { img: Leader4, name: 'G Padmavati', role: 'Advisor  Finance' },
               { img: Leader5, name: 'Harshad Awasare', role: 'COO' },
-              { img: Leader6, name: 'Subeeth Kotian', role: 'VP – Commercial' },
-              { img: Leader8, name: 'Deepak Trisal', role: 'VP – Service Delivery' },
+              { img: Leader6, name: 'Subeeth Kotian', role: 'VP  Commercial' },
+              { img: Leader8, name: 'Deepak Trisal', role: 'VP  Service Delivery' },
             ].map((leader, i) => (
               <div
                 key={leader.name}

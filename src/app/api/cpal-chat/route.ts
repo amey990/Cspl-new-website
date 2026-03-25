@@ -1,4 +1,4 @@
-export const runtime = 'nodejs';
+﻿export const runtime = 'nodejs';
 
 type Msg = { role: 'user' | 'assistant' | 'system'; content: string };
 
@@ -14,10 +14,10 @@ function replyFromFAQ(last: string) {
   }
 
   if (q.includes('wireless') || q.includes('wifi') || q.includes('roaming') || q.includes('meraki')) {
-    return `Yes — we support Wi-Fi planning and deployment (coverage planning, channel design, high-density tuning, roaming stability, and managed Wi-Fi like Meraki).\n\nWhat’s your environment: office / campus / public space, and approx users per area?`;
+    return `Yes  we support Wi-Fi planning and deployment (coverage planning, channel design, high-density tuning, roaming stability, and managed Wi-Fi like Meraki).\n\nWhat’s your environment: office / campus / public space, and approx users per area?`;
   }
 
-  return `Got it. Tell me:\n1) What problem you’re facing (1–2 lines)\n2) Your environment (office/campus/industrial/public)\n3) Any vendor stack (Cisco/Meraki/Aruba/etc)\n\nI’ll suggest the best next steps.`;
+  return `Got it. Tell me:\n1) What problem you’re facing (12 lines)\n2) Your environment (office/campus/industrial/public)\n3) Any vendor stack (Cisco/Meraki/Aruba/etc)\n\nI’ll suggest the best next steps.`;
 }
 
 function suggestFollowUps(text: string) {

@@ -8,7 +8,6 @@ import SmartHelmet from '@/components/SmarthelmetSection';
 import Cpal from '@/components/CpalChatbot';
 import OpsAdvisor from '@/components/OperationsAdvisorSection';
 
-
 type OpenDemoDetail = {
   url?: string;      // full youtube url OR embed url
   title?: string;    // optional: show title in player header
@@ -34,12 +33,14 @@ export default function ProductsClient() {
   return (
     <section className="px-0 md:px-0 lg:px-0">
       <IconCubesField />
+
+      {/* This component must be present and not commented out */}
       <AtlasProductSection />
+
       <SmartHelmet />
       <CNMSNetwork />
       <Cpal />
       <OpsAdvisor />
-
     </section>
   );
 }

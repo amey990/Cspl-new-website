@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import Image from 'next/image';
 // import { motion, cubicBezier } from 'framer-motion';
@@ -50,7 +50,7 @@
 //             className="mb-8 max-w-md text-[18px] text-slate-300/85 md:text-[20px]"
 //           >
 //             Streamline product operations with AI-assisted labeling, root-cause hints, and
-//             suggested actions across your backlog — while keeping workers safer on site.
+//             suggested actions across your backlog  while keeping workers safer on site.
 //           </motion.p>
 
 //           {/* bullet list with yellow bars */}
@@ -196,7 +196,7 @@
 //             className="mb-6 sm:mb-8 max-w-md text-[15px] sm:text-[17px] md:text-[18px] text-slate-300/85 leading-relaxed"
 //           >
 //             Streamline product operations with AI-assisted labeling, root-cause hints, and
-//             suggested actions across your backlog — while keeping workers safer on site.
+//             suggested actions across your backlog  while keeping workers safer on site.
 //           </motion.p>
 
 //           {/* Bullet list with yellow bars */}
@@ -312,7 +312,7 @@ export default function SmartHelmetGrid() {
             className="mb-6 sm:mb-8 max-w-md text-[15px] sm:text-[17px] md:text-[18px] text-slate-300/85 leading-relaxed"
           >
             Streamline product operations with AI-assisted labeling, root-cause hints, and
-            suggested actions across your backlog — while keeping workers safer on site.
+            suggested actions across your backlog  while keeping workers safer on site.
           </motion.p>
 
           {/* Bullet list with yellow bars */}

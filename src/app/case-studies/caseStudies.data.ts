@@ -1,4 +1,4 @@
-import type { StaticImageData } from "next/image";
+﻿import type { StaticImageData } from "next/image";
 
 // ===== VERTICAL IMAGES =====
 import sp1 from "../../../assets/case studies/sp1.png";
@@ -111,7 +111,7 @@ const base = {
 
 export const CASE_STUDIES: CaseStudy[] = [
   /* =========================
-   * VERTICALS — Service Provider (REAL DATA)
+   * VERTICALS  Service Provider (REAL DATA)
    * ========================= */
   {
     ...base,
@@ -272,7 +272,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   /* =========================
-   * VERTICALS — Digital Media (✅ updated with real content)
+   * VERTICALS  Digital Media (✅ updated with real content)
    * ========================= */
   {
     ...base,
@@ -490,7 +490,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   /* =========================
-   * VERTICALS — Enterprise (✅ with images)
+   * VERTICALS  Enterprise (✅ with images)
    * ========================= */
   {
     id: "ent-chromaflo-end-to-end-it-infra",
@@ -589,7 +589,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
 
     overview:
-      "LeEco, a major Chinese technology brand, needed a full IT solution — including wired/wireless networking and office automation — across their Indian offices in Mumbai, Bangalore, and Gurugram.",
+      "LeEco, a major Chinese technology brand, needed a full IT solution  including wired/wireless networking and office automation  across their Indian offices in Mumbai, Bangalore, and Gurugram.",
 
     challenge: [
       "Stringent project deadlines.",
@@ -610,7 +610,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
 
   /* =========================
- * VERTICALS — Government (✅ updated with real content)
+ * VERTICALS  Government (✅ updated with real content)
  * ========================= */
 {
   ...base,
@@ -741,7 +741,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
 
   /* =========================
- * SOLUTIONS — Data Center (✅ real content + images)
+ * SOLUTIONS  Data Center (✅ real content + images)
  * ========================= */
 {
   ...base,
@@ -945,7 +945,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 },
 
   /* =========================
- * SOLUTIONS — SD-WAN (✅ with images + REAL DATA)
+ * SOLUTIONS  SD-WAN (✅ with images + REAL DATA)
  * ========================= */
 {
   ...base,
@@ -1073,7 +1073,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 },
 
 /* =========================
- * SOLUTIONS — Network Security (✅ with images + real content)
+ * SOLUTIONS  Network Security (✅ with images + real content)
  * ========================= */
 {
   ...base,
@@ -1095,7 +1095,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   ],
 
   overview:
-    "A service provider needed managed SOC operations for a bank, including deployment of L1–L3 analysts and shift leads for PAN-India service delivery.",
+    "A service provider needed managed SOC operations for a bank, including deployment of L1L3 analysts and shift leads for PAN-India service delivery.",
 
   challenge: [
     "Strict SLA timelines and SOP adherence across operations.",
@@ -1105,7 +1105,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 
   approach: [
     "Delivered managed services spanning 25+ technologies and toolsets.",
-    "Deployed 59+ resources across multiple levels (L1–L3 + shift leadership).",
+    "Deployed 59+ resources across multiple levels (L1L3 + shift leadership).",
     "Enabled 24x7 operations and supported NOC configuration where required.",
   ],
 
@@ -1243,7 +1243,7 @@ export const CASE_STUDIES: CaseStudy[] = [
 },
 
  /* =========================
- * SOLUTIONS — Wireless Networking (✅ real data + images)
+ * SOLUTIONS  Wireless Networking (✅ real data + images)
  * ========================= */
 {
   ...base,

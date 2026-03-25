@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
 import SolutionsCubesField from '../../components/SolutionsCubesField';
@@ -32,7 +32,7 @@ const solutionSummary = [
   {
     id: 'data-center-networking',
     label: 'Data Center & Networking',
-    blurb: 'Policy-driven fabric for DC, campus, WAN and edge – designed to run 24×7.',
+    blurb: 'Policy-driven fabric for DC, campus, WAN and edge  designed to run 24×7.',
     accent: 'text-sky-300',
     badgeBg: 'bg-sky-400/10 border-sky-400/40',
   },
@@ -151,7 +151,7 @@ export default function SolutionsPage() {
               </p>
 
               <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
-                From greenfield builds to brownfield upgrades, we combine design, rollout and managed services – so you&apos;re
+                From greenfield builds to brownfield upgrades, we combine design, rollout and managed services  so you&apos;re
                 never left with a half-finished project or an unsupported stack.
               </p>
             </div>
@@ -168,7 +168,7 @@ export default function SolutionsPage() {
                     <ul className="space-y-2">
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                        <span>Data center design and deployment – switching, routing and compute fabrics.</span>
+                        <span>Data center design and deployment  switching, routing and compute fabrics.</span>
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
@@ -225,7 +225,7 @@ export default function SolutionsPage() {
                     <div className="mt-4 flex items-center justify-between rounded-xl bg-black/60 px-3 py-2 text-[11px] text-zinc-300">
                       <div>
                         <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">Typical engagement</p>
-                        <p className="text-xs text-zinc-100">Multi-site DC + campus · 6–18 months</p>
+                        <p className="text-xs text-zinc-100">Multi-site DC + campus · 618 months</p>
                       </div>
                       <div className="text-right">
                         <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">Focus</p>
@@ -254,7 +254,7 @@ export default function SolutionsPage() {
 
               <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
                 SD-WAN lets you treat MPLS, broadband and LTE as a single, intelligent pool. Traffic is steered per-application
-                based on latency, loss and jitter – not just static routes – so user experience stays consistent even as links flap.
+                based on latency, loss and jitter  not just static routes  so user experience stays consistent even as links flap.
               </p>
             </div>
 
@@ -290,7 +290,7 @@ export default function SolutionsPage() {
                     <div className="mt-4 flex items-center justify-between rounded-xl bg-black/60 px-3 py-2 text-[11px] text-zinc-300">
                       <div>
                         <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">Typical footprint</p>
-                        <p className="text-xs text-zinc-100">50–500+ branches across regions</p>
+                        <p className="text-xs text-zinc-100">50500+ branches across regions</p>
                       </div>
                       <div className="text-right">
                         <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">Outcomes</p>
@@ -310,22 +310,22 @@ export default function SolutionsPage() {
                     <ul className="space-y-2">
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                        <span>Optimised performance – dynamic path selection per flow for minimal latency.</span>
+                        <span>Optimised performance  dynamic path selection per flow for minimal latency.</span>
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                        <span>Secure connectivity – encryption, zero-trust access and integrated firewalls.</span>
+                        <span>Secure connectivity  encryption, zero-trust access and integrated firewalls.</span>
                       </li>
                     </ul>
 
                     <ul className="mt-3 space-y-2 md:mt-0">
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                        <span>Multi-cloud &amp; hybrid integration – on-ramps to AWS, Azure and private clouds.</span>
+                        <span>Multi-cloud &amp; hybrid integration  on-ramps to AWS, Azure and private clouds.</span>
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-400" />
-                        <span>Cost-effective WAN – reduce MPLS dependency using broadband and LTE.</span>
+                        <span>Cost-effective WAN  reduce MPLS dependency using broadband and LTE.</span>
                       </li>
                     </ul>
                   </div>
@@ -353,7 +353,7 @@ export default function SolutionsPage() {
 
               <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
                 We design security architectures that assume compromise by default. Every user, device and workload is continuously
-                verified using Cisco NGFWs, IDS/IPS and modern endpoint controls – stitched together into one policy.
+                verified using Cisco NGFWs, IDS/IPS and modern endpoint controls  stitched together into one policy.
               </p>
             </div>
 
@@ -378,11 +378,11 @@ export default function SolutionsPage() {
                     <ul className="mt-3 space-y-2 md:mt-0">
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-fuchsia-400" />
-                        <span>Endpoint security – AMP, NAC, PAM and VMS integrated with identity and logging.</span>
+                        <span>Endpoint security  AMP, NAC, PAM and VMS integrated with identity and logging.</span>
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-fuchsia-400" />
-                        <span>Zero Trust Architecture – segmentation and access policies mapped to business roles.</span>
+                        <span>Zero Trust Architecture  segmentation and access policies mapped to business roles.</span>
                       </li>
                     </ul>
                   </div>
@@ -447,7 +447,7 @@ export default function SolutionsPage() {
               </h2>
 
               <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
-                We help you migrate, modernise and operate workloads on AWS and other clouds – from core business apps to demanding
+                We help you migrate, modernise and operate workloads on AWS and other clouds  from core business apps to demanding
                 media and video pipelines.
               </p>
             </div>
@@ -504,7 +504,7 @@ export default function SolutionsPage() {
                     <ul className="space-y-2">
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />
-                        <span>Cloud infrastructure &amp; migration – planning, landing zones and workload moves.</span>
+                        <span>Cloud infrastructure &amp; migration  planning, landing zones and workload moves.</span>
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />
@@ -515,11 +515,11 @@ export default function SolutionsPage() {
                     <ul className="mt-3 space-y-2 md:mt-0">
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />
-                        <span>Media streaming &amp; transcoding – OTT, broadcast and live workflows on AWS.</span>
+                        <span>Media streaming &amp; transcoding  OTT, broadcast and live workflows on AWS.</span>
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />
-                        <span>IoT cloud services – AWS IoT Core and analytics for sensor fleets.</span>
+                        <span>IoT cloud services  AWS IoT Core and analytics for sensor fleets.</span>
                       </li>
                     </ul>
                   </div>
@@ -637,7 +637,7 @@ export default function SolutionsPage() {
               </h2>
 
               <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
-                We deliver end-to-end AV solutions for corporates, broadcasters and educational institutions – from room acoustics
+                We deliver end-to-end AV solutions for corporates, broadcasters and educational institutions  from room acoustics
                 and display choices to control systems and streaming.
               </p>
             </div>
@@ -709,7 +709,7 @@ export default function SolutionsPage() {
                       </li>
                       <li className="flex gap-2">
                         <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-rose-400" />
-                        <span>Live streaming chains – capture, encoding, CDN and monitoring.</span>
+                        <span>Live streaming chains  capture, encoding, CDN and monitoring.</span>
                       </li>
                     </ul>
                   </div>

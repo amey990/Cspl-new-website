@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
 import Link from 'next/link';
@@ -77,7 +77,7 @@ export default function Products() {
             }}
           >
             Plan, assign, and track all work in one fast system. Use Atlas to orchestrate projects,
-            teams, and timelines with precision—while keeping stakeholders aligned.
+            teams, and timelines with precisionwhile keeping stakeholders aligned.
           </p>
 
           <div className="mt-6">

@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import { cn } from '@/lib/utils';
 // import { useTheme } from 'next-themes';
@@ -79,7 +79,7 @@
 //     const points = new THREE.Points(geometry, material);
 
 //     // Lift the whole grid up so it kisses the text/buttons
-//     points.position.y = 120; // tweak 90–160 to taste
+//     points.position.y = 120; // tweak 90160 to taste
 //     scene.add(points);
 
 //     let t = 0;

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import type { ReactNode } from 'react';
 import Image from 'next/image';
@@ -284,7 +284,7 @@ export default function Page() {
 
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
                 We design and deploy seamless wireless networks for offices, campuses,
-                warehouses and outdoor environments—so users, devices and critical apps
+                warehouses and outdoor environmentsso users, devices and critical apps
                 stay connected, securely and consistently.
               </p>
 
@@ -312,7 +312,7 @@ export default function Page() {
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
               Different environments need different RF strategies. We design for
-              density, roaming, interference and backhaul—not just “signal bars”.
+              density, roaming, interference and backhaulnot just “signal bars”.
             </p>
 
             <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -342,7 +342,7 @@ export default function Page() {
                 tone="fuchsia"
                 icon={<RadioTower className="h-4 w-4" />}
                 title="Outdoor links"
-                desc="Last-mile connectivity where fibre is impractical—yards, sheds, gates and remote blocks."
+                desc="Last-mile connectivity where fibre is impracticalyards, sheds, gates and remote blocks."
                 bullets={[
                   'Point-to-point bridges for cameras and remote units.',
                   'Mesh where line-of-sight is not guaranteed.',
@@ -457,7 +457,7 @@ export default function Page() {
                 Wireless security that doesn’t annoy users.
               </h2>
               <p className="mt-3 max-w-xl text-sm text-slate-300 md:text-base">
-                We make access predictable: correct role, correct VLAN, correct policy—
+                We make access predictable: correct role, correct VLAN, correct policy
                 with visibility for IT when something goes wrong.
               </p>
 
@@ -517,7 +517,7 @@ export default function Page() {
                     <BadgePill icon={<Network className="h-3.5 w-3.5" />} label="Isolated" tone="amber" />
                   </div>
                   <p className="mt-2 text-xs leading-relaxed text-slate-300">
-                    Segmented VLANs with strict east–west restrictions and monitoring hooks.
+                    Segmented VLANs with strict eastwest restrictions and monitoring hooks.
                   </p>
                 </div>
               </div>
@@ -532,7 +532,7 @@ export default function Page() {
               How we roll out wireless projects.
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
-              We aim for “switch-over weekends” instead of months-long disruption—
+              We aim for “switch-over weekends” instead of months-long disruption
               especially for live offices and plants.
             </p>
           </motion.div>

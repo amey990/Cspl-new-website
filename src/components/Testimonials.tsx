@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
 import Image from 'next/image';
@@ -24,7 +24,7 @@ import Image7 from '../../assets/AWS_BG.png';
 import Image8 from '../../assets/ISRO_BG.png';
 import Image9 from '../../assets/telsttra.png';
 
-// Demo content — replace with your data
+// Demo content  replace with your data
 const testimonials: Testimonial[] = [
   {
     name: 'Airtel',
@@ -38,7 +38,7 @@ const testimonials: Testimonial[] = [
     handle: '@centralbank.bank.in',
     avatar: Image2,
     quote:
-      "Security and scalability were non-negotiable for us. Commedia delivered both — with zero compromise on speed.",
+      "Security and scalability were non-negotiable for us. Commedia delivered both  with zero compromise on speed.",
   },
   {
     name: 'NTT Data',
@@ -58,7 +58,7 @@ const testimonials: Testimonial[] = [
     name: 'HP',
     handle: '@hp.com',
     avatar: Image5,
-    quote: "We’ve worked with many vendors — Commedia stands out for their reliability and ability to handle complex integrations.",
+    quote: "We’ve worked with many vendors  Commedia stands out for their reliability and ability to handle complex integrations.",
   },
   {
     name: 'LG',
@@ -140,7 +140,7 @@ export default function Testimonials() {
                 '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
             }}
           >
-            From hot reloads to happy teams — here's what our customers have to say.
+            From hot reloads to happy teams  here's what our customers have to say.
           </p>
         </motion.div>
 

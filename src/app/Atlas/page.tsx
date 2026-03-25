@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import Image from 'next/image';
 // import { motion, cubicBezier } from 'framer-motion';
@@ -428,7 +428,7 @@
 //             <p className="mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
 //               Atlas Inventory gives operations and finance a live view of every material
 //               request, transfer and dispatch. See what&apos;s on hand, what&apos;s reserved and
-//               what&apos;s already on the road — all in one place.
+//               what&apos;s already on the road  all in one place.
 //             </p>
 
 //             <div className="mt-6 grid gap-3 text-sm text-slate-100/90 md:grid-cols-2 md:gap-4">
@@ -613,7 +613,7 @@
 //             <p className="mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
 //               Every rollout, organisation and workflow is different. Atlas can be tailored to your
 //               fields, layouts, roles and approvals so it feels like a dedicated system for your
-//               operations — without starting from scratch.
+//               operations without starting from scratch.
 //             </p>
 
 //             <div className="mt-6 space-y-3 text-sm text-slate-100/90">
@@ -870,7 +870,7 @@ export default function AtlasProjectManagementPage() {
             />
           </motion.div>
 
-          {/* Giant "Atlas" text — scales down gracefully on small screens */}
+          {/* Giant "Atlas" text  scales down gracefully on small screens */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -1034,7 +1034,7 @@ export default function AtlasProjectManagementPage() {
                   </div>
                 </motion.div>
 
-                {/* Front image — kept within bounds on small screens */}
+                {/* Front image  kept within bounds on small screens */}
                 <motion.div
                   className="absolute -bottom-4 sm:-bottom-8 md:-bottom-10 right-0 sm:-right-6 md:-right-10 w-[82%] sm:w-[88%] md:w-[90%] rounded-[5px] border border-white/10 bg-gradient-to-b from-white/8 via-white/3 to-black/70 shadow-[0_30px_100px_rgba(0,0,0,1)] overflow-hidden"
                   variants={stackFront}
@@ -1077,7 +1077,7 @@ export default function AtlasProjectManagementPage() {
                 />
               </motion.div>
 
-              {/* Lottie — positioned inside the padded wrapper */}
+              {/* Lottie  positioned inside the padded wrapper */}
               <motion.div
                 className="pointer-events-none absolute bottom-0 right-0 sm:-right-6 md:-right-12 w-24 sm:w-32 md:w-40"
                 initial={{ opacity: 0, y: 20 }}
@@ -1155,7 +1155,7 @@ export default function AtlasProjectManagementPage() {
             <p className="mt-3 sm:mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
               Atlas Inventory gives operations and finance a live view of every material
               request, transfer and dispatch. See what&apos;s on hand, what&apos;s reserved and
-              what&apos;s already on the road — all in one place.
+              what&apos;s already on the road all in one place.
             </p>
 
             <div className="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 text-sm text-slate-100/90">
@@ -1342,7 +1342,7 @@ export default function AtlasProjectManagementPage() {
             <p className="mt-3 sm:mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
               Every rollout, organisation and workflow is different. Atlas can be tailored to your
               fields, layouts, roles and approvals so it feels like a dedicated system for your
-              operations — without starting from scratch.
+              operations  without starting from scratch.
             </p>
 
             <div className="mt-4 sm:mt-6 space-y-2 sm:space-y-3 text-sm text-slate-100/90">
@@ -1437,7 +1437,7 @@ export default function AtlasProjectManagementPage() {
                 <div className="h-2.5 sm:h-3 w-16 sm:w-20 rounded-md bg-zinc-800/70" />
               </div>
 
-              {/* drag handles — only on larger screens */}
+              {/* drag handles  only on larger screens */}
               <div className="pointer-events-none absolute right-4 top-1/2 hidden -translate-y-1/2 md:flex flex-col gap-1">
                 <span className="h-1 w-4 rounded-full bg-zinc-700" />
                 <span className="h-1 w-4 rounded-full bg-zinc-700" />

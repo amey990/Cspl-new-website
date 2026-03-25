@@ -1,4 +1,4 @@
-// //p3//
+﻿// //p3//
 // 'use client';
 
 // import { useEffect, useState } from 'react';
@@ -200,7 +200,7 @@
 //             }}
 //           >
 //             From strategy to deployment, our services are built to deliver impact at every stage. We
-//             craft solutions with speed, precision, and purpose — so you can focus on growth.{` `}
+//             craft solutions with speed, precision, and purpose  so you can focus on growth.{` `}
 //             <Link
 //               href="#"
 //               className="inline-flex items-center gap-1 text-white hover:text-zinc-300"
@@ -500,7 +500,7 @@ export default function Solutions() {
             }}
           >
             From strategy to deployment, our services are built to deliver impact at every stage. We
-            craft solutions with speed, precision, and purpose — so you can focus on growth.{` `}
+            craft solutions with speed, precision, and purpose so you can focus on growth.{` `}
             <Link
               href="/solutions"
               className="inline-flex items-center gap-1 text-white hover:text-zinc-300"

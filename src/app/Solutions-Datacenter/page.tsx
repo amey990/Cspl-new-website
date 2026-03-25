@@ -1,4 +1,4 @@
-// src/app/solutions/data-center-networking/page.tsx
+﻿// src/app/solutions/data-center-networking/page.tsx
 'use client';
 
 import Image from 'next/image';
@@ -79,8 +79,8 @@ export default function DataCenterNetworkingPage() {
 
 
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
-                We design, build and operate the fabric your business runs on –
-                data centers, campus networks and cloud connectivity – with
+                We design, build and operate the fabric your business runs on 
+                data centers, campus networks and cloud connectivity  with
                 uptime, security and expansion already baked in.
               </p>
 
@@ -230,7 +230,7 @@ export default function DataCenterNetworkingPage() {
             {/* Explanation */}
             <div className="space-y-4 text-sm text-slate-200">
               <h2 className="text-lg font-semibold text-slate-50 md:text-xl">
-                From cold aisles to cloud edges – one team owns the stack.
+                From cold aisles to cloud edges  one team owns the stack.
               </h2>
               <p className="leading-relaxed text-slate-300">
                 We work as infrastructure partners, not just project vendors. Our
@@ -336,7 +336,7 @@ export default function DataCenterNetworkingPage() {
               HOW THE PIECES CONNECT
             </h3>
             <p className="mt-3 max-w-2xl text-sm text-slate-300">
-              We treat data center, campus, cloud and edge as one fabric –
+              We treat data center, campus, cloud and edge as one fabric 
               policy-driven, observable and ready for automation.
             </p>
 
@@ -350,7 +350,7 @@ export default function DataCenterNetworkingPage() {
     </div>
   </div>
 
-  {/* Connection lines – only from node outwards */}
+  {/* Connection lines  only from node outwards */}
   {/* to the right chip */}
   <div className="pointer-events-none absolute left-1/2 top-1/2 h-px w-28 translate-x-10 -translate-y-1/2 bg-gradient-to-r from-cyan-400/70 to-transparent" />
   {/* to the left chip */}
@@ -358,7 +358,7 @@ export default function DataCenterNetworkingPage() {
   {/* to the bottom chip */}
   <div className="pointer-events-none absolute left-1/2 top-1/2 h-24 w-px translate-y-8 bg-gradient-to-b from-cyan-400/70 to-transparent" />
 
-  {/* Left chip – Observability */}
+  {/* Left chip  Observability */}
   <div className="absolute left-0 top-1/2 -translate-y-1/2">
     <BadgePill
       icon={<Activity className="h-3.5 w-3.5" />}
@@ -367,7 +367,7 @@ export default function DataCenterNetworkingPage() {
     />
   </div>
 
-  {/* Right chip – Campus & branches */}
+  {/* Right chip  Campus & branches */}
   <div className="absolute right-0 top-1/2 -translate-y-1/2">
     <BadgePill
       icon={<Network className="h-3.5 w-3.5" />}
@@ -376,7 +376,7 @@ export default function DataCenterNetworkingPage() {
     />
   </div>
 
-  {/* Bottom chip – Security & edge */}
+  {/* Bottom chip  Security & edge */}
   <div className="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-2">
     <BadgePill
       icon={<ShieldCheck className="h-3.5 w-3.5" />}
@@ -483,7 +483,7 @@ export default function DataCenterNetworkingPage() {
               Planning a new data center or rethinking your network?
             </h3>
             <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
-              Share your current architecture and constraints with us – we&apos;ll
+              Share your current architecture and constraints with us  we&apos;ll
               map options, timelines and where automation or observability will
               have the biggest impact.
             </p>

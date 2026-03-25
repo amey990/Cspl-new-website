@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
 import VerticalsCubesField from '../../components/VerticalsHeroViz'; // adjust path if needed
@@ -207,7 +207,7 @@ export default function VerticalsPage() {
                     <div className="mt-4 flex items-center justify-between rounded-xl bg-black/60 px-3 py-2 text-[11px] text-zinc-300">
                       <div>
                         <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">Typical engagement</p>
-                        <p className="text-xs text-zinc-100">Multi-circle deployments · 6–18 months</p>
+                        <p className="text-xs text-zinc-100">Multi-circle deployments · 618 months</p>
                       </div>
                       <div className="text-right">
                         <p className="text-[10px] uppercase tracking-[0.16em] text-zinc-500">Focus</p>
@@ -368,7 +368,7 @@ export default function VerticalsPage() {
 
               <p className="mt-4 text-sm leading-relaxed text-zinc-300 md:text-base">
                 With the convergence of technologies, Commedia understands the evolving needs of growing enterprise companies.
-                Diverse businesses now recognise the efficiency that modern IT and networking bring across functions – from
+                Diverse businesses now recognise the efficiency that modern IT and networking bring across functions from
                 collaboration and security to customer experience.
               </p>
 

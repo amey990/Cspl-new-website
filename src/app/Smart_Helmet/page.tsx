@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import Image from 'next/image';
 // import Link from 'next/link';
@@ -40,7 +40,7 @@
 //     new CustomEvent('commedia:open-demo', {
 //       detail: {
 //         url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder
-//         title: 'Smart Helmet — Demo',
+//         title: 'Smart Helmet  Demo',
 //       },
 //     })
 //   );
@@ -613,7 +613,7 @@
 //         {/* ------------------------------------------------------------------ */}
 //         <section className="mt-32 mx-auto max-w-6xl px-6 md:px-10 lg:px-16">
 //           <div className="grid items-center gap-12 md:grid-cols-2">
-//             {/* LEFT: Architecture card – Helmet ➜ IoT Core ➜ DynamoDB ➜ Dashboard */}
+//             {/* LEFT: Architecture card  Helmet ➜ IoT Core ➜ DynamoDB ➜ Dashboard */}
 //             <motion.div
 //               {...fadeIn}
 //               className="flex justify-center"
@@ -1641,7 +1641,7 @@ export default function SmartHelmetPage() {
                 </div>
               </div>
 
-              {/* Lottie badge — contained so it doesn't clip on mobile */}
+              {/* Lottie badge  contained so it doesn't clip on mobile */}
               <motion.div
                 className="pointer-events-none absolute -bottom-8 right-0 sm:-bottom-12 sm:-right-2 md:-bottom-16 md:-right-6 w-20 sm:w-24 md:w-32 lg:w-40"
                 initial={{ opacity: 0, y: 20, scale: 0.9 }}

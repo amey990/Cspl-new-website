@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 // import Image from 'next/image';
 // import { motion, cubicBezier } from 'framer-motion';
 
@@ -25,7 +25,7 @@
 //       <div className="relative z-10 mx-auto flex max-w-6xl flex-col px-6 pt-20 pb-12">
 //         {/* ---------- TOP: HERO CHIP + BIG IMAGE + ATLAS TEXT (Effect 1) ---------- */}
 
-//         {/* Chip – same pattern as homepage chip */}
+//         {/* Chip  same pattern as homepage chip */}
 //         <motion.div
 //           initial={{ opacity: 0, y: 6 }}
 //           whileInView={{ opacity: 1, y: 0 }}
@@ -39,7 +39,7 @@
 //           <span className="text-[18px] leading-none text-slate-500">›</span>
 //         </motion.div>
 
-//         {/* Big hero image – Effect 1 (fade / slide / scale / blur) */}
+//         {/* Big hero image  Effect 1 (fade / slide / scale / blur) */}
 //         <motion.div
 //           initial={{ opacity: 0, y: 20, scale: 0.98, filter: 'blur(8px)' }}
 //           whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
@@ -55,7 +55,7 @@
 //           />
 //         </motion.div>
 
-//         {/* Giant “Atlas” text – simple fade up, slightly delayed */}
+//         {/* Giant “Atlas” text  simple fade up, slightly delayed */}
 //         <motion.div
 //           initial={{ opacity: 0, y: 16 }}
 //           whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +79,7 @@
 
 //         {/* ---------- BOTTOM: IMAGE + TEXT SECTION (Effect 2 like Smart Helmet) ---------- */}
 //         <div className="mt-25 grid items-center gap-12 md:grid-cols-2">
-//           {/* LEFT: Image – slide in from left (like helmet image) */}
+//           {/* LEFT: Image  slide in from left (like helmet image) */}
 //           <motion.div
 //             initial={{ opacity: 0, x: -20 }}
 //             whileInView={{ opacity: 1, x: 0 }}
@@ -100,7 +100,7 @@
 //             </div>
 //           </motion.div>
 
-//           {/* RIGHT: Text + Watch demo – slide in from right (like helmet text) */}
+//           {/* RIGHT: Text + Watch demo  slide in from right (like helmet text) */}
 //           <motion.div
 //             initial={{ opacity: 0, x: 20 }}
 //             whileInView={{ opacity: 1, x: 0 }}
@@ -227,7 +227,7 @@
 //           />
 //         </motion.div>
 
-//         {/* Giant "Atlas" text – overlaps image bottom */}
+//         {/* Giant "Atlas" text  overlaps image bottom */}
 //         <motion.div
 //           initial={{ opacity: 0, y: 16 }}
 //           whileInView={{ opacity: 1, y: 0 }}
@@ -360,8 +360,8 @@ export default function AtlasGrid() {
           <span className="text-base leading-none text-slate-500">›</span>
         </motion.div>
 
-        {/* Hero image */}
-        <motion.div
+        {/* Hero image - Commented Out */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 20, scale: 0.98, filter: 'blur(8px)' }}
           whileInView={{ opacity: 1, y: 0, scale: 1, filter: 'blur(0px)' }}
           viewport={{ once: true, amount: 0.4 }}
@@ -375,9 +375,10 @@ export default function AtlasGrid() {
             priority
           />
         </motion.div>
+        */}
 
-        {/* Giant "Atlas" text */}
-        <motion.div
+        {/* Giant "Atlas" text - Commented Out */}
+        {/* <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.6 }}
@@ -396,6 +397,7 @@ export default function AtlasGrid() {
             Atlas
           </h2>
         </motion.div>
+        */}
 
         {/* ── BOTTOM: IMAGE + TEXT ── */}
         <div className="mt-10 sm:mt-14 md:mt-20 grid items-center gap-8 sm:gap-12 md:grid-cols-2">

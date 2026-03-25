@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState } from 'react';
 import { Mail, MessageCircle, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -182,10 +182,10 @@ export default function ContactPage() {
                       Company size
                     </label>
                     <select className="h-10 w-full rounded-lg border border-white/10 bg-zinc-950/70 px-3 text-sm text-white outline-none ring-0 focus:border-white/30">
-                      <option>1–20</option>
-                      <option>21–50</option>
-                      <option>51–200</option>
-                      <option>201–1000</option>
+                      <option>120</option>
+                      <option>2150</option>
+                      <option>51200</option>
+                      <option>2011000</option>
                       <option>1000+</option>
                     </select>
                   </div>

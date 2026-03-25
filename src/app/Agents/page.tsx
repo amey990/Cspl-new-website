@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 
 import Link from 'next/link';
@@ -29,7 +29,7 @@ const openOverview = () => {
     new CustomEvent('commedia:open-demo', {
       detail: {
         url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // replace with your real overview link
-        title: 'Agentic Solutions — Overview',
+        title: 'Agentic Solutions  Overview',
       },
     })
   );
@@ -271,7 +271,7 @@ export default function AgenticSolutionsPage() {
               },
               {
                 title: 'Ops co-pilot agents',
-                body: 'Sit in chat, answer questions over your docs and data, and propose next steps — from running checks to drafting updates.',
+                body: 'Sit in chat, answer questions over your docs and data, and propose next steps  from running checks to drafting updates.',
               },
               {
                 title: 'Reporting & insight agents',
@@ -327,7 +327,7 @@ export default function AgenticSolutionsPage() {
               },
               {
                 title: '2 · Design & architecture',
-                body: 'We design the agent loop — observations, reasoning steps, tool calls and human approvals — and align it with your security and data boundaries.',
+                body: 'We design the agent loop  observations, reasoning steps, tool calls and human approvals  and align it with your security and data boundaries.',
               },
               {
                 title: '3 · Build & integrate',

@@ -1,4 +1,4 @@
-
+﻿
 // 'use client';
 
 // import Image from 'next/image';
@@ -97,7 +97,7 @@
 //   useEffect(() => {
 //     const ids = Array.from({ length: totalCubes }, (_, i) => i);
 
-//     // Fisher–Yates shuffle
+//     // FisherYates shuffle
 //     for (let i = ids.length - 1; i > 0; i--) {
 //       const j = Math.floor(Math.random() * (i + 1));
 //       [ids[i], ids[j]] = [ids[j], ids[i]];
@@ -189,7 +189,7 @@
 //         </div>
 //       </div>
 
-//       {/* Foreground cube – same styling as Verticals, but with handshake icon */}
+//       {/* Foreground cube  same styling as Verticals, but with handshake icon */}
 //       <motion.div
 //         className="pointer-events-none absolute left-1/2 top-[40%] z-20 -translate-x-1/2 -translate-y-1/2 md:top-[35%]"
 //         initial={{ opacity: 0, scale: 0.7, y: 20 }}
@@ -209,7 +209,7 @@
 //               'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12), transparent 55%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.06), transparent 60%), #141515',
 //           }}
 //         >
-//           {/* Keep your hand element here – using lucide Handshake as default */}
+//           {/* Keep your hand element here  using lucide Handshake as default */}
 //           <div className="flex h-full w-full items-center justify-center">
 //             {/* <Handshake className="h-12 w-12 text-white" /> */}
 //             <Handshake
@@ -221,7 +221,7 @@
 //         </div>
 //       </motion.div>
 
-//       {/* Heading + description + chips – same layout as Verticals, so chips won't be cut off */}
+//       {/* Heading + description + chips  same layout as Verticals, so chips won't be cut off */}
 //       <div className="pointer-events-none absolute inset-x-0 top-[55%] z-10 flex flex-col items-center px-6 text-center md:top-[57%]">
 //         <p className="mb-4 inline-flex items-center rounded-full border border-sky-400/60 bg-sky-400/15 px-5 py-1.5 text-[13px] font-semibold uppercase tracking-[0.22em] text-sky-200">
 //           Partners
@@ -273,7 +273,7 @@
 //         </div>
 //       </div>
 
-//       {/* Vignettes – identical to Verticals so overall look matches */}
+//       {/* Vignettes  identical to Verticals so overall look matches */}
 //       <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_55%,rgba(0,0,0,0.95)_60%,rgba(0,0,0,1)_100%)]" />
 //       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(0,0,0,1),rgba(0,0,0,0.8)_10%,rgba(0,0,0,0)_22%,rgba(0,0,0,0)_78%,rgba(0,0,0,0.8)_90%,rgba(0,0,0,1))]" />
 //       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0)_20%,rgba(0,0,0,0)_40%,rgba(0,0,0,0.9)_100%)]" />
@@ -467,7 +467,7 @@
 //         </div>
 //       </div>
 
-//       {/* Foreground cube – Handshake icon */}
+//       {/* Foreground cube  Handshake icon */}
 //       <motion.div
 //         className="pointer-events-none absolute left-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
 //         style={{ top: '38%' }}
@@ -739,7 +739,7 @@ export default function PartnersCubesField() {
           </div>
         </div>
 
-        {/* Foreground cube — absolutely centered over the grid */}
+        {/* Foreground cube  absolutely centered over the grid */}
         <motion.div
           className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.7, y: 20 }}

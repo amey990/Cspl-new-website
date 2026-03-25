@@ -12,6 +12,7 @@ const navItems = [
   { label: 'Solutions', href: '/solutions', menuKey: 'solutions' as MenuKey },
   { label: 'Partners', href: '/partners', menuKey: null },
   { label: 'Case Studies', href: '/case-studies', menuKey: null },
+  { label: 'Recruitment', href: '/recruitment', menuKey: null }, // Added Recruitment here!
   { label: 'Contact', href: '/contact', menuKey: null },
 ];
 
@@ -42,10 +43,10 @@ const productsContent = {
         {
           title: 'Smart Helmet',
           description: 'Advanced safety monitoring and communication',
-          
+
           href: '/Smart_Helmet',
         },
-      ],  
+      ],
     },
   ],
   right: [
@@ -215,9 +216,8 @@ export default function Navbar() {
                 }}
               >
                 <span
-                  className={`text-sm text-zinc-300 hover:text-white transition ${
-                    isActive ? 'text-white' : ''
-                  }`}
+                  className={`text-sm text-zinc-300 hover:text-white transition ${isActive ? 'text-white' : ''
+                    }`}
                 >
                   {item.label}
                 </span>
@@ -365,5 +365,3 @@ export default function Navbar() {
     </header>
   );
 }
-
-

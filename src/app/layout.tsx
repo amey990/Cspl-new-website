@@ -1,4 +1,4 @@
-
+﻿
 
 // // src/app/layout.tsx
 // import type { Metadata } from 'next';
@@ -8,7 +8,7 @@
 // import DemoCornerPlayer from '@/components/DemoCornerPlayer';
 
 // export const metadata: Metadata = {
-//   title: 'Commedia — Modern Product Experiences',
+//   title: 'Commedia  Modern Product Experiences',
 //   description: 'Purpose-built tools and solutions.',
 // };
 
@@ -45,7 +45,7 @@ import DemoCornerPlayer from '@/components/DemoCornerPlayer';
 import ChatbotWidget from '@/components/chatbot/ChatbotWidget';
 
 export const metadata: Metadata = {
-  title: 'Commedia — Modern Product Experiences',
+  title: 'Commedia  Modern Product Experiences',
   description: 'Purpose-built tools and solutions.',
 };
 

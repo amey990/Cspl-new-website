@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import Image from 'next/image';
 // import { motion } from 'framer-motion';
@@ -96,7 +96,7 @@
 //   useEffect(() => {
 //     const ids = Array.from({ length: totalCubes }, (_, i) => i);
 
-//     // Fisher–Yates shuffle
+//     // FisherYates shuffle
 //     for (let i = ids.length - 1; i > 0; i--) {
 //       const j = Math.floor(Math.random() * (i + 1));
 //       [ids[i], ids[j]] = [ids[j], ids[i]];
@@ -188,7 +188,7 @@
 //         </div>
 //       </div>
 
-//       {/* Foreground cube – same styling, but Case Studies icon */}
+//       {/* Foreground cube  same styling, but Case Studies icon */}
 //       <motion.div
 //         className="pointer-events-none absolute left-1/2 top-[40%] z-20 -translate-x-1/2 -translate-y-1/2 md:top-[35%]"
 //         initial={{ opacity: 0, scale: 0.7, y: 20 }}
@@ -242,11 +242,11 @@
 //               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
 //           }}
 //         >
-//           Explore implementation stories across solutions and verticals — with measurable results,
+//           Explore implementation stories across solutions and verticals  with measurable results,
 //           clear scope, and lessons learned.
 //         </p>
 
-//         {/* quick chips (placeholder — we’ll align with your real categories later) */}
+//         {/* quick chips (placeholder  we’ll align with your real categories later) */}
 //         <div className="mt-4 flex flex-wrap justify-center gap-2 text-[11px] text-slate-200">
 //           <span className="inline-flex items-center gap-2 rounded-full bg-black/40 px-3 py-1">
 //             <span className="h-1.5 w-1.5 rounded-full bg-sky-400" />
@@ -271,7 +271,7 @@
 //         </div>
 //       </div>
 
-//       {/* Vignettes – identical styling */}
+//       {/* Vignettes  identical styling */}
 //       <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.6)_55%,rgba(0,0,0,0.95)_60%,rgba(0,0,0,1)_100%)]" />
 //       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_right,rgba(0,0,0,1),rgba(0,0,0,0.8)_10%,rgba(0,0,0,0)_22%,rgba(0,0,0,0)_78%,rgba(0,0,0,0.8)_90%,rgba(0,0,0,1))]" />
 //       <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0)_20%,rgba(0,0,0,0)_40%,rgba(0,0,0,0.9)_100%)]" />
@@ -464,7 +464,7 @@ export default function CaseStudiesCubesField() {
           </div>
         </div>
 
-        {/* Foreground cube — absolutely centered over the grid */}
+        {/* Foreground cube  absolutely centered over the grid */}
         <motion.div
           className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.7, y: 20 }}
@@ -519,7 +519,7 @@ export default function CaseStudiesCubesField() {
               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
           }}
         >
-          Explore implementation stories across solutions and verticals — with measurable results,
+          Explore implementation stories across solutions and verticals  with measurable results,
           clear scope, and lessons learned.
         </p>
 

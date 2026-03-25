@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import { motion, cubicBezier } from 'framer-motion';
 // import Image from 'next/image';
@@ -138,7 +138,7 @@
 //                     Typical engagement
 //                   </p>
 //                   <p className="text-xs text-zinc-100">
-//                     Multi-circle deployments · 6–18 months
+//                     Multi-circle deployments · 618 months
 //                   </p>
 //                 </div>
 //                 <div className="text-right">
@@ -297,7 +297,7 @@ export default function ServiceProviderSection() {
                       Typical engagement
                     </p>
                     <p className="text-xs text-zinc-100">
-                      Multi-circle deployments · 6–18 months
+                      Multi-circle deployments · 618 months
                     </p>
                   </div>
                   <div className="text-right">

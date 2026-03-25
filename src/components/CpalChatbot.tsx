@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import { motion, cubicBezier } from 'framer-motion';
 // import dynamic from 'next/dynamic';
@@ -74,7 +74,7 @@
 //           {/* Original: <p className="max-w-xl text-lg text-slate-300/85 md:text-lg"> */}
 //           <p className="max-w-xl text-[18px] text-slate-300/85 md:text-[20px]">
 //             C-pal connects to your tools and channels to answer questions, triage issues
-//             and keep every stakeholder in sync — without adding more tabs to your day.
+//             and keep every stakeholder in sync  without adding more tabs to your day.
 //           </p>
 
 //           {/* bullets */}
@@ -90,7 +90,7 @@
 //             </div>
 //             <div className="flex items-start gap-3">
 //               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
-//               <span>Works where your teams already are — Slack, email and more.</span>
+//               <span>Works where your teams already are  Slack, email and more.</span>
 //             </div>
 //             <div className="flex items-start gap-3">
 //               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#19E28F]" />
@@ -189,7 +189,7 @@
 //           {/* Subheading */}
 //           <p className="max-w-xl text-[15px] sm:text-[17px] md:text-[18px] text-slate-300/85 leading-relaxed">
 //             C-pal connects to your tools and channels to answer questions, triage issues
-//             and keep every stakeholder in sync — without adding more tabs to your day.
+//             and keep every stakeholder in sync  without adding more tabs to your day.
 //           </p>
 
 //           {/* Bullets */}
@@ -197,7 +197,7 @@
 //             {[
 //               'Natural language queries over tickets, tasks and documentation.',
 //               'Smart summaries for stand-ups, incident reviews and hand-offs.',
-//               'Works where your teams already are — Slack, email and more.',
+//               'Works where your teams already are  Slack, email and more.',
 //               'Guardrails and permissions aligned with your existing systems.',
 //             ].map((point) => (
 //               <div key={point} className="flex items-start gap-2 sm:gap-3">
@@ -286,7 +286,7 @@ export default function CpalChatbot() {
           {/* Subheading */}
           <p className="max-w-xl text-[15px] sm:text-[17px] md:text-[18px] text-slate-300/85 leading-relaxed">
             C-pal connects to your tools and channels to answer questions, triage issues
-            and keep every stakeholder in sync — without adding more tabs to your day.
+            and keep every stakeholder in sync without adding more tabs to your day.
           </p>
 
           {/* Bullets */}
@@ -294,7 +294,7 @@ export default function CpalChatbot() {
             {[
               'Natural language queries over tickets, tasks and documentation.',
               'Smart summaries for stand-ups, incident reviews and hand-offs.',
-              'Works where your teams already are — Slack, email and more.',
+              'Works where your teams already are Slack, email and more.',
               'Guardrails and permissions aligned with your existing systems.',
             ].map((point) => (
               <div key={point} className="flex items-start gap-2 sm:gap-3">

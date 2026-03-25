@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import { motion, cubicBezier } from 'framer-motion';
 // import Image from 'next/image';
@@ -45,7 +45,7 @@
 
 //           <p className="mt-3 text-sm leading-relaxed text-zinc-300 md:text-base">
 //             Latest technologies like AI, AR and VR are being used across the broadcast
-//             domain – especially as online platforms explode at an exponential rate. Most
+//             domain  especially as online platforms explode at an exponential rate. Most
 //             telcos, broadcasters, content producers and aggregators are venturing into
 //             OTT/IPTV platforms, giving their customers a wholesome experience as 4G / 5G
 //             LTE networks roll out.
@@ -53,7 +53,7 @@
 
 //           <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
 //             Commedia works closely with major broadcasters in India and abroad. Our
-//             experienced team handles projects end-to-end – from setting up a satellite /
+//             experienced team handles projects end-to-end  from setting up a satellite /
 //             cable channel to modernising existing teleport and playout operations.
 //           </p>
 
@@ -234,7 +234,7 @@ export default function DigitalMediaSection() {
 
           <p className="mt-3 text-sm leading-relaxed text-zinc-300 md:text-base">
             Latest technologies like AI, AR and VR are being used across the broadcast
-            domain – especially as online platforms explode at an exponential rate. Most
+            domain especially as online platforms explode at an exponential rate. Most
             telcos, broadcasters, content producers and aggregators are venturing into
             OTT/IPTV platforms, giving their customers a wholesome experience as 4G / 5G
             LTE networks roll out.
@@ -242,7 +242,7 @@ export default function DigitalMediaSection() {
 
           <p className="mt-3 text-sm leading-relaxed text-zinc-400 md:text-base">
             Commedia works closely with major broadcasters in India and abroad. Our
-            experienced team handles projects end-to-end – from setting up a satellite /
+            experienced team handles projects end-to-end from setting up a satellite /
             cable channel to modernising existing teleport and playout operations.
           </p>
         </div>

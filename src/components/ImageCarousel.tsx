@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useCallback, useEffect, useRef } from "react";
 
@@ -25,7 +25,7 @@ export interface ImageCarouselProps {
   animationDuration?: number;
   autoPlay?: number;
   pauseOnHover?: boolean;
-  visibleCards?: number;        // how many side cards each side (0–2)
+  visibleCards?: number;        // how many side cards each side (02)
   sideCardScale?: number;
   sideCardOpacity?: number;
   grayscaleEffect?: boolean;
@@ -180,7 +180,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
           transition,
         };
       default:
-        // HIDDEN: fade/scale in place – no big horizontal travel
+        // HIDDEN: fade/scale in place  no big horizontal travel
         return {
           zIndex: 0,
           opacity: 0,
@@ -272,7 +272,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Track container – dynamically sized */}
+      {/* Track container  dynamically sized */}
       <div
         className="relative mx-auto overflow-hidden"
         style={{

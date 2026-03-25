@@ -1,4 +1,4 @@
-
+﻿
 
 
 //pp test//
@@ -153,7 +153,7 @@ export default function CloudSolutionsPage() {
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
                 From data centre extension to OTT streaming and IoT telemetry,
                 we design, migrate and operate cloud platforms on AWS and other
-                hyperscalers—with security and performance baked in.
+                hyperscalerswith security and performance baked in.
               </p>
 
               <div className="mt-6 grid gap-3 text-sm text-slate-200 md:grid-cols-2">
@@ -380,7 +380,7 @@ export default function CloudSolutionsPage() {
                 </h3>
                 <p className="text-sm leading-relaxed text-slate-300 md:text-base">
                   We connect your data centres, users, media workflows and IoT
-                  fleets into a single cloud operating model—so teams don&apos;t
+                  fleets into a single cloud operating modelso teams don&apos;t
                   have to juggle silos.
                 </p>
                 <ul className="space-y-2 text-xs leading-relaxed text-slate-300 md:text-sm">
@@ -485,7 +485,7 @@ export default function CloudSolutionsPage() {
                 Operate &amp; optimise.
               </p>
               <p className="mt-2 text-xs leading-relaxed text-slate-300">
-                Continuous cost, performance and security tuning—so your cloud
+                Continuous cost, performance and security tuningso your cloud
                 stays efficient as usage grows across India and beyond.
               </p>
             </li>

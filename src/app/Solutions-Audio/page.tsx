@@ -1,4 +1,4 @@
-
+﻿
 
 //pp//
 // src/app/solutions/audio-video-services/page.tsx
@@ -230,8 +230,8 @@ export default function Page() {
               </h1>
 
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
-                We deliver end-to-end AV—from concept and acoustics to control,
-                conferencing and streaming—so every meeting, town hall or live
+                We deliver end-to-end AVfrom concept and acoustics to control,
+                conferencing and streamingso every meeting, town hall or live
                 event feels professional, in-room and online.
               </p>
 
@@ -375,7 +375,7 @@ export default function Page() {
                 tone="emerald"
                 title="Auditoriums"
                 icon={<Presentation className="h-4 w-4" />}
-                desc="Large-room audio intelligibility and presentation confidence—without needing a dedicated technician for every session."
+                desc="Large-room audio intelligibility and presentation confidencewithout needing a dedicated technician for every session."
                 chips={['Wireless mics', 'DSP tuning', 'Projection/LED']}
               />
               <StripCard
@@ -401,7 +401,7 @@ export default function Page() {
                   AV signal flow that’s documented and supportable.
                 </h3>
                 <p className="mt-2 max-w-2xl text-sm text-slate-300 md:text-base">
-                  We design the full pipeline—so you don’t end up with mystery patching
+                  We design the full pipelineso you don’t end up with mystery patching
                   and “only this one person knows how it works”.
                 </p>
               </div>
@@ -476,7 +476,7 @@ export default function Page() {
                 How we deliver AV that ages well.
               </h2>
               <p className="mt-3 text-sm text-slate-300 md:text-base">
-                Standardisation, documentation and training—so rooms don’t degrade
+                Standardisation, documentation and trainingso rooms don’t degrade
                 into support tickets after the first quarter.
               </p>
 
@@ -536,7 +536,7 @@ export default function Page() {
                     Presenter-friendly quick guides
                   </p>
                   <p className="mt-2 text-xs text-slate-300">
-                    “Start meeting”, “Share content”, “Switch preset” — no rummaging for remotes.
+                    “Start meeting”, “Share content”, “Switch preset”  no rummaging for remotes.
                   </p>
                 </div>
               </div>

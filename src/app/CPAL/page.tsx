@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import Link from 'next/link';
 // import { motion, cubicBezier } from 'framer-motion';
@@ -33,7 +33,7 @@
 //     new CustomEvent('commedia:open-demo', {
 //       detail: {
 //         url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // placeholder for now
-//         title: 'C-pal — AI Assistant',
+//         title: 'C-pal  AI Assistant',
 //       },
 //     })
 //   );
@@ -131,7 +131,7 @@
 //             {/* subheading */}
 //             <p className="max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
 //               C-pal connects to your tools and channels to answer questions, triage issues
-//               and keep every stakeholder in sync — without adding more tabs to your day.
+//               and keep every stakeholder in sync  without adding more tabs to your day.
 //             </p>
 
 //             {/* bullets */}
@@ -139,7 +139,7 @@
 //               {[
 //                 'Natural language queries over tickets, tasks and documentation.',
 //                 'Smart summaries for stand-ups, incident reviews and hand-offs.',
-//                 'Works where your teams already are — Slack, email and more.',
+//                 'Works where your teams already are  Slack, email and more.',
 //                 'Guardrails and permissions aligned with your existing systems.',
 //               ].map((t) => (
 //                 <div key={t} className="flex items-start gap-3">
@@ -201,7 +201,7 @@
 //                 {[
 //                   {
 //                     title: 'Connectors to your stack',
-//                     body: 'Jira, ServiceNow, Slack, email, wikis and logs — so answers are grounded in your live data.',
+//                     body: 'Jira, ServiceNow, Slack, email, wikis and logs  so answers are grounded in your live data.',
 //                   },
 //                   {
 //                     title: 'Knowledge & memory',
@@ -454,7 +454,7 @@
 
 //               <p className="mt-4 max-w-xl text-sm md:text-base leading-relaxed text-slate-300/85">
 //                 C-pal respects the same roles and permissions you already use, and every action
-//                 it takes can be logged, reviewed and tuned — so operations teams stay in control.
+//                 it takes can be logged, reviewed and tuned  so operations teams stay in control.
 //               </p>
 
 //               <div className="mt-6 space-y-3 text-sm text-slate-100/90">
@@ -592,8 +592,8 @@
 //                 Ready to see C-pal working on your data?
 //               </h2>
 //               <p className="mt-4 max-w-xl text-sm md:text-base leading-relaxed text-slate-300/85">
-//                 Bring C-pal into a small slice of your stack — a single team, queue or
-//                 incident type — and see how quickly it becomes the default way to ask questions
+//                 Bring C-pal into a small slice of your stack  a single team, queue or
+//                 incident type  and see how quickly it becomes the default way to ask questions
 //                 and share context.
 //               </p>
 
@@ -798,7 +798,7 @@ export default function CpalChatbotPage() {
 
             <p className="max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
               C-pal connects to your tools and channels to answer questions, triage issues
-              and keep every stakeholder in sync — without adding more tabs to your day.
+              and keep every stakeholder in sync without adding more tabs to your day.
             </p>
 
             {/* bullets */}
@@ -806,7 +806,7 @@ export default function CpalChatbotPage() {
               {[
                 'Natural language queries over tickets, tasks and documentation.',
                 'Smart summaries for stand-ups, incident reviews and hand-offs.',
-                'Works where your teams already are — Slack, email and more.',
+                'Works where your teams already are Slack, email and more.',
                 'Guardrails and permissions aligned with your existing systems.',
               ].map((t) => (
                 <div key={t} className="flex items-start gap-2 sm:gap-3">
@@ -853,7 +853,7 @@ export default function CpalChatbotPage() {
                 {[
                   {
                     title: 'Connectors to your stack',
-                    body: 'Jira, ServiceNow, Slack, email, wikis and logs — so answers are grounded in your live data.',
+                    body: 'Jira, ServiceNow, Slack, email, wikis and logs so answers are grounded in your live data.',
                   },
                   {
                     title: 'Knowledge & memory',
@@ -1119,7 +1119,7 @@ export default function CpalChatbotPage() {
 
               <p className="mt-3 sm:mt-4 max-w-xl text-sm md:text-base leading-relaxed text-slate-300/85">
                 C-pal respects the same roles and permissions you already use, and every action
-                it takes can be logged, reviewed and tuned — so operations teams stay in control.
+                it takes can be logged, reviewed and tuned so operations teams stay in control.
               </p>
 
               <div className="mt-4 sm:mt-6 space-y-2 sm:space-y-3 text-sm text-slate-100/90">
@@ -1262,8 +1262,8 @@ export default function CpalChatbotPage() {
                 Ready to see C-pal working on your data?
               </h2>
               <p className="mt-3 sm:mt-4 max-w-xl text-sm md:text-base leading-relaxed text-slate-300/85">
-                Bring C-pal into a small slice of your stack — a single team, queue or
-                incident type — and see how quickly it becomes the default way to ask questions
+                Bring C-pal into a small slice of your stack  a single team, queue or
+                incident type  and see how quickly it becomes the default way to ask questions
                 and share context.
               </p>
 

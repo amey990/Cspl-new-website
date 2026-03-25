@@ -5,16 +5,16 @@ import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 
 // TODO: Replace these paths with your actual logo paths
-import Logo1 from '../../assets/Softwaresol.png'; 
+import Logo1 from '../../assets/Softwaresol.png';
 import Logo2 from '../../assets/AWS-3d.png';
-import Logo3 from '../../assets/Flutter-3d.png';
-import Logo4 from '../../assets/Azure-3d.png';
+// Logo3 (Mobile Development) removed
+// Logo4 (Azure) removed
 import Logo5 from '../../assets/SDWAN-3d.png';
-import Logo6 from '../../assets/Avvc.png';  
+import Logo6 from '../../assets/Avvc.png';
 import Logo7 from '../../assets/Satelliterf-3d.png';
 import Logo8 from '../../assets/Statmux-3d.png';
-import Logo9 from '../../assets/Multiplex-3d.png';
-import Logo10 from '../../assets/Ai.png'; 
+// Logo9 (Streaming) removed
+import Logo10 from '../../assets/Ai.png';
 import Logo11 from '../../assets/NMS-3d.png';
 import Logo12 from '../../assets/software-3d.png';
 
@@ -33,7 +33,7 @@ function useCountUp(end: number, duration: number = 2000, shouldStart: boolean =
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
-      
+
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(easeOutQuart * (end - startValue) + startValue));
@@ -65,28 +65,25 @@ export default function TechnologiesStats() {
   const teamCount = useCountUp(150, 2000, startCounting);
   const countriesCount = useCountUp(100, 2000, startCounting);
 
+  // Updated to a 3x3 array
   const technologies = [
     // Row 1
     { name: 'Software Solutions', logo: Logo1, color: '#646CFF' },
     { name: 'AWS Cloud', logo: Logo2, color: '#42B883' },
-    { name: 'Mobile Development', logo: Logo3, color: '#DD0031' },
-    { name: 'Azure Infrastructure', logo: Logo4, color: '#42B883' },
-    // Row 2
     { name: 'SD-WAN', logo: Logo5, color: '#FF3E00' },
+    // Row 2
     { name: 'Audio/Video', logo: Logo6, color: '#CC6699' },
     { name: 'Satellites and RF', logo: Logo7, color: '#764ABC' },
     { name: 'Digital Media', logo: Logo8, color: '#311C87' },
     // Row 3
-    { name: 'Streaming', logo: Logo9, color: '#0070F3' },
     { name: 'Artificial Intelligence', logo: Logo10, color: '#00DC82' },
     { name: 'Network Management', logo: Logo11, color: '#0070F3' },
     { name: 'Customized SaaS', logo: Logo12, color: '#673AB8' },
   ];
 
   return (
-    // <section className="relative overflow-hidden bg-[#0A0B0C] px-6 py-20 md:px-8 lg:px-16 lg:py-28">
     <section className="relative overflow-hidden bg-[#0A0B0C] px-6 py-20 md:px-8 lg:px-16 lg:py-20">
-      {/* --- Top lighting (identical recipe to Products) --- */}
+      {/* --- Top lighting --- */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         {/* neutral slate wash */}
         <div
@@ -157,7 +154,7 @@ export default function TechnologiesStats() {
             </div>
           </motion.div>
 
-          {/* Right: tech grid - 4 columns x 3 rows = 12 logos */}
+          {/* Right: tech grid - updated to 3x3 */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -169,11 +166,12 @@ export default function TechnologiesStats() {
               className="mb-8 text-center text-[28px] font-medium text-white md:text-[32px]"
               style={{ fontFamily: '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial' }}
             >
-              Engineering excellence with 
+              Engineering excellence with
               <br />the technologies you trust.
             </h2>
 
-            <div className="mx-auto grid max-w-[480px] grid-cols-4 gap-3 md:gap-4">
+            {/* Adjusted max-w and gaps for a clean 3x3 professional look */}
+            <div className="mx-auto grid max-w-[420px] grid-cols-3 gap-4 md:gap-6">
               {technologies.map((tech, idx) => (
                 <motion.div
                   key={idx}

@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import Image from 'next/image';
 // import Link from 'next/link';
@@ -30,7 +30,7 @@
 //     new CustomEvent('commedia:open-demo', {
 //       detail: {
 //         url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // replace with your real demo link
-//         title: 'Operations Advisor — Demo',
+//         title: 'Operations Advisor  Demo',
 //       },
 //     })
 //   );
@@ -44,7 +44,7 @@
 //     new CustomEvent('commedia:open-demo', {
 //       detail: {
 //         url: 'https://www.youtube.com/watch?v=M7lc1UVf-VE', // or a PDF / notion / page link
-//         title: 'Operations Advisor — Sample Playbooks',
+//         title: 'Operations Advisor  Sample Playbooks',
 //       },
 //     })
 //   );
@@ -125,7 +125,7 @@
 //             <p className="max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
 //               It connects to your monitoring, tickets and logs, surfaces the signals that
 //               matter, and guides operators through the steps most likely to resolve the issue
-//               — before customers feel the impact.
+//                before customers feel the impact.
 //             </p>
 
 //             {/* bullets */}
@@ -160,7 +160,7 @@
 //                   className="mt-1 h-1.5 w-1.5 rounded-full"
 //                   style={{ backgroundColor: ACCENT }}
 //                 />
-//                 <span>Playbooks that adapt as conditions change — not static runbooks.</span>
+//                 <span>Playbooks that adapt as conditions change  not static runbooks.</span>
 //               </div>
 //             </div>
 
@@ -250,7 +250,7 @@
 
 //               <p className="mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
 //                 Ops Advisor ingests alerts, tickets and telemetry, clusters them into
-//                 situations, then runs agentic playbooks that recommend what to do next —
+//                 situations, then runs agentic playbooks that recommend what to do next 
 //                 keeping humans in control while automation does the heavy lifting.
 //               </p>
 
@@ -511,7 +511,7 @@
 //               <p className="mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
 //                 The operations board gives you a single view of which sites, services and
 //                 assets are healthy, which situations are active, and which playbooks are in
-//                 flight — so shifts stay ahead of incidents instead of chasing them.
+//                 flight so shifts stay ahead of incidents instead of chasing them.
 //               </p>
 
 //               <div className="mt-6 grid gap-3 text-sm text-slate-100/90 md:grid-cols-2 md:gap-4">
@@ -626,7 +626,7 @@
 //                 Ready to see Ops Advisor on your operations floor?
 //               </h2>
 //               <p className="mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
-//                 Start with a focused pilot — one region, one product line or one NOC — and
+//                 Start with a focused pilot one region, one product line or one NOC and
 //                 see how agentic workflows change the way operators respond to incidents.
 //               </p>
 
@@ -827,7 +827,7 @@ export default function OperationsAdvisorPage() {
             <p className="max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
               It connects to your monitoring, tickets and logs, surfaces the signals that
               matter, and guides operators through the steps most likely to resolve the issue
-              — before customers feel the impact.
+              before customers feel the impact.
             </p>
 
             {/* bullets */}
@@ -836,7 +836,7 @@ export default function OperationsAdvisorPage() {
                 'Agentic workflows that triage, route and recommend actions automatically.',
                 'Live health scores across sites, assets and customer-facing services.',
                 'Root-cause hints from tickets, logs and historical incidents.',
-                'Playbooks that adapt as conditions change — not static runbooks.',
+                'Playbooks that adapt as conditions change not static runbooks.',
               ].map((text) => (
                 <div key={text} className="flex items-start gap-2 sm:gap-3">
                   <span
@@ -889,59 +889,59 @@ export default function OperationsAdvisorPage() {
           </motion.div> */}
 
           <motion.div
-  initial={{ opacity: 0, x: 24, y: 12, scale: 0.96 }}
-  whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-  viewport={{ once: true, amount: 0.45 }}
-  transition={{ duration: 0.8, ease: easeOutExpo }}
-  className="relative flex flex-1 items-center justify-center"
->
-  {/* glow behind card */}
-  <div className="pointer-events-none absolute inset-0 -z-10">
-    <div
-      className="absolute left-1/2 top-1/2 h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
-      style={{
-        background: 'radial-gradient(circle, rgba(255,89,6,0.35) 0%, transparent 60%)',
-      }}
-    />
-  </div>
+            initial={{ opacity: 0, x: 24, y: 12, scale: 0.96 }}
+            whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.45 }}
+            transition={{ duration: 0.8, ease: easeOutExpo }}
+            className="relative flex flex-1 items-center justify-center"
+          >
+            {/* glow behind card */}
+            <div className="pointer-events-none absolute inset-0 -z-10">
+              <div
+                className="absolute left-1/2 top-1/2 h-48 w-48 sm:h-64 sm:w-64 md:h-72 md:w-72 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
+                style={{
+                  background: 'radial-gradient(circle, rgba(255,89,6,0.35) 0%, transparent 60%)',
+                }}
+              />
+            </div>
 
-  {/* ── wrapper that holds both images ── */}
-  <div className="relative w-full max-w-[480px] sm:max-w-[520px] md:max-w-[540px]"
-    style={{ perspective: '1200px' }}
-  >
-    {/* MAIN image */}
-    <div
-      className="relative rounded-[16px] sm:rounded-[20px] border border-white/10 bg-[#101012] shadow-[0_40px_120px_rgba(0,0,0,0.95)]"
-      style={{
-        transform: 'rotateX(0deg) rotateZ(0deg)',
-        boxShadow: '0 24px 60px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.06)',
-        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
-      }}
-    >
-      <div className="overflow-hidden rounded-[14px] sm:rounded-[18px]">
-        <Image
-          src={OpsAdvisorImage}
-          alt="Operations Advisor dashboard"
-          className="h-auto w-full"
-          quality={100}
-          priority
-        />
-      </div>
-    </div>
+            {/* ── wrapper that holds both images ── */}
+            <div className="relative w-full max-w-[480px] sm:max-w-[520px] md:max-w-[540px]"
+              style={{ perspective: '1200px' }}
+            >
+              {/* MAIN image */}
+              <div
+                className="relative rounded-[16px] sm:rounded-[20px] border border-white/10 bg-[#101012] shadow-[0_40px_120px_rgba(0,0,0,0.95)]"
+                style={{
+                  transform: 'rotateX(0deg) rotateZ(0deg)',
+                  boxShadow: '0 24px 60px rgba(0,0,0,.7), inset 0 1px 0 rgba(255,255,255,.06)',
+                  WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+                  maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%)',
+                }}
+              >
+                <div className="overflow-hidden rounded-[14px] sm:rounded-[18px]">
+                  <Image
+                    src={OpsAdvisorImage}
+                    alt="Operations Advisor dashboard"
+                    className="h-auto w-full"
+                    quality={100}
+                    priority
+                  />
+                </div>
+              </div>
 
-    {/* OVERLAY image — swap src for whichever image you want */}
-    <Image
-      src={OpsAdvisorImage2}        // ← replace with your second image import
-      alt="Operations Advisor detail"
-      quality={95}
-      className="absolute -bottom-10 right-2 w-[75%] rounded-2xl border border-white/10 shadow-[0_28px_90px_rgba(0,0,0,0.95)]"
-      style={{
-        transform: 'rotateX(10deg) rotateZ(2deg)',
-      }}
-    />
-  </div>
-</motion.div>
+              {/* OVERLAY image  swap src for whichever image you want */}
+              <Image
+                src={OpsAdvisorImage2}        // ← replace with your second image import
+                alt="Operations Advisor detail"
+                quality={95}
+                className="absolute -bottom-10 right-2 w-[75%] rounded-2xl border border-white/10 shadow-[0_28px_90px_rgba(0,0,0,0.95)]"
+                style={{
+                  transform: 'rotateX(10deg) rotateZ(2deg)',
+                }}
+              />
+            </div>
+          </motion.div>
         </section>
 
         {/* ------------------------------------------------------------------ */}
@@ -968,7 +968,7 @@ export default function OperationsAdvisorPage() {
 
               <p className="mt-3 sm:mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
                 Ops Advisor ingests alerts, tickets and telemetry, clusters them into
-                situations, then runs agentic playbooks that recommend what to do next —
+                situations, then runs agentic playbooks that recommend what to do next
                 keeping humans in control while automation does the heavy lifting.
               </p>
 
@@ -1189,7 +1189,7 @@ export default function OperationsAdvisorPage() {
               <p className="mt-3 sm:mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
                 The operations board gives you a single view of which sites, services and
                 assets are healthy, which situations are active, and which playbooks are in
-                flight — so shifts stay ahead of incidents instead of chasing them.
+                flight  so shifts stay ahead of incidents instead of chasing them.
               </p>
 
               <div className="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 text-sm text-slate-100/90">
@@ -1285,7 +1285,7 @@ export default function OperationsAdvisorPage() {
                 Ready to see Ops Advisor on your operations floor?
               </h2>
               <p className="mt-3 sm:mt-4 max-w-xl text-sm md:text-base text-slate-300/85 leading-relaxed">
-                Start with a focused pilot — one region, one product line or one NOC — and
+                Start with a focused pilot  one region, one product line or one NOC  and
                 see how agentic workflows change the way operators respond to incidents.
               </p>
 

@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import styles from './ChatbotWidget.module.css';
@@ -140,7 +140,7 @@ export default function ChatbotWidget() {
           role: 'assistant',
           ts: Date.now(),
           content:
-            "Sorry — I couldn't reach the chat service right now. Try again in a moment, or use the Contact page and we’ll get back to you.",
+            "Sorry  I couldn't reach the chat service right now. Try again in a moment, or use the Contact page and we’ll get back to you.",
         },
       ]);
     } finally {

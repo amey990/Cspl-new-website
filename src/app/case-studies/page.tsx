@@ -1,4 +1,4 @@
-import CaseStudiesCubesField from '../../components/CaseStudiesCubesField';
+﻿import CaseStudiesCubesField from '../../components/CaseStudiesCubesField';
 import CaseStudiesGrid from './CaseStudiesGrid';
 import { CASE_STUDIES } from './caseStudies.data';
 
@@ -13,7 +13,7 @@ export default function CaseStudiesPage() {
             Explore case studies
           </h2>
           <p className="mt-3 text-zinc-300 max-w-2xl">
-            Browse deployments by verticals and solutions — open any case study for full details.
+            Browse deployments by verticals and solutions  open any case study for full details.
           </p>
         </div>
 

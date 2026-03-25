@@ -1,4 +1,4 @@
-// src/app/solutions/network-security/page.tsx
+﻿// src/app/solutions/network-security/page.tsx
 'use client';
 
 import type { ReactNode } from 'react';
@@ -214,7 +214,7 @@ export default function Page() {
 
                 <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
                   Firewalls, detection and access controls only work when they’re
-                  designed as one operating model—across DC, campus, branches and cloud.
+                  designed as one operating modelacross DC, campus, branches and cloud.
                 </p>
 
                 <div className="mt-6 grid gap-4 md:grid-cols-2">
@@ -316,7 +316,7 @@ export default function Page() {
               The control stack we build and run.
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
-              Not a pile of products—an integrated set of controls mapped to the
+              Not a pile of productsan integrated set of controls mapped to the
               way attacks actually flow through networks.
             </p>
 
@@ -337,7 +337,7 @@ export default function Page() {
                 tone="fuchsia"
                 icon={<Radar className="h-5 w-5" />}
                 title="Detection across core + critical zones"
-                desc="Sensors that watch east–west traffic to catch what perimeter controls miss."
+                desc="Sensors that watch eastwest traffic to catch what perimeter controls miss."
                 bullets={[
                   'IDS/IPS coverage for high-value segments and DC cores.',
                   'Anomaly detection for unexpected flows and port chatter.',
@@ -379,7 +379,7 @@ export default function Page() {
               Mapped to the attacker’s path.
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
-              We align controls to stop the chain early—then contain fast if something lands.
+              We align controls to stop the chain earlythen contain fast if something lands.
             </p>
 
             <div className="mt-8 grid gap-4 md:grid-cols-4">
@@ -443,7 +443,7 @@ export default function Page() {
                   <div>
                     <p className="text-sm font-medium text-white">Observe</p>
                     <p className="mt-1 text-xs leading-relaxed text-slate-300">
-                      Telemetry and signals tuned to your environment—not generic dashboards.
+                      Telemetry and signals tuned to your environmentnot generic dashboards.
                     </p>
                   </div>
                 </div>

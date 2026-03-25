@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import type { ReactNode } from 'react';
 import Image from 'next/image';
@@ -163,7 +163,7 @@ export default function Page() {
                 </div>
 
                 <h1 className="mt-5 text-4xl font-semibold leading-tight md:text-5xl">
-  SD-WAN that chooses the best path—
+  SD-WAN that chooses the best path
   <span className="block text-fuchsia-300">without drama.</span>
 </h1>
 
@@ -280,7 +280,7 @@ export default function Page() {
             </h2>
             <p className="mt-3 max-w-2xl text-sm text-slate-300 md:text-base">
               Built for reliability, designed for operations, and tuned to your
-              app reality—voice, video, ERP, SaaS and bulk traffic.
+              app realityvoice, video, ERP, SaaS and bulk traffic.
             </p>
 
             <div className="mt-6 grid gap-4 md:grid-cols-3">

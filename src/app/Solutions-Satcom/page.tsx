@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion, cubicBezier } from 'framer-motion';
 import {
@@ -131,7 +131,7 @@ function MetricCard({
 export default function SatelliteCommunicationPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#010101] text-white">
-      {/* GLOBAL GRID BACKGROUND – same style as other Solutions pages */}
+      {/* GLOBAL GRID BACKGROUND  same style as other Solutions pages */}
       <div
         className="pointer-events-none absolute inset-0 z-0"
         style={{
@@ -170,7 +170,7 @@ export default function SatelliteCommunicationPage() {
 
               <p className="mt-4 max-w-xl text-sm leading-relaxed text-slate-300 md:text-base">
                 From remote VSAT sites to carrier-grade teleports, we design and
-                operate satellite connectivity that behaves predictably—even in
+                operate satellite connectivity that behaves predictablyeven in
                 the most remote, infrastructure-poor locations.
               </p>
 
@@ -438,7 +438,7 @@ export default function SatelliteCommunicationPage() {
                 </h3>
                 <p className="text-sm leading-relaxed text-slate-300 md:text-base">
                   We design satellite topologies to align with your existing WAN
-                  and security architecture—so remote sites don&apos;t feel like
+                  and security architectureso remote sites don&apos;t feel like
                   a separate, &quot;special&quot; network to support.
                 </p>
                 <ul className="space-y-2 text-xs leading-relaxed text-slate-300 md:text-sm">

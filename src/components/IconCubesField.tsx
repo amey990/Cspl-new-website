@@ -1,4 +1,4 @@
-// // src/app/components/IconCubesField.tsx
+﻿// // src/app/components/IconCubesField.tsx
 // 'use client';
 
 // import Image from 'next/image';
@@ -103,7 +103,7 @@
 //   useEffect(() => {
 //     const ids = Array.from({ length: totalCubes }, (_, i) => i);
 
-//     // Fisher–Yates shuffle
+//     // FisherYates shuffle
 //     for (let i = ids.length - 1; i > 0; i--) {
 //       const j = Math.floor(Math.random() * (i + 1));
 //       [ids[i], ids[j]] = [ids[j], ids[i]];
@@ -258,7 +258,7 @@
 //               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
 //           }}
 //         >
-//           Discover Commmedia’s product suite&nbsp;— 
+//           Discover Commmedia’s product suite&nbsp; 
 //           Elevate your workflow with intuitive, 
 //           future-ready solutions.
 //         </p>
@@ -463,7 +463,7 @@ export default function IconCubesField() {
           </div>
         </div>
 
-        {/* Orb cube — absolutely centered over the grid */}
+        {/* Orb cube  absolutely centered over the grid */}
         <motion.div
           className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center"
           initial={{ opacity: 0, scale: 0.7, y: 20 }}
@@ -509,7 +509,7 @@ export default function IconCubesField() {
               '"ABC Diatype",-apple-system,system-ui,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial',
           }}
         >
-          Discover Commmedia's product suite&nbsp;—&nbsp;Elevate your workflow with intuitive,
+          Discover Commmedia's product suite&nbsp;&nbsp;Elevate your workflow with intuitive,
           future-ready solutions.
         </p>
       </div>

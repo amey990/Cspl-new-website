@@ -1,4 +1,4 @@
-// 'use client';
+﻿// 'use client';
 
 // import { motion, cubicBezier } from 'framer-motion';
 
@@ -45,8 +45,8 @@
 //           </p>
 
 //           <p className="mt-3 text-sm leading-relaxed text-zinc-300 md:text-base">
-//             Commedia has been working closely on a host of Government projects –
-//             including organisations such as Prasar Bharti, All India Radio and ISRO –
+//             Commedia has been working closely on a host of Government projects 
+//             including organisations such as Prasar Bharti, All India Radio and ISRO 
 //             since its inception. We are keen to associate with more government bodies
 //             and continuously work towards providing stronger technical solutions and
 //             services.
@@ -196,8 +196,8 @@ export default function GovernmentSection() {
           </p>
 
           <p className="mt-3 text-sm leading-relaxed text-zinc-300 md:text-base">
-            Commedia has been working closely on a host of Government projects –
-            including organisations such as Prasar Bharti, All India Radio and ISRO –
+            Commedia has been working closely on a host of Government projects 
+            including organisations such as Prasar Bharti, All India Radio and ISRO 
             since its inception. We are keen to associate with more government bodies
             and continuously work towards providing stronger technical solutions and
             services.
