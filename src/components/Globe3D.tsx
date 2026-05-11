@@ -226,7 +226,7 @@ function Marker({
         <meshBasicMaterial color={hovered ? "#34d399" : "#10b981"} />
       </mesh>
 
-      {/* Native HTML Label at the top (replaces blurry image) */}
+      {/* Native HTML Label at the top - shows full place name */}
       <group ref={imageGroupRef} position={topPosition}>
         <Html
           center
@@ -237,32 +237,22 @@ function Marker({
           }}
           zIndexRange={[100, 0]}
         >
-          <div className="relative group">
-            <div
-              className={cn(
-                "flex cursor-pointer items-center justify-center rounded-full border border-white/20 font-bold text-white shadow-lg transition-transform duration-200",
-                hovered && "scale-110 shadow-xl ring-2 ring-white/50"
-              )}
-              style={{
-                width: "22px",
-                height: "22px",
-                fontSize: "9px",
-                backgroundColor: bgColor,
-                letterSpacing: "0.05em",
-              }}
-              onMouseEnter={handlePointerEnter}
-              onMouseLeave={handlePointerLeave}
-              onClick={handleClick}
-            >
-              {initials}
-            </div>
-
-            {/* Tooltip Label */}
-            {hovered && marker.label && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 whitespace-nowrap rounded-md border border-white/10 bg-black/90 px-2 py-1 text-xs font-medium tracking-wide text-white shadow-xl backdrop-blur-md pointer-events-none z-50">
-                {marker.label}
-              </div>
+          <div
+            className={cn(
+              "flex cursor-pointer items-center gap-1.5 whitespace-nowrap rounded-full border border-white/15 bg-black/70 px-2 py-1 shadow-lg backdrop-blur-md transition-all duration-200",
+              hovered && "scale-110 shadow-xl border-white/30 bg-black/85"
             )}
+            onMouseEnter={handlePointerEnter}
+            onMouseLeave={handlePointerLeave}
+            onClick={handleClick}
+          >
+            <span
+              className="inline-block h-2 w-2 flex-shrink-0 rounded-full"
+              style={{ backgroundColor: bgColor }}
+            />
+            <span className="text-[9px] font-semibold leading-none tracking-wide text-white">
+              {marker.label}
+            </span>
           </div>
         </Html>
       </group>

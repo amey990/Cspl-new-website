@@ -487,25 +487,15 @@ import { useState, useEffect, useRef } from 'react';
 import { Globe3D, GlobeMarker } from '@/components/Globe3D';
 
 const PRESENCE_MARKERS: GlobeMarker[] = [
-  // India
-  { lat: 31.6340, lng: 74.8723, label: "Amritsar" },
+  // India (key cities)
   { lat: 28.6139, lng: 77.2090, label: "Delhi" },
-  { lat: 26.8467, lng: 80.9462, label: "Lucknow" },
-  { lat: 25.5788, lng: 91.8933, label: "Shilong" },
-  { lat: 25.8580, lng: 93.7431, label: "Dimah" },
   { lat: 26.1445, lng: 91.7362, label: "Guwahati" },
   { lat: 23.0225, lng: 72.5714, label: "Ahmedabad" },
-  { lat: 22.7196, lng: 75.8577, label: "Indore" },
   { lat: 22.5726, lng: 88.3639, label: "Kolkata" },
   { lat: 19.0760, lng: 72.8777, label: "Mumbai" },
-  { lat: 18.5204, lng: 73.8567, label: "Pune" },
   { lat: 17.3850, lng: 78.4867, label: "Hyderabad" },
-  { lat: 16.5062, lng: 80.6480, label: "Vijaywada" },
-  { lat: 15.2993, lng: 74.1240, label: "Goa" },
-  { lat: 13.0827, lng: 80.2707, label: "Chennai" },
   { lat: 12.9716, lng: 77.5946, label: "Bangalore" },
-  { lat: 11.6643, lng: 78.1460, label: "Salem" },
-  { lat: 10.8505, lng: 76.2711, label: "Kerala" },
+  { lat: 13.0827, lng: 80.2707, label: "Chennai" },
   
   // Global
   { lat: 37.0902, lng: -95.7129, label: "US" },
